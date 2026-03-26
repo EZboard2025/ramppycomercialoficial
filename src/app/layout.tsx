@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     "análise de reuniões",
     "copiloto de vendas",
   ],
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
   openGraph: {
     title: "Ramppy — Ecossistema Completo de Vendas com IA",
     description:

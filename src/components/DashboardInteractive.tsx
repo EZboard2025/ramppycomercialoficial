@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import type React from "react";
+import { useState, useEffect, useRef } from "react";
 import RamppyLogo from "./RamppyLogo";
 import ProfilePage from "./ProfilePage";
 import SimulationPage from "./SimulationPage";
+import CalendarPage from "./CalendarPage";
+import HistoricoPage from "./HistoricoPage";
 
 /* ─── Lucide-style SVG icons (matching the real Ramppy sidebar) ─── */
 const icons = {
@@ -142,6 +145,8 @@ const icons = {
   ),
 };
 
+const scrollToPlanos = (e: React.MouseEvent) => { e.stopPropagation(); const el = document.getElementById("planos"); if (el) el.scrollIntoView({ behavior: "smooth" }); };
+
 const sidebarItems = [
   { key: "home", icon: icons.house, label: "Home" },
   { key: "perfil", icon: icons.user, label: "Meu Perfil" },
@@ -165,9 +170,9 @@ function CalendarGrid() {
   return (
     <div className="select-none">
       <div className="flex items-center justify-between mb-2">
-        <button className="p-0.5 hover:bg-gray-100 rounded-full transition-colors text-gray-500">{icons.chevronLeft}</button>
+        <button onClick={scrollToPlanos} className="p-0.5 hover:bg-gray-100 rounded-full transition-colors text-gray-500">{icons.chevronLeft}</button>
         <span className="text-xs font-medium text-gray-700">Marco 2026</span>
-        <button className="p-0.5 hover:bg-gray-100 rounded-full transition-colors text-gray-500">{icons.chevronRight}</button>
+        <button onClick={scrollToPlanos} className="p-0.5 hover:bg-gray-100 rounded-full transition-colors text-gray-500">{icons.chevronRight}</button>
       </div>
       <div className="grid grid-cols-7 mb-0.5">
         {days.map((d, i) => (
@@ -235,7 +240,7 @@ function NicolePanel() {
           <span className="text-sm font-bold text-gray-900">Nicole</span>
           <span className="text-[10px] bg-green-50 text-green-600 font-semibold px-2 py-0.5 rounded border border-green-100">IA Ramppy</span>
         </div>
-        <button className="text-gray-400 hover:text-gray-600 text-lg leading-none">&times;</button>
+        <button onClick={scrollToPlanos} className="text-gray-400 hover:text-gray-600 text-lg leading-none">&times;</button>
       </div>
 
       {/* Body */}
@@ -253,7 +258,7 @@ function NicolePanel() {
       <div className="p-4 border-t border-gray-100">
         <div className="flex items-center bg-gray-50 rounded-xl px-3 py-2.5 border border-gray-200">
           <span className="text-xs text-gray-400 flex-1">Fale com a Nicole...</span>
-          <button className="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center text-white shrink-0">
+          <button onClick={scrollToPlanos} className="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center text-white shrink-0">
             {icons.send}
           </button>
         </div>
@@ -266,7 +271,7 @@ function NicolePanel() {
           { emoji: "📊", text: "Compare os vendedores" },
           { emoji: "📈", text: "Como esta minha performance?" },
         ].map((a) => (
-          <button key={a.text} className="w-full flex items-center gap-2 bg-gray-50 hover:bg-gray-100 rounded-lg px-3 py-2 transition-colors text-left">
+          <button key={a.text} onClick={scrollToPlanos} className="w-full flex items-center gap-2 bg-gray-50 hover:bg-gray-100 rounded-lg px-3 py-2 transition-colors text-left">
             <span className="text-sm">{a.emoji}</span>
             <span className="text-xs font-medium text-gray-700">{a.text}</span>
           </button>
@@ -287,8 +292,8 @@ function HomePage() {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-gray-900">Evolucao de Performance</h3>
             <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5">
-              <button className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all bg-green-500 text-white">Roleplay</button>
-              <button className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all text-gray-500 hover:text-gray-700">Meet Real</button>
+              <button onClick={scrollToPlanos} className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all bg-green-500 text-white">Roleplay</button>
+              <button onClick={scrollToPlanos} className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all text-gray-500 hover:text-gray-700">Meet Real</button>
             </div>
           </div>
           <div className="h-[200px]">
@@ -353,15 +358,15 @@ function HomePage() {
                 <span className="text-xs font-medium text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-100">Implicacao</span>
               </div>
             </div>
-            <button className="flex items-center gap-1 text-xs text-green-600 hover:text-green-700 font-medium transition-colors flex-shrink-0 whitespace-nowrap">
+            <button onClick={scrollToPlanos} className="flex items-center gap-1 text-xs text-green-600 hover:text-green-700 font-medium transition-colors flex-shrink-0 whitespace-nowrap">
               {icons.eye} Ver detalhes
             </button>
           </div>
           <div className="p-4 pt-0 space-y-2">
-            <button className="w-full flex items-center justify-center gap-2 py-2.5 bg-green-50 hover:bg-green-100 text-green-700 text-sm font-medium rounded-lg transition-colors border border-green-200">
+            <button onClick={scrollToPlanos} className="w-full flex items-center justify-center gap-2 py-2.5 bg-green-50 hover:bg-green-100 text-green-700 text-sm font-medium rounded-lg transition-colors border border-green-200">
               {icons.play} Iniciar Simulacao
             </button>
-            <button className="w-full flex items-center justify-center gap-2 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 text-xs font-medium rounded-lg transition-colors border border-amber-200">
+            <button onClick={scrollToPlanos} className="w-full flex items-center justify-center gap-2 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 text-xs font-medium rounded-lg transition-colors border border-amber-200">
               {icons.list} Voce tem 8 simulacoes pendentes — Ver todas
             </button>
           </div>
@@ -371,7 +376,7 @@ function HomePage() {
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-gray-900">Agenda</h3>
-            <button className="text-xs text-green-600 hover:text-green-700 font-medium flex items-center gap-1 transition-colors">
+            <button onClick={scrollToPlanos} className="text-xs text-green-600 hover:text-green-700 font-medium flex items-center gap-1 transition-colors">
               Ver completo {icons.arrowRight}
             </button>
           </div>
@@ -442,12 +447,17 @@ function HomePage() {
 function PlaceholderPage({ title, description }: { title: string; description: string }) {
   return (
     <div className="flex items-center justify-center h-full min-h-[400px]">
-      <div className="text-center">
+      <div className="text-center max-w-md">
         <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-green-600">
-          {icons.sparkles}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
         <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
-        <p className="text-sm text-gray-500 max-w-xs">{description}</p>
+        <p className="text-sm text-gray-500 mb-6">{description}</p>
+        <p className="text-sm text-gray-400 mb-4">Essa funcionalidade esta disponivel no plano Pro.</p>
+        <a href="#planos" className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-xl transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Conhecer planos
+        </a>
       </div>
     </div>
   );
@@ -466,8 +476,26 @@ const pages: Record<string, { title: string; description: string }> = {
 };
 
 /* ─── Main Dashboard Component ─── */
+const autoPages = ["home", "perfil", "simulacao", "calendario", "historico"];
+
 export default function DashboardInteractive() {
   const [activeNav, setActiveNav] = useState("home");
+  const [userInteracted, setUserInteracted] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (userInteracted) {
+      if (timerRef.current) clearInterval(timerRef.current);
+      return;
+    }
+    timerRef.current = setInterval(() => {
+      setActiveNav((prev) => {
+        const idx = autoPages.indexOf(prev);
+        return autoPages[(idx + 1) % autoPages.length];
+      });
+    }, 5000);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [userInteracted]);
 
   return (
     <div className="min-h-screen text-gray-900 flex bg-white rounded-lg overflow-hidden" style={{ width: 1360, height: 820 }}>
@@ -483,7 +511,16 @@ export default function DashboardInteractive() {
           {sidebarItems.map((item) => (
             <button
               key={item.key}
-              onClick={() => setActiveNav(item.key)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setUserInteracted(true);
+                if (["whatsapp", "meet", "gestao", "publica", "download"].includes(item.key)) {
+                  const el = document.getElementById("planos");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  setActiveNav(item.key);
+                }
+              }}
               title={item.label}
               className={`relative w-full flex items-center justify-center px-3 py-2.5 rounded-lg transition-colors duration-150 ${
                 activeNav === item.key
@@ -501,10 +538,10 @@ export default function DashboardInteractive() {
 
         {/* Bottom */}
         <div className="p-2 border-t border-white/10 space-y-1">
-          <button className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all">
+          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all">
             {icons.settings}
           </button>
-          <button className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-red-400 hover:bg-red-500/10 transition-all">
+          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-red-400 hover:bg-red-500/10 transition-all">
             {icons.logOut}
           </button>
         </div>
@@ -522,25 +559,31 @@ export default function DashboardInteractive() {
                   <p className="text-xs text-gray-400 mt-0.5">voce@email.com</p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <button className="p-2.5 rounded-xl hover:bg-gray-100 text-gray-400">{icons.layoutGrid}</button>
-                  <button className="p-2.5 rounded-xl hover:bg-gray-100 text-gray-500">{icons.bell}</button>
+                  <button onClick={scrollToPlanos} className="p-2.5 rounded-xl hover:bg-gray-100 text-gray-400">{icons.layoutGrid}</button>
+                  <button onClick={scrollToPlanos} className="p-2.5 rounded-xl hover:bg-gray-100 text-gray-500">{icons.bell}</button>
                 </div>
               </div>
             )}
 
             {/* Content */}
-            {activeNav === "home" ? (
-              <HomePage />
-            ) : activeNav === "perfil" ? (
-              <ProfilePage />
-            ) : activeNav === "simulacao" ? (
-              <SimulationPage />
-            ) : (
-              <PlaceholderPage
-                title={pages[activeNav]?.title ?? "Pagina"}
-                description={pages[activeNav]?.description ?? ""}
-              />
-            )}
+            <div key={activeNav} className="animate-[fadeSlideIn_0.4s_ease-out]">
+              {activeNav === "home" ? (
+                <HomePage />
+              ) : activeNav === "perfil" ? (
+                <ProfilePage />
+              ) : activeNav === "simulacao" ? (
+                <SimulationPage />
+              ) : activeNav === "calendario" ? (
+                <CalendarPage />
+              ) : activeNav === "historico" ? (
+                <HistoricoPage />
+              ) : (
+                <PlaceholderPage
+                  title={pages[activeNav]?.title ?? "Pagina"}
+                  description={pages[activeNav]?.description ?? ""}
+                />
+              )}
+            </div>
           </div>
         </div>
       </main>

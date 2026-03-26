@@ -9,32 +9,12 @@ export const GridBeam: React.FC<{
   className?: string;
 }> = ({ children, className }) => (
   <div className={cn("relative w-full h-full", className)}>
-    {/* Grid pattern */}
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{
-        backgroundImage: `
-          linear-gradient(rgba(45, 140, 60, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(45, 140, 60, 0.03) 1px, transparent 1px)
-        `,
-        backgroundSize: "60px 60px",
-      }}
-    />
-    {/* Beams */}
-    <Beam className="top-0 left-[20%]" delay={0} />
-    <Beam className="top-0 left-[50%]" delay={1.2} />
-    <Beam className="top-0 left-[80%]" delay={2.4} />
+    <Beam />
     {children}
   </div>
 );
 
-const Beam = ({
-  className,
-  delay = 0,
-}: {
-  className?: string;
-  delay?: number;
-}) => {
+export const Beam = () => {
   return (
     <svg
       width="156"
@@ -42,10 +22,7 @@ const Beam = ({
       viewBox="0 0 156 63"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(
-        "absolute pointer-events-none opacity-40",
-        className
-      )}
+      className="absolute top-0 left-0 ml-24 mt-8 pointer-events-none"
     >
       <path
         d="M31 .5h32M0 .5h32m30 31h32m-1 0h32m-1 31h32M62.5 32V0m62 63V31"
@@ -54,7 +31,7 @@ const Beam = ({
       />
       <defs>
         <motion.linearGradient
-          id={`grad-${delay}`}
+          id="grad1"
           variants={{
             initial: {
               x1: "40%",
@@ -77,13 +54,12 @@ const Beam = ({
             repeatType: "loop",
             ease: "linear",
             repeatDelay: 2,
-            delay,
           }}
         >
-          <stop stopColor="#22c55e" stopOpacity="0" />
-          <stop stopColor="#22c55e" />
-          <stop offset="0.325" stopColor="#15803d" />
-          <stop offset="1" stopColor="#166534" stopOpacity="0" />
+          <stop stopColor="#18CCFC" stopOpacity="0" />
+          <stop stopColor="#18CCFC" />
+          <stop offset="0.325" stopColor="#6344F5" />
+          <stop offset="1" stopColor="#AE48FF" stopOpacity="0" />
         </motion.linearGradient>
       </defs>
     </svg>
