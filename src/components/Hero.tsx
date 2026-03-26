@@ -1,5 +1,4 @@
 import SectionWrapper from "./SectionWrapper";
-import DashboardPreview from "./DashboardPreview";
 
 export default function Hero() {
   return (
@@ -10,7 +9,7 @@ export default function Hero() {
           <div className="lg:w-[520px] xl:w-[580px] shrink-0 lg:ml-12 xl:ml-20">
             {/* H1 */}
             <h1 className="font-[var(--font-fustat)] text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] font-semibold leading-[105%] tracking-[-0.05em] text-teal-dark">
-              <span className="whitespace-nowrap">Acabe com a ineficiencia</span>
+              <span className="whitespace-nowrap">Acabe com a <span className="clip-text">ineficiencia</span></span>
               <br />
               do seu time de{" "}
               <span className="clip-text">vendas.</span>
@@ -71,9 +70,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Mini Interactive Dashboard */}
-          <div className="flex-1 w-full lg:min-w-[900px] xl:min-w-[1100px] lg:translate-x-[180px] xl:translate-x-[270px]">
-            <DashboardPreview />
+          {/* Right: Video */}
+          <div className="flex-1 w-full lg:min-w-[320px] xl:min-w-[400px] lg:translate-x-[180px] xl:translate-x-[270px]">
+            <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto block object-cover scale-[1.02]"
+                style={{ marginLeft: "-1%" }}
+                preload="auto"
+              >
+                <source src="/videos/IMG_2973.MOV" type="video/quicktime" />
+                <source src="/videos/IMG_2973.MOV" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </div>

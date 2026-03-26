@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import DashboardInteractive from "./DashboardInteractive";
 
 const DASH_W = 1360;
-const DASH_H = 760;
+const DASH_H = 820;
 
 export default function DashboardPreview() {
   const containerRef = useRef<HTMLDivElement>(null);

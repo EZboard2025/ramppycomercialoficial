@@ -288,7 +288,7 @@ function HomePage() {
       {/* Col 1: Performance chart + SPIN metrics */}
       <div className="col-span-5 space-y-4">
         {/* Evolucao de Performance */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-sm transition-all">
+        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-gray-900">Evolucao de Performance</h3>
             <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5">
@@ -302,7 +302,7 @@ function HomePage() {
         </div>
 
         {/* Metricas SPIN */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-sm transition-all">
+        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Metricas SPIN</h3>
           <div className="space-y-4">
             {[
@@ -411,7 +411,7 @@ function HomePage() {
         </div>
 
         {/* Historico */}
-        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-sm transition-all">
+        <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-500">
               {icons.clock}
@@ -482,6 +482,12 @@ export default function DashboardInteractive() {
   const [activeNav, setActiveNav] = useState("home");
   const [userInteracted, setUserInteracted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const mainRef = useRef<HTMLElement>(null);
+
+  // Scroll main to top on page change
+  useEffect(() => {
+    if (mainRef.current) mainRef.current.scrollTop = 0;
+  }, [activeNav]);
 
   useEffect(() => {
     if (userInteracted) {
@@ -522,7 +528,7 @@ export default function DashboardInteractive() {
                 }
               }}
               title={item.label}
-              className={`relative w-full flex items-center justify-center px-3 py-2.5 rounded-lg transition-colors duration-150 ${
+              className={`relative w-full flex items-center justify-center px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                 activeNav === item.key
                   ? "bg-green-500/20 text-white font-semibold"
                   : "text-gray-300 hover:text-white hover:bg-white/10"
@@ -531,24 +537,24 @@ export default function DashboardInteractive() {
               {activeNav === item.key && (
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-green-500 rounded-r-full" />
               )}
-              {item.icon}
+              <span className="transition-transform duration-200 group-hover:scale-125">{item.icon}</span>
             </button>
           ))}
         </nav>
 
         {/* Bottom */}
         <div className="p-2 border-t border-white/10 space-y-1">
-          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all">
-            {icons.settings}
+          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 group">
+            <span className="transition-transform duration-200 group-hover:scale-125 group-hover:rotate-45">{icons.settings}</span>
           </button>
-          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-red-400 hover:bg-red-500/10 transition-all">
-            {icons.logOut}
+          <button onClick={scrollToPlanos} className="w-full flex items-center justify-center px-3 py-2.5 rounded-lg text-gray-300 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200 group">
+            <span className="transition-transform duration-200 group-hover:scale-125 group-hover:translate-x-0.5">{icons.logOut}</span>
           </button>
         </div>
       </aside>
 
       {/* Main */}
-      <main className="flex-1 h-full overflow-y-auto bg-[#FAFBFC]">
+      <main ref={mainRef} className="flex-1 h-full overflow-y-auto bg-[#FAFBFC]">
         <div className="py-8 px-6">
           <div>
             {/* Header - only on home */}

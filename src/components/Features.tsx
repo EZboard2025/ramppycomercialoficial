@@ -1,4 +1,5 @@
 import SectionWrapper from "./SectionWrapper";
+import DashboardPreview from "./DashboardPreview";
 
 const features = [
   {
@@ -15,28 +16,7 @@ const features = [
       </svg>
     ),
     visual: (
-      <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
-          </div>
-          <div>
-            <p className="text-sm font-bold text-gray-900">Roleplay em andamento</p>
-            <p className="text-[10px] text-gray-400">Gerente Comercial • Analitico • 30 anos</p>
-          </div>
-        </div>
-        <div className="space-y-2">
-          {["Situacao", "Problema", "Implicacao", "Necessidade"].map((s, i) => (
-            <div key={s} className="flex items-center gap-2">
-              <span className="text-[10px] font-bold text-gray-500 w-4">{s[0]}</span>
-              <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                <div className={`h-full rounded-full ${i === 2 ? "bg-yellow-500" : "bg-green-500"}`} style={{ width: `${[75, 75, 67, 70][i]}%` }} />
-              </div>
-              <span className="text-[10px] font-bold text-gray-700">{["7.5", "7.5", "6.7", "7.0"][i]}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <img src="/images/roleplay.png.png" alt="Roleplay de vendas com IA" className="w-full h-auto block rounded-2xl shadow-2xl" />
     ),
   },
   {
@@ -239,6 +219,14 @@ export default function Features() {
           <p className="mt-4 text-base md:text-lg text-text-secondary leading-relaxed">
             Da simulacao ao fechamento, cada ferramenta foi pensada para
             acelerar o aprendizado e maximizar resultados.
+          </p>
+        </div>
+
+        {/* Interactive Dashboard */}
+        <div className="mb-24 max-w-3xl mx-auto">
+          <DashboardPreview />
+          <p className="text-center text-xs text-text-secondary mt-4 opacity-60">
+            Explore a plataforma — clique na sidebar para navegar
           </p>
         </div>
 
