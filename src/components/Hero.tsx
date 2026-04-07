@@ -1,3 +1,4 @@
+"use client";
 import SectionWrapper from "./SectionWrapper";
 
 export default function Hero() {
@@ -74,6 +75,7 @@ export default function Hero() {
           <div className="flex-1 w-full lg:min-w-[320px] xl:min-w-[400px] lg:translate-x-[180px] xl:translate-x-[270px]">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
+                ref={(el) => { if (el) el.playbackRate = 1.25; }}
                 autoPlay
                 loop
                 muted
