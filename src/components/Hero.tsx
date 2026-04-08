@@ -5,9 +5,9 @@ export default function Hero() {
   return (
     <SectionWrapper className="overflow-visible">
       <div className="py-16 md:py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-4">
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[5%]">
           {/* Left: Text Content */}
-          <div className="lg:w-[33%] xl:w-[33%] shrink-0 lg:ml-[2.5vw] xl:ml-[4vw]">
+          <div className="lg:w-[33%] xl:w-[33%] shrink-0">
             {/* H1 */}
             <h1 className="font-[var(--font-fustat)] text-[42px] md:text-[3.5vw] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.05em] text-teal-dark">
               <span className="whitespace-nowrap">Acabe com a <span className="clip-text">ineficiencia</span></span>
