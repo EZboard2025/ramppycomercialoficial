@@ -9,7 +9,7 @@ export default function Features() {
         {/* Simulação de vendas */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative">
           {/* Image - Left */}
-          <div className="flex-1 w-full lg:translate-x-[-9.4vw] xl:translate-x-[-14vw]">
+          <div className="flex-1 w-full lg:translate-x-[-1vw] xl:translate-x-[-3vw]">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <img
                 src="/images/roleplay.png.png"
@@ -69,7 +69,7 @@ export default function Features() {
           </div>
 
           {/* Video - Right */}
-          <div className="flex-1 w-full max-w-[500px] lg:translate-x-[9.4vw] xl:translate-x-[14vw] lg:mt-16">
+          <div className="flex-1 w-full max-w-[500px] lg:ml-auto lg:mt-16">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
                 ref={(el) => { if (el) el.playbackRate = 1; }}

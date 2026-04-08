@@ -12,7 +12,7 @@ import GridBeam from "@/components/GridBeam";
 export default function Home() {
   return (
     <GridBeam className="min-h-screen">
-      <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10">
+      <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10 max-w-[1920px] mx-auto">
         <Navbar />
         <Hero />
         <LogoBar />
