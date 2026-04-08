@@ -3,7 +3,7 @@ import SectionWrapper from "./SectionWrapper";
 const results = [
   {
     metric: "67%",
-    description: "Reducao no tempo de ramp-up de novos vendedores",
+    description: "Redução no tempo de ramp-up de novos vendedores",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -13,7 +13,7 @@ const results = [
   },
   {
     metric: "3h",
-    description: "Economizadas por semana em analise manual de calls",
+    description: "Economizadas por semana em análise manual de calls",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -23,7 +23,7 @@ const results = [
   },
   {
     metric: "40%",
-    description: "Aumento medio na taxa de conversao das equipes",
+    description: "Aumento médio na taxa de conversão das equipes",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -33,7 +33,7 @@ const results = [
   },
   {
     metric: "2x",
-    description: "Mais rapido para atingir quota no primeiro trimestre",
+    description: "Mais rápido para atingir quota no primeiro trimestre",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -55,10 +55,10 @@ export default function Results() {
             Resultados reais
           </span>
           <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[120%] tracking-[-0.04em] text-white">
-            Numeros que falam por si
+            Números que falam por si
           </h2>
           <p className="mt-4 text-base md:text-lg text-white/60 leading-relaxed">
-            Resultados medios dos times que usam o Ramppy ha mais de 3 meses.
+            Resultados médios dos times que usam o Ramppy há mais de 3 meses.
           </p>
         </div>
 

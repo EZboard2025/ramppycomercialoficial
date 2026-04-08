@@ -7,9 +7,9 @@ const testimonials = [
     company: "TechCorp",
     avatar: "L",
     gradient: "from-green-500 to-emerald-600",
-    text: "O Ramppy revolucionou nosso onboarding de vendedores. Em 2 semanas, novos reps ja estao performando como veteranos. A IA de roleplay e assustadoramente realista.",
+    text: "O Ramppy revolucionou nosso onboarding de vendedores. Em 2 semanas, novos reps já estão performando como veteranos. A IA de roleplay é assustadoramente realista.",
     metric: "+40%",
-    metricLabel: "em conversao",
+    metricLabel: "em conversão",
     stars: 5,
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     company: "SaaS Pro",
     avatar: "M",
     gradient: "from-blue-500 to-indigo-600",
-    text: "A analise automatica de Meet economiza 3 horas por semana do meu time. O feedback SPIN e extremamente preciso e me ajuda a fazer coaching direcionado.",
+    text: "A análise automática de Meet economiza 3 horas por semana do meu time. O feedback SPIN é extremamente preciso e me ajuda a fazer coaching direcionado.",
     metric: "3h",
     metricLabel: "economizadas/semana",
     stars: 5,
@@ -29,7 +29,7 @@ const testimonials = [
     company: "Growth Labs",
     avatar: "R",
     gradient: "from-purple-500 to-violet-600",
-    text: "A Nicole me ajuda em tempo real durante calls. Minha nota SPIN subiu de 5.2 para 8.4 em um mes. Nunca mais perdi uma objecao importante.",
+    text: "A Nicole me ajuda em tempo real durante calls. Minha nota SPIN subiu de 5.2 para 8.4 em um mês. Nunca mais perdi uma objeção importante.",
     metric: "5.2 → 8.4",
     metricLabel: "SPIN score",
     stars: 5,
@@ -52,7 +52,7 @@ export default function Testimonials() {
             Quem usa, <span className="text-primary-green">recomenda</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-lg mx-auto">
-            Veja o que nossos usuarios dizem sobre o impacto do Ramppy nas suas vendas.
+            Veja o que nossos usuários dizem sobre o impacto do Ramppy nas suas vendas.
           </p>
         </div>
 

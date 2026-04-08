@@ -26,6 +26,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+
   }
 
   body {
@@ -96,6 +97,25 @@
   }
   100% {
     background-position: 200% center;
+  }
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 40s linear infinite;
+}
+
+@keyframes draw-circle {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

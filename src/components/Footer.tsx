@@ -43,7 +43,7 @@ export default function Footer() {
                 Produto
               </h4>
               <ul className="space-y-3">
-                {["Simulacao", "Analise Meet", "WhatsApp IA", "Copiloto Nicole", "PDI", "Gestao"].map((item) => (
+                {["Simulação", "Análise Meet", "WhatsApp IA", "Copiloto Nicole", "PDI", "Gestão"].map((item) => (
                   <li key={item}>
                     <a href="#funcionalidades" className="text-sm text-text-secondary hover:text-primary-green transition-colors">
                       {item}
@@ -75,7 +75,7 @@ export default function Footer() {
                 Empresa
               </h4>
               <ul className="space-y-3">
-                {["Sobre nos", "Carreiras", "Contato", "Parceiros"].map((item) => (
+                {["Sobre nós", "Carreiras", "Contato", "Parceiros"].map((item) => (
                   <li key={item}>
                     <a href="#" className="text-sm text-text-secondary hover:text-primary-green transition-colors">
                       {item}
@@ -91,7 +91,7 @@ export default function Footer() {
                 Legal
               </h4>
               <ul className="space-y-3">
-                {["Termos de uso", "Privacidade", "Cookies", "Seguranca"].map((item) => (
+                {["Termos de uso", "Privacidade", "Cookies", "Segurança"].map((item) => (
                   <li key={item}>
                     <a href="#" className="text-sm text-text-secondary hover:text-primary-green transition-colors">
                       {item}

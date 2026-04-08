@@ -3,8 +3,8 @@ import SectionWrapper from "./SectionWrapper";
 const steps = [
   {
     number: "01",
-    title: "Configure seu cenario",
-    description: "Escolha a persona do cliente, idade, temperamento e objecoes. Defina o contexto da venda.",
+    title: "Configure seu cenário",
+    description: "Escolha a persona do cliente, idade, temperamento e objeções. Defina o contexto da venda.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -14,8 +14,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Faca a simulacao por voz",
-    description: "Converse com a IA em uma videochamada realista. A IA reage as suas perguntas em tempo real.",
+    title: "Faça a simulação por voz",
+    description: "Converse com a IA em uma videochamada realista. A IA reage às suas perguntas em tempo real.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="23 7 16 12 23 17 23 7" />
@@ -26,7 +26,7 @@ const steps = [
   {
     number: "03",
     title: "Receba feedback SPIN",
-    description: "Avaliacao completa nos 4 pilares: Situacao, Problema, Implicacao e Necessidade.",
+    description: "Avaliação completa nos 4 pilares: Situação, Problema, Implicação e Necessidade.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
@@ -37,7 +37,7 @@ const steps = [
   {
     number: "04",
     title: "Evolua com a IA",
-    description: "PDI personalizado, desafios diarios e copiloto em calls reais. Evolucao continua.",
+    description: "PDI personalizado, desafios diários e copiloto em calls reais. Evolução contínua.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -65,7 +65,7 @@ export default function HowItWorks() {
             <span className="text-primary-green">4 passos</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-lg mx-auto">
-            Comece a treinar em minutos. Sem configuracao complexa, sem integracao demorada.
+            Comece a treinar em minutos. Sem configuração complexa, sem integração demorada.
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export default function HowItWorks() {
             href="#planos"
             className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/20"
           >
-            Testar gratis agora
+            Testar grátis agora
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />

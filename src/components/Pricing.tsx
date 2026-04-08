@@ -6,19 +6,19 @@ import SectionWrapper from "./SectionWrapper";
 const plans = [
   {
     name: "Pro",
-    subtitle: "Ate 10 vendedores",
+    subtitle: "Até10 vendedores",
     monthlyPrice: "1.200",
     yearlyPrice: "960",
     features: [
-      "200 creditos/mes",
-      "Ate 10 vendedores",
-      "Simulacoes de roleplay",
-      "Avaliacao SPIN completa",
-      "Analise de Meet automatica",
+      "200 créditos/mes",
+      "Até10 vendedores",
+      "Simulações de roleplay",
+      "Avaliação SPIN completa",
+      "Análise de Meet automática",
       "Copiloto Nicole IA",
       "App Desktop",
     ],
-    cta: "Comecar agora",
+    cta: "Começar agora",
     highlighted: false,
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -30,19 +30,19 @@ const plans = [
   },
   {
     name: "Team",
-    subtitle: "Ate 20 vendedores",
+    subtitle: "Até20 vendedores",
     monthlyPrice: "1.999",
     yearlyPrice: "1.599",
     features: [
-      "400 creditos/mes",
-      "Ate 20 vendedores",
+      "400 créditos/mes",
+      "Até20 vendedores",
       "Tudo do Pro",
       "Dashboard de gestao",
-      "Historico completo",
+      "Histórico completo",
       "PDI personalizado + desafios",
       "Personas customizadas",
     ],
-    cta: "Comecar agora",
+    cta: "Começar agora",
     highlighted: false,
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -59,15 +59,15 @@ const plans = [
     monthlyPrice: "4.999",
     yearlyPrice: "3.999",
     features: [
-      "1.000 creditos/mes",
+      "1.000 créditos/mes",
       "20 a 50 vendedores",
       "Tudo do Team",
       "Creditos extras sob demanda",
-      "Objecoes customizadas",
+      "Objeções customizadas",
       "Onboarding dedicado",
-      "Suporte prioritario",
+      "Suporte prioritário",
     ],
-    cta: "Comecar agora",
+    cta: "Começar agora",
     highlighted: true,
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -87,7 +87,7 @@ const plans = [
       "Creditos sob demanda",
       "+50 vendedores",
       "Tudo do Business",
-      "API de integracao",
+      "API de integração",
       "SLA garantido",
       "Gestor de conta dedicado",
       "Treinamento personalizado",
@@ -249,7 +249,7 @@ export default function Pricing() {
         <div className="flex flex-wrap justify-center gap-8 mt-14 text-sm text-white/35">
           <span className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-            Sem cartao de credito
+            Sem cartão de crédito
           </span>
           <span className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
@@ -257,7 +257,7 @@ export default function Pricing() {
           </span>
           <span className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-            Suporte em portugues
+            Suporte em português
           </span>
         </div>
       </div>

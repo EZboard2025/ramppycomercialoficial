@@ -10,7 +10,7 @@ export default function Hero() {
           <div className="lg:w-[33%] xl:w-[33%] shrink-0">
             {/* H1 */}
             <h1 className="font-[var(--font-fustat)] text-[42px] md:text-[3.5vw] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.05em] text-teal-dark">
-              <span className="whitespace-nowrap">Acabe com a <span className="clip-text">ineficiencia</span></span>
+              <span className="whitespace-nowrap">Acabe com a <span className="clip-text">ineficiência</span></span>
               <br />
               do seu time de{" "}
               <span className="clip-text">vendas.</span>
@@ -18,8 +18,8 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="mt-6 text-lg font-medium leading-7 text-text-secondary max-w-xl">
-              O ecossistema completo de vendas com IA: simule reunioes, analise calls reais,
-              receba coaching em tempo real no WhatsApp e acompanhe a evolucao do seu time.
+              O ecossistema completo de vendas com IA: simule reuniões, análise calls reais,
+              receba coaching em tempo real no WhatsApp e acompanhe a evolução do seu time.
             </p>
 
             {/* CTAs */}
@@ -28,7 +28,7 @@ export default function Hero() {
                 href="#planos"
                 className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-6 py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                Comece gratis
+                Comece grátis
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 16l4-4-4-4" />
@@ -52,7 +52,7 @@ export default function Hero() {
                   </svg>
                 </div>
                 <div>
-                  <span className="text-sm font-semibold text-teal-medium">Resultados rapidos</span>
+                  <span className="text-sm font-semibold text-teal-medium">Resultados rápidos</span>
                   <p className="text-xs text-text-secondary">Setup em 5 min</p>
                 </div>
               </div>
