@@ -4,8 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Configure seu cenario",
-    description:
-      "Escolha a persona do cliente, idade, temperamento e objecoes. Defina o objetivo da simulacao e o contexto da venda.",
+    description: "Escolha a persona do cliente, idade, temperamento e objecoes. Defina o contexto da venda.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -16,8 +15,7 @@ const steps = [
   {
     number: "02",
     title: "Faca a simulacao por voz",
-    description:
-      "Converse com a IA em uma videochamada realista. A IA assume o papel do cliente e reage as suas perguntas em tempo real.",
+    description: "Converse com a IA em uma videochamada realista. A IA reage as suas perguntas em tempo real.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="23 7 16 12 23 17 23 7" />
@@ -27,9 +25,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Receba feedback detalhado",
-    description:
-      "Avaliacao completa com SPIN Selling: Situacao, Problema, Implicacao e Necessidade. Veja oportunidades perdidas e pontos fortes.",
+    title: "Receba feedback SPIN",
+    description: "Avaliacao completa nos 4 pilares: Situacao, Problema, Implicacao e Necessidade.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
@@ -40,8 +37,7 @@ const steps = [
   {
     number: "04",
     title: "Evolua com a IA",
-    description:
-      "Receba um PDI personalizado, desafios diarios e acompanhe metricas em tempo real. O copiloto te ajuda em calls reais.",
+    description: "PDI personalizado, desafios diarios e copiloto em calls reais. Evolucao continua.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -54,86 +50,68 @@ const steps = [
 export default function HowItWorks() {
   return (
     <SectionWrapper id="como-funciona">
-      <div className="py-16 md:py-24">
+      <div className="py-20 md:py-32">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-2 bg-green-surface text-primary-green text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <span className="inline-flex items-center gap-2 bg-green-surface text-primary-green text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
             Como funciona
           </span>
-          <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[120%] tracking-[-0.04em] text-teal-dark">
+          <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[110%] tracking-[-0.04em] text-teal-dark">
             Do zero ao resultado em{" "}
             <span className="text-primary-green">4 passos</span>
           </h2>
+          <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-lg mx-auto">
+            Comece a treinar em minutos. Sem configuracao complexa, sem integracao demorada.
+          </p>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative">
-              {/* Connector line (desktop) */}
-              {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[calc(100%+4px)] w-[calc(100%-48px)] h-[2px] bg-gradient-to-r from-primary-green/40 to-primary-green/10 -translate-x-4" />
-              )}
+        <div className="relative">
+          {/* Connector line (desktop) */}
+          <div className="hidden lg:block absolute top-[52px] left-[60px] right-[60px] h-[2px] bg-gradient-to-r from-primary-green/30 via-primary-green/20 to-primary-green/30" />
 
-              <div className="bg-white border border-border-light rounded-2xl p-6 hover:border-primary-green/30 hover:shadow-md transition-all duration-300 h-full">
-                {/* Step number + icon */}
-                <div className="flex items-center justify-between mb-5">
-                  <span className="font-[var(--font-fustat)] text-3xl font-bold text-primary-green/20">
-                    {step.number}
-                  </span>
-                  <div className="w-12 h-12 rounded-xl bg-green-surface text-primary-green flex items-center justify-center">
-                    {step.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((step, idx) => (
+              <div key={idx} className="relative">
+                <div className="bg-white border border-border-light rounded-2xl p-7 hover:border-primary-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                  {/* Step number circle */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center relative z-10">
+                      <span className="font-[var(--font-fustat)] text-lg font-bold text-white">{step.number}</span>
+                    </div>
+                    <div className="w-11 h-11 rounded-xl bg-green-surface text-primary-green flex items-center justify-center">
+                      {step.icon}
+                    </div>
                   </div>
-                </div>
 
-                <h3 className="font-[var(--font-fustat)] text-lg font-semibold text-teal-dark mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {step.description}
-                </p>
+                  <h3 className="font-[var(--font-fustat)] text-lg font-semibold text-teal-dark mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed flex-1">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Demo CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-4 bg-gray-50 rounded-2xl p-8 md:p-12 border border-border-light">
-            <div className="w-16 h-16 rounded-2xl bg-primary-green flex items-center justify-center">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-            </div>
-            <h3 className="font-[var(--font-fustat)] text-2xl font-semibold text-teal-dark">
-              Veja na pratica
-            </h3>
-            <p className="text-text-secondary max-w-md">
-              Assista uma simulacao completa de roleplay com IA e entenda como a
-              avaliacao SPIN funciona.
-            </p>
-            <a
-              href="#planos"
-              className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-6 py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300"
-            >
-              Testar gratis agora
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14" />
-                <path d="M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+        <div className="mt-20 text-center">
+          <a
+            href="#planos"
+            className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/20"
+          >
+            Testar gratis agora
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </SectionWrapper>

@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import LogoBar from "@/components/LogoBar";
 import Features from "@/components/Features";
-import SpinSection from "@/components/SpinSection";
+import Results from "@/components/Results";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -15,12 +16,13 @@ export default function Home() {
       <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10">
         <Navbar />
         <Hero />
-        <Features />
-        <SpinSection />
+        <LogoBar />
+        <Results />
         <HowItWorks />
         <Testimonials />
         <Pricing />
         <CTA />
+        <Features />
         <Footer />
       </main>
     </GridBeam>

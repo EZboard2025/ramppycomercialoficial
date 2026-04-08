@@ -3,74 +3,56 @@ import SectionWrapper from "./SectionWrapper";
 export default function CTA() {
   return (
     <SectionWrapper>
-      <div className="py-16 md:py-24">
-        <div className="relative bg-primary-green rounded-3xl p-8 md:p-16 text-center overflow-hidden">
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(45deg, white 0px, white 1px, transparent 1px, transparent 20px)",
-              }}
-            />
-          </div>
+      <div className="py-20 md:py-32">
+        <div className="relative bg-gradient-to-br from-teal-dark via-[#1e4d38] to-[#1a3a2a] rounded-3xl p-10 md:p-20 overflow-hidden">
+          {/* Background decorations */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-green/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-          <div className="relative z-10">
-            <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[120%] tracking-[-0.04em] text-white">
-              Pronto para transformar
-              <br />
-              suas vendas?
+          <div className="relative z-10 max-w-2xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-8">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              500+ vendedores ja estao usando
+            </div>
+
+            <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] lg:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white mb-6">
+              Pronto para transformar suas vendas?
             </h2>
-            <p className="mt-4 text-lg text-white/80 max-w-xl mx-auto">
-              Junte-se a mais de 500 vendedores que ja estao usando IA para
-              vender mais e melhor. Comece gratis hoje.
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-lg mx-auto">
+              Comece gratis hoje e veja resultados na primeira semana. Sem configuracao complexa, sem cartao de credito.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-10">
               <a
                 href="#planos"
-                className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-white text-primary-green hover:bg-gray-100 transition-all duration-300 hover:scale-[1.02]"
+                className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/30"
               >
                 Comecar gratis agora
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a
                 href="#"
-                className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 border border-white/30"
+                className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-white/10 text-white hover:bg-white/15 transition-all duration-300 border border-white/20"
               >
                 Agendar demo
               </a>
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-white/70">
-              <span className="flex items-center gap-1.5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                Sem cartao de credito
-              </span>
-              <span className="flex items-center gap-1.5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/40">
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
                 Setup em 5 minutos
               </span>
-              <span className="flex items-center gap-1.5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
+                Sem cartao de credito
+              </span>
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
                 Cancele quando quiser
               </span>
             </div>
