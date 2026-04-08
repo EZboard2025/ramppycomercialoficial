@@ -45,7 +45,7 @@ function StatItem({ target, suffix, label, trigger }: { target: number; suffix: 
 
   return (
     <div className="text-center group cursor-default">
-      <p className="font-[var(--font-fustat)] text-4xl md:text-5xl lg:text-6xl font-bold text-teal-dark tracking-tight transition-transform duration-300 group-hover:scale-110">
+      <p className="font-[var(--font-fustat)] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
         {value}{suffix}
       </p>
       <p className="text-sm md:text-base text-text-secondary mt-2">{label}</p>

@@ -2,28 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  opacity: number;
-  pulse: number;
-  pulseSpeed: number;
-}
-
-interface ShootingStar {
-  x: number;
-  y: number;
-  length: number;
-  speed: number;
-  angle: number;
-  opacity: number;
-  life: number;
-  maxLife: number;
-}
-
 export default function StarField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -34,123 +12,103 @@ export default function StarField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationId: number;
-    let particles: Particle[] = [];
-    let shootingStars: ShootingStar[] = [];
-
-    function resize() {
-      canvas!.width = window.innerWidth;
-      canvas!.height = document.documentElement.scrollHeight;
-      initParticles();
-    }
-
-    function initParticles() {
-      particles = [];
-      const count = Math.floor((canvas!.width * canvas!.height) / 40000);
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas!.width,
-          y: Math.random() * canvas!.height,
-          size: Math.random() * 2.5 + 1,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: Math.random() * 0.2 + 0.1,
-          opacity: Math.random() * 0.2 + 0.05,
-          pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: Math.random() * 0.03 + 0.01,
-        });
-      }
-    }
-
-    function spawnShootingStar() {
-      shootingStars.push({
-        x: Math.random() * canvas!.width,
-        y: -10,
-        length: Math.random() * 80 + 50,
-        speed: Math.random() * 4 + 3,
-        angle: Math.PI * 0.3 + Math.random() * 0.2,
-        opacity: Math.random() * 0.35 + 0.15,
-        life: 0,
-        maxLife: Math.random() * 100 + 80,
-      });
-    }
-
-    let nextShootingStar = Math.random() * 200 + 100;
-
     function draw() {
-      ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      canvas!.width = w;
+      canvas!.height = h;
 
-      // Floating particles
-      for (const p of particles) {
-        p.x += p.speedX;
-        p.y += p.speedY;
-        p.pulse += p.pulseSpeed;
+      ctx!.clearRect(0, 0, w, h);
 
-        // Wrap around
-        if (p.y > canvas!.height) { p.y = -5; p.x = Math.random() * canvas!.width; }
-        if (p.x < 0) p.x = canvas!.width;
-        if (p.x > canvas!.width) p.x = 0;
+      // Vanishing point
+      const vx = w / 2;
+      const vy = h * 0.35;
 
-        const alpha = p.opacity * (0.5 + Math.sin(p.pulse) * 0.5);
+      const gridColor = "rgba(180, 180, 180, 0.25)";
+      const lineWidth = 0.5;
 
+      // --- Left wall ---
+      const leftWallRight = w * 0.35;
+      const verticalLines = 14;
+      const horizontalLines = 16;
+
+      for (let i = 0; i <= verticalLines; i++) {
+        const t = i / verticalLines;
+        // Bottom edge x
+        const bx = leftWallRight * t;
+        // Top converges to vanishing point
+        const tx = vx + (bx - vx) * 0.15;
+        const ty = vy + (0 - vy) * 0.15;
+
+        const alpha = 0.12 + t * 0.18;
         ctx!.beginPath();
-        ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(34, 197, 94, ${alpha})`;
-        ctx!.fill();
-      }
-
-      // Shooting stars
-      nextShootingStar--;
-      if (nextShootingStar <= 0) {
-        spawnShootingStar();
-        nextShootingStar = Math.random() * 400 + 200;
-      }
-
-      for (let i = shootingStars.length - 1; i >= 0; i--) {
-        const s = shootingStars[i];
-        s.x += Math.cos(s.angle) * s.speed;
-        s.y += Math.sin(s.angle) * s.speed;
-        s.life++;
-
-        const fadeIn = Math.min(s.life / 10, 1);
-        const fadeOut = Math.max(1 - s.life / s.maxLife, 0);
-        const alpha = s.opacity * fadeIn * fadeOut;
-
-        if (alpha <= 0) {
-          shootingStars.splice(i, 1);
-          continue;
-        }
-
-        const tailX = s.x - Math.cos(s.angle) * s.length;
-        const tailY = s.y - Math.sin(s.angle) * s.length;
-
-        const gradient = ctx!.createLinearGradient(s.x, s.y, tailX, tailY);
-        gradient.addColorStop(0, `rgba(34, 197, 94, ${alpha})`);
-        gradient.addColorStop(1, `rgba(34, 197, 94, 0)`);
-
-        ctx!.beginPath();
-        ctx!.moveTo(s.x, s.y);
-        ctx!.lineTo(tailX, tailY);
-        ctx!.strokeStyle = gradient;
-        ctx!.lineWidth = 1.5;
+        ctx!.moveTo(bx, h);
+        ctx!.lineTo(tx, ty);
+        ctx!.strokeStyle = `rgba(160, 160, 160, ${alpha})`;
+        ctx!.lineWidth = lineWidth;
         ctx!.stroke();
-
-        // Glow at head
-        ctx!.beginPath();
-        ctx!.arc(s.x, s.y, 2, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(34, 197, 94, ${alpha * 0.6})`;
-        ctx!.fill();
       }
 
-      animationId = requestAnimationFrame(draw);
+      for (let i = 0; i <= horizontalLines; i++) {
+        const t = i / horizontalLines;
+        // Ease - lines get closer together near vanishing point
+        const eased = Math.pow(t, 1.8);
+
+        const y = vy + (h - vy) * eased;
+        const xLeft = 0;
+        const xRight = leftWallRight * eased + vx * (1 - eased);
+
+        const alpha = 0.05 + eased * 0.2;
+        ctx!.beginPath();
+        ctx!.moveTo(xLeft, y);
+        ctx!.lineTo(xRight, y);
+        ctx!.strokeStyle = `rgba(160, 160, 160, ${alpha})`;
+        ctx!.lineWidth = lineWidth;
+        ctx!.stroke();
+      }
+
+      // --- Right wall ---
+      const rightWallLeft = w * 0.65;
+
+      for (let i = 0; i <= verticalLines; i++) {
+        const t = i / verticalLines;
+        const bx = rightWallLeft + (w - rightWallLeft) * t;
+        const tx = vx + (bx - vx) * 0.15;
+        const ty = vy + (0 - vy) * 0.15;
+
+        const alpha = 0.12 + (1 - t) * 0.18;
+        ctx!.beginPath();
+        ctx!.moveTo(bx, h);
+        ctx!.lineTo(tx, ty);
+        ctx!.strokeStyle = `rgba(160, 160, 160, ${alpha})`;
+        ctx!.lineWidth = lineWidth;
+        ctx!.stroke();
+      }
+
+      for (let i = 0; i <= horizontalLines; i++) {
+        const t = i / horizontalLines;
+        const eased = Math.pow(t, 1.8);
+
+        const y = vy + (h - vy) * eased;
+        const xLeft = rightWallLeft * eased + vx * (1 - eased);
+        const xRight = w;
+
+        const alpha = 0.05 + eased * 0.2;
+        ctx!.beginPath();
+        ctx!.moveTo(xLeft, y);
+        ctx!.lineTo(xRight, y);
+        ctx!.strokeStyle = `rgba(160, 160, 160, ${alpha})`;
+        ctx!.lineWidth = lineWidth;
+        ctx!.stroke();
+      }
+
     }
 
-    resize();
     draw();
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", draw);
 
     return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", draw);
     };
   }, []);
 
