@@ -17,7 +17,7 @@ export default function SectionWrapper({
           dark ? "bg-teal-dark text-white" : "bg-white"
         } ${className}`}
       >
-        <div className="px-6 md:px-8 lg:px-16 xl:px-[104px]">{children}</div>
+        <div className="px-6 md:px-[4%] lg:px-[5%] xl:px-[5.4%]">{children}</div>
       </div>
       <div className="content-side rounded-l-lg" />
     </section>

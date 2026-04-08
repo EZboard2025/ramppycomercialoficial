@@ -9,10 +9,12 @@ import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import GridBeam from "@/components/GridBeam";
+import StarField from "@/components/StarField";
 
 export default function Home() {
   return (
     <GridBeam className="min-h-screen">
+      <StarField />
       <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10">
         <Navbar />
         <Hero />

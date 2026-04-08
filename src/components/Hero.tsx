@@ -7,9 +7,9 @@ export default function Hero() {
       <div className="py-16 md:py-24 lg:py-32">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-4">
           {/* Left: Text Content */}
-          <div className="lg:w-[520px] xl:w-[580px] shrink-0 lg:ml-12 xl:ml-20">
+          <div className="lg:w-[33%] xl:w-[33%] shrink-0 lg:ml-[2.5vw] xl:ml-[4vw]">
             {/* H1 */}
-            <h1 className="font-[var(--font-fustat)] text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] font-semibold leading-[105%] tracking-[-0.05em] text-teal-dark">
+            <h1 className="font-[var(--font-fustat)] text-[42px] md:text-[3.5vw] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.05em] text-teal-dark">
               <span className="whitespace-nowrap">Acabe com a <span className="clip-text">ineficiencia</span></span>
               <br />
               do seu time de{" "}
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Video */}
-          <div className="flex-1 w-full lg:min-w-[320px] xl:min-w-[400px] lg:translate-x-[180px] xl:translate-x-[270px]">
+          <div className="flex-1 w-full lg:translate-x-[9.4vw] xl:translate-x-[14vw]">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
                 ref={(el) => { if (el) el.playbackRate = 1.25; }}
