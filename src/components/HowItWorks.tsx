@@ -3,8 +3,18 @@ import SectionWrapper from "./SectionWrapper";
 const steps = [
   {
     number: "01",
-    title: "Configure seu cenário",
-    description: "Escolha a persona do cliente, idade, temperamento e objeções. Defina o contexto da venda.",
+    title: "Reunião de diagnóstico",
+    description: "Entendemos o cenário atual do seu time: processos, desafios e objetivos. Tudo para personalizar a plataforma à sua realidade.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+      </svg>
+    ),
+  },
+  {
+    number: "02",
+    title: "Configuração assistida",
+    description: "Nossa equipe configura personas, cenários e objeções junto com você. Seu time já começa treinando no contexto certo.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -13,31 +23,22 @@ const steps = [
     ),
   },
   {
-    number: "02",
-    title: "Faça a simulação por voz",
-    description: "Converse com a IA em uma videochamada realista. A IA reage às suas perguntas em tempo real.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="23 7 16 12 23 17 23 7" />
-        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-      </svg>
-    ),
-  },
-  {
     number: "03",
-    title: "Receba feedback SPIN",
-    description: "Avaliação completa nos 4 pilares: Situação, Problema, Implicação e Necessidade.",
+    title: "Onboarding do time",
+    description: "Treinamos seus vendedores e gestores na plataforma. Todos saem usando desde o primeiro dia.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 00-3-3.87" />
+        <path d="M16 3.13a4 4 0 010 7.75" />
       </svg>
     ),
   },
   {
     number: "04",
-    title: "Evolua com a IA",
-    description: "PDI personalizado, desafios diários e copiloto em calls reais. Evolução contínua.",
+    title: "Acompanhamento contínuo",
+    description: "Nosso time acompanha os resultados com você, ajusta cenários e garante que a plataforma evolua junto com seu time.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -55,17 +56,19 @@ export default function HowItWorks() {
         <div className="text-center max-w-2xl mx-auto mb-20">
           <span className="inline-flex items-center gap-2 bg-green-surface text-primary-green text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
             </svg>
-            Como funciona
+            Implementação
           </span>
           <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[110%] tracking-[-0.04em] text-teal-dark">
-            Do zero ao resultado em{" "}
-            <span className="text-primary-green">4 passos</span>
+            A gente implementa{" "}
+            <span className="text-primary-green">com você</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-lg mx-auto">
-            Comece a treinar em minutos. Sem configuração complexa, sem integração demorada.
+            Você não fica sozinho. Nosso time te acompanha do primeiro acesso até os primeiros resultados.
           </p>
         </div>
 
@@ -106,7 +109,7 @@ export default function HowItWorks() {
             href="#planos"
             className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/20"
           >
-            Testar grátis agora
+            Marcar teste grátis
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />

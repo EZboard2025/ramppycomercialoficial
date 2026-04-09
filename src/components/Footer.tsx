@@ -7,7 +7,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {/* Brand */}
             <div className="md:col-span-4">
-              <a href="#" className="flex items-center mb-5">
+              <a href="/" className="flex items-center mb-5">
                 <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-9 object-contain" />
               </a>
               <p className="text-sm text-text-secondary leading-relaxed max-w-xs mb-6">
@@ -59,10 +59,15 @@ export default function Footer() {
                 Recursos
               </h4>
               <ul className="space-y-3">
-                {["Como funciona", "Metodologia SPIN", "Blog", "Central de ajuda"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-text-secondary hover:text-primary-green transition-colors">
-                      {item}
+                {[
+                  { label: "Como funciona", href: "/como-funciona" },
+                  { label: "Metodologia SPIN", href: "/metodologia-spin" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Central de ajuda", href: "/ajuda" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="text-sm text-text-secondary hover:text-primary-green transition-colors">
+                      {item.label}
                     </a>
                   </li>
                 ))}

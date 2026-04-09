@@ -38,7 +38,7 @@ function StatItem({ target, suffix, label, trigger }: { target: number; suffix: 
   const value = useCountUp(target, trigger);
 
   return (
-    <div className="text-center shrink-0 w-[50vw] sm:w-[33vw] md:w-[25vw] cursor-default group">
+    <div className="text-center group cursor-default">
       <p className="font-[var(--font-fustat)] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
         {value}{suffix}
       </p>
@@ -57,17 +57,13 @@ export default function LogoBar() {
     return () => clearInterval(interval);
   }, []);
 
-  // 2 copies only — each item is wide enough that 4 items fill the screen,
-  // so the second set only appears as the first leaves
-  const items = [...stats, ...stats];
-
   return (
-    <SectionWrapper className="overflow-hidden">
-      <div className="py-12 md:py-16 -mx-6 md:-mx-[4%] lg:-mx-[5%] xl:-mx-[5.4%]">
-        <div className="flex w-max animate-carousel">
-          {items.map((stat, i) => (
+    <SectionWrapper>
+      <div className="py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          {stats.map((stat) => (
             <StatItem
-              key={i}
+              key={stat.label}
               target={stat.target}
               suffix={stat.suffix}
               label={stat.label}

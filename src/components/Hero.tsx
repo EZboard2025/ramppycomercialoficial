@@ -18,8 +18,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="mt-6 text-lg font-medium leading-7 text-text-secondary max-w-xl">
-              O ecossistema completo de vendas com IA: simule reuniões, análise calls reais,
-              receba coaching em tempo real no WhatsApp e acompanhe a evolução do seu time.
+              O ecossistema completo de vendas com IA: treinamento, simulações, avaliação e gestão do seu time otimizados com inteligência artificial.
             </p>
 
             {/* CTAs */}
@@ -43,32 +42,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Quick Features */}
-            <div className="flex flex-wrap gap-6 mt-10">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-surface flex items-center justify-center">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D8C3C" strokeWidth="2.5">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-teal-medium">Resultados rápidos</span>
-                  <p className="text-xs text-text-secondary">Setup em 5 min</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-surface flex items-center justify-center">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D8C3C" strokeWidth="2.5">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0110 0v4" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-sm font-semibold text-teal-medium">Dados seguros</span>
-                  <p className="text-xs text-text-secondary">Criptografia E2E</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right: Video */}

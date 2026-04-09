@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProblemStats from "@/components/ProblemStats";
 import LogoBar from "@/components/LogoBar";
 import Features from "@/components/Features";
 import Results from "@/components/Results";
@@ -15,11 +16,12 @@ export default function Home() {
       <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10 max-w-[1920px] mx-auto">
         <Navbar />
         <Hero />
-        <LogoBar />
+        {/* <ProblemStats /> */}
         <Features />
-        <Results />
+        <LogoBar />
+        {/* <Results /> */}
         <HowItWorks />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Pricing />
         <CTA />
         <Footer />

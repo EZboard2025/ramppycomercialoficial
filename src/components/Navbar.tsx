@@ -7,9 +7,9 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const links = [
-    { label: "Funcionalidades", href: "#funcionalidades" },
-    { label: "Como funciona", href: "#como-funciona" },
-    { label: "Planos", href: "#planos" },
+    { label: "Funcionalidades", href: "/#funcionalidades" },
+    { label: "Como funciona", href: "/#como-funciona" },
+    { label: "Planos", href: "/#planos" },
   ];
 
   return (
@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="content-center">
         <div className="flex items-center justify-between h-[80px] px-6 md:px-8 lg:px-16 xl:px-[104px]">
           {/* Logo */}
-          <a href="#" className="flex items-center lg:ml-12 xl:ml-20">
+          <a href="/" className="flex items-center lg:ml-12 xl:ml-20">
             <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-8 object-contain" />
           </a>
 
