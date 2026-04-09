@@ -52,7 +52,7 @@ export default function Testimonials() {
             Quem usa, <span className="text-primary-green">recomenda</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-lg mx-auto">
-            Veja o que nossos usuários dizem sobre o impacto do Ramppy nas suas vendas.
+            Veja o que nossos usuários dizem sobre o impacto da Ramppy nas suas vendas.
           </p>
         </div>
 

@@ -201,7 +201,9 @@ export default function Pricing() {
 
                 {/* CTA */}
                 <a
-                  href="#"
+                  href={`https://wa.me/5531995525157?text=${encodeURIComponent(`Olá, tenho interesse no plano ${plan.name} da Ramppy`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-auto font-[var(--font-fustat)] w-full text-center text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 block ${
                     plan.highlighted
                       ? "bg-white text-teal-dark hover:bg-white/90 shadow-lg"

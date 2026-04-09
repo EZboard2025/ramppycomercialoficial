@@ -38,16 +38,10 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#planos"
-              className="font-[var(--font-fustat)] text-base font-semibold text-teal-medium px-4 py-3 rounded-full hover:bg-surface-hover transition-colors duration-300"
-            >
-              Login
-            </a>
-            <a
-              href="#planos"
+              href="/#planos"
               className="font-[var(--font-fustat)] text-base font-semibold px-5 py-3 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300"
             >
-              Comece gratis
+              Marcar teste grátis
             </a>
           </div>
 

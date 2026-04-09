@@ -9,7 +9,7 @@ import FaqAccordion from "@/components/ajuda/FaqAccordion";
 export const metadata: Metadata = {
   title: "Central de Ajuda | Ramppy",
   description:
-    "Tire suas dúvidas sobre o Ramppy: simulações, análise de reuniões, planos e muito mais.",
+    "Tire suas dúvidas sobre a Ramppy: simulações, análise de reuniões, planos e muito mais.",
 };
 
 const helpCategories = [
@@ -40,19 +40,14 @@ const faqCategories = [
     title: "Primeiros passos",
     items: [
       {
-        question: "Como criar minha conta?",
-        answer:
-          "Acesse ramppy.com, clique em 'Começar grátis' e siga o passo a passo. Em menos de 5 minutos sua conta estará configurada.",
-      },
-      {
         question: "Preciso instalar algum software?",
         answer:
-          "Não. O Ramppy funciona 100% no navegador. Para análise de reuniões, basta conectar seu Google Agenda.",
+          "O Ramppy funciona 100% no navegador. Para análise de reuniões, basta conectar seu Google Agenda. Você também pode baixar a versão beta do app desktop para funcionalidades adicionais.",
       },
       {
         question: "Quanto tempo leva para configurar?",
         answer:
-          "A configuração inicial leva menos de 10 minutos. Nossa equipe também oferece onboarding assistido para todos os planos.",
+          "Em uma única reunião de implementação podemos configurar a Ramppy na sua empresa. Nossa equipe cuida de tudo com você e fornece suporte contínuo após a implementação.",
       },
     ],
   },
@@ -82,7 +77,7 @@ const faqCategories = [
       {
         question: "Como conectar o Google Meet?",
         answer:
-          "Na plataforma, vá em Configurações > Integrações e conecte seu Google Agenda. O bot entrará automaticamente nas reuniões agendadas.",
+          "Na plataforma, conecte sua conta Google em 'Meu Perfil' e depois acesse 'Agenda'. O bot entrará automaticamente nas reuniões agendadas.",
       },
       {
         question: "O bot grava a reunião?",
@@ -124,19 +119,8 @@ export default function AjudaPage() {
       <PageHero
         badge="Ajuda"
         title="Central de Ajuda"
-        subtitle="Encontre respostas para as dúvidas mais comuns sobre o Ramppy."
+        subtitle="Encontre respostas para as dúvidas mais comuns sobre a Ramppy."
       />
-
-      {/* Category cards */}
-      <SectionWrapper>
-        <div className="py-10 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {helpCategories.map((cat, idx) => (
-              <CategoryCard key={idx} {...cat} />
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
 
       {/* FAQ Accordion */}
       <SectionWrapper>
@@ -161,7 +145,9 @@ export default function AjudaPage() {
               Nossa equipe de suporte está pronta para ajudar você.
             </p>
             <a
-              href="mailto:suporte@ramppy.com"
+              href="https://wa.me/5531995525157?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20a%20Ramppy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/30"
             >
               Falar com suporte

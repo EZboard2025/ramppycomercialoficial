@@ -58,7 +58,7 @@ export default function Results() {
             Números que falam por si
           </h2>
           <p className="mt-4 text-base md:text-lg text-white/60 leading-relaxed">
-            Resultados médios dos times que usam o Ramppy há mais de 3 meses.
+            Resultados médios dos times que usam a Ramppy há mais de 3 meses.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ export default function NicoleFeature() {
               Sua assistente de vendas pessoal
             </h2>
             <p className="text-base text-text-secondary leading-relaxed mb-6">
-              A Nicole é a assistente de IA do Ramppy. Ela acompanha a performance de cada vendedor, organiza a agenda, analisa reuniões e sugere os próximos passos, tudo em tempo real, direto na plataforma.
+              A Nicole é a assistente de IA da Ramppy. Ela acompanha a performance de cada vendedor, organiza a agenda, analisa reuniões e sugere os próximos passos, tudo em tempo real, direto na plataforma.
             </p>
             <p className="text-base text-text-secondary leading-relaxed">
               Precisa saber como foi a última call? Quer comparar vendedores? Precisa de um resumo do dia? É só perguntar. A Nicole tem contexto completo do seu time e responde na hora.

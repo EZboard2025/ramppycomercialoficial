@@ -29,7 +29,7 @@ export default function Features() {
               <span className="relative inline-block isolate">
                 <span className="relative z-10">Pratique</span>
                 <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" style={{ strokeDasharray: 800, strokeDashoffset: 800, animation: "draw-circle 1.4s ease-out 0.5s forwards" }} />
+                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
                 </svg>
               </span>{" "}
               antes de vender de verdade
@@ -44,7 +44,7 @@ export default function Features() {
         </div>
 
         {/* Nicole IA */}
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 relative mt-6 md:mt-8 lg:ml-[3vw] xl:ml-[4vw]">
+        <div id="nicole" className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 relative mt-6 md:mt-8 lg:ml-[3vw] xl:ml-[4vw]">
           {/* Text - Left */}
           <div className="flex-1 max-w-lg lg:pt-32">
             <span className="text-xs font-bold text-primary-green bg-green-surface px-3 py-1.5 rounded-full uppercase tracking-wider">
@@ -55,13 +55,13 @@ export default function Features() {
               <span className="relative inline-block isolate">
                 <span className="relative z-10">vendas</span>
                 <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" style={{ strokeDasharray: 800, strokeDashoffset: 800, animation: "draw-circle 1.4s ease-out 0.5s forwards" }} />
+                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
                 </svg>
               </span>{" "}
               pessoal
             </h2>
             <p className="text-lg text-text-secondary leading-relaxed mb-6">
-              A Nicole é a assistente de IA do Ramppy. Ela acompanha a performance de cada vendedor, organiza a agenda, analisa reuniões e sugere os próximos passos, tudo em tempo real, direto na plataforma.
+              A Nicole é a assistente de IA da Ramppy. Ela acompanha a performance de cada vendedor, organiza a agenda, analisa reuniões e sugere os próximos passos, tudo em tempo real, direto na plataforma.
             </p>
             <p className="text-lg text-text-secondary leading-relaxed">
               Precisa saber como foi a última call? Quer comparar vendedores? Precisa de um resumo do dia? É só perguntar. A Nicole tem contexto completo do seu time e responde na hora.
@@ -117,7 +117,7 @@ export default function Features() {
               <span className="relative inline-block isolate">
                 <span className="relative z-10">reunião</span>
                 <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" style={{ strokeDasharray: 800, strokeDashoffset: 800, animation: "draw-circle 1.4s ease-out 0.5s forwards" }} />
+                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
                 </svg>
               </span>{" "}
               real
