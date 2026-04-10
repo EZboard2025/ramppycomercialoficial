@@ -84,7 +84,7 @@ export default function Hero() {
                 preload="auto"
                 onTimeUpdate={handleTimeUpdate}
               >
-                <source src="/videos/IMG_2973.mp4" type="video/mp4" />
+                <source src="/videos/hero.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

@@ -35,8 +35,8 @@ export default function NicoleFeature() {
                 className="w-full h-auto block rounded-2xl"
                 preload="auto"
               >
-                <source src="/videos/Nicole clip feature.MOV" type="video/quicktime" />
-                <source src="/videos/Nicole clip feature.MOV" type="video/mp4" />
+                <source src="/videos/nicole.mp4" type="video/quicktime" />
+                <source src="/videos/nicole.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
