@@ -84,10 +84,20 @@ export default function Navbar() {
       <div className="content-side rounded-r-lg" />
       <div className="content-center overflow-visible">
         {/* Top bar */}
-        <div className="flex items-center justify-between h-[80px] px-6 md:px-8 max-w-7xl mx-auto w-full">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-20 md:h-[80px] px-4 md:px-8 max-w-7xl mx-auto w-full">
+          {/* Mobile: Logo + CTA */}
           <a href="/" className="flex items-center shrink-0 lg:hidden">
-            <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-8 object-contain" />
+            <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-7 object-contain" />
+          </a>
+          <a
+            href="/#planos"
+            className="lg:hidden font-[var(--font-fustat)] text-xs font-semibold px-4 py-2.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 inline-flex items-center gap-1.5"
+          >
+            Marcar teste grátis
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="M12 5l7 7-7 7" />
+            </svg>
           </a>
 
           {/* Desktop Nav — logo + links + CTA all together centered */}
@@ -143,20 +153,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {mobileOpen ? (
-                <path d="M6 6L18 18M6 18L18 6" />
-              ) : (
-                <path d="M4 6H20M4 12H20M4 18H20" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile Menu Button - hidden, replaced by CTA */}
         </div>
 
         {/* Backdrop blur — covers entire screen */}
@@ -222,59 +219,6 @@ export default function Navbar() {
         )}
 
         {/* Mobile Nav */}
-        {mobileOpen && (
-          <div className="lg:hidden px-6 pb-6 flex flex-col gap-1 border-t border-border-light/40">
-            {menuKeys.map((key) => (
-              <div key={key}>
-                <button
-                  className="w-full flex items-center justify-between font-[var(--font-fustat)] text-base font-semibold text-teal-medium px-4 py-3 rounded-xl hover:bg-surface-hover transition-colors"
-                  onClick={() => setMobileExpanded(mobileExpanded === key ? null : key)}
-                >
-                  {key}
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    className={`transition-transform duration-200 ${mobileExpanded === key ? "rotate-180" : ""}`}
-                  >
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                {mobileExpanded === key && (
-                  <div className="pl-4 flex flex-col gap-1 mb-1">
-                    {menuData[key].map((item) => (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="font-[var(--font-fustat)] text-sm text-text-secondary px-4 py-2.5 rounded-xl hover:bg-surface-hover transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-
-            <a
-              href="/#planos"
-              onClick={() => setMobileOpen(false)}
-              className="font-[var(--font-fustat)] text-base font-semibold text-teal-medium px-4 py-3 rounded-xl hover:bg-surface-hover transition-colors"
-            >
-              Planos
-            </a>
-
-            <a
-              href="/#planos"
-              onClick={() => setMobileOpen(false)}
-              className="font-[var(--font-fustat)] text-base font-semibold px-5 py-3 rounded-full bg-primary-green text-white text-center hover:bg-green-dark transition-all duration-300 mt-2"
-            >
-              Marcar teste grátis
-            </a>
-          </div>
-        )}
       </div>
       <div className="content-side rounded-l-lg" />
     </header>

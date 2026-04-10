@@ -53,7 +53,7 @@ export default function HowItWorks() {
     <SectionWrapper id="como-funciona">
       <div className="py-20 md:py-32">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-20">
           <span className="inline-flex items-center gap-2 bg-green-surface text-primary-green text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -63,7 +63,7 @@ export default function HowItWorks() {
             </svg>
             Implementação
           </span>
-          <h2 className="font-[var(--font-fustat)] text-[32px] md:text-[48px] font-semibold leading-[110%] tracking-[-0.04em] text-teal-dark">
+          <h2 className="font-[var(--font-fustat)] text-2xl md:text-[32px] lg:text-[48px] font-semibold leading-[110%] tracking-[-0.04em] text-teal-dark">
             A gente implementa{" "}
             <span className="text-primary-green">com você</span>
           </h2>
@@ -80,7 +80,7 @@ export default function HowItWorks() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
-                <div className="bg-white border border-border-light rounded-2xl p-7 hover:border-primary-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <div className="bg-white border border-border-light rounded-2xl p-5 md:p-7 hover:border-primary-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                   {/* Step icon */}
                   <div className="flex items-center mb-6">
                     <div className="w-11 h-11 rounded-xl bg-green-surface text-primary-green flex items-center justify-center">

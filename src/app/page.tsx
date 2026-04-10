@@ -23,7 +23,6 @@ export default function Home() {
         <HowItWorks />
         {/* <Testimonials /> */}
         <Pricing />
-        <CTA />
         <Footer />
       </main>
     </GridBeam>

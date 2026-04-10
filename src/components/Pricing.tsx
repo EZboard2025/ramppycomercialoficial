@@ -113,7 +113,7 @@ export default function Pricing() {
       <div className="py-12 md:py-14">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-5">
-          <h2 className="font-[var(--font-fustat)] text-[36px] md:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white">
+          <h2 className="font-[var(--font-fustat)] text-2xl md:text-[36px] lg:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white">
             Pricing
           </h2>
         </div>
@@ -123,7 +123,7 @@ export default function Pricing() {
           <div className="inline-flex items-center bg-white/[0.06] rounded-full p-1 border border-white/10">
             <button
               onClick={() => setBilling("monthly")}
-              className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`relative px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 billing === "monthly"
                   ? "bg-white/[0.12] text-white shadow-sm border border-white/15"
                   : "text-white/50 hover:text-white/70"
@@ -133,7 +133,7 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setBilling("yearly")}
-              className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`relative px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 billing === "yearly"
                   ? "bg-white/[0.12] text-white shadow-sm border border-white/15"
                   : "text-white/50 hover:text-white/70"
@@ -162,7 +162,7 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className={`p-7 flex flex-col ${plan.highlighted ? "pt-10" : ""}`}>
+              <div className={`p-5 md:p-7 flex flex-col ${plan.highlighted ? "pt-8 md:pt-10" : ""}`}>
                 {/* Icon */}
                 <div className="mb-5 opacity-80">
                   {plan.icon}
@@ -180,13 +180,13 @@ export default function Pricing() {
                 <div className="mt-5 mb-2">
                   {plan.monthlyPrice ? (
                     <>
-                      <span className="font-[var(--font-fustat)] text-[32px] lg:text-[36px] font-bold text-white leading-none">
+                      <span className="font-[var(--font-fustat)] text-2xl md:text-[32px] lg:text-[36px] font-bold text-white leading-none">
                         R${billing === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
                       <span className="text-sm text-white/40 ml-1">/mes</span>
                     </>
                   ) : (
-                    <span className="font-[var(--font-fustat)] text-[28px] lg:text-[32px] font-bold text-white leading-none">
+                    <span className="font-[var(--font-fustat)] text-xl md:text-[28px] lg:text-[32px] font-bold text-white leading-none">
                       Personalizado
                     </span>
                   )}
@@ -218,7 +218,7 @@ export default function Pricing() {
               <div className={`mx-7 border-t ${plan.highlighted ? "border-white/10" : "border-white/[0.06]"}`} />
 
               {/* Features */}
-              <div className="p-7 pt-6 flex-1">
+              <div className="p-5 md:p-7 pt-4 md:pt-6 flex-1">
                 <p className="text-xs font-medium text-white/30 uppercase tracking-wider mb-4">
                   {plan.highlighted ? "Tudo do Team, mais:" : idx === 0 ? "Inclui:" : `Tudo do ${plans[idx - 1]?.name}, mais:`}
                 </p>
@@ -248,7 +248,7 @@ export default function Pricing() {
         </div>
 
         {/* Trust note */}
-        <div className="flex flex-wrap justify-center gap-8 mt-14 text-sm text-white/35">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 md:mt-14 text-xs md:text-sm text-white/35">
           <span className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
             Sem cartão de crédito

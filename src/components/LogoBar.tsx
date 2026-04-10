@@ -38,8 +38,8 @@ function StatItem({ target, suffix, label, trigger }: { target: number; suffix: 
   const value = useCountUp(target, trigger);
 
   return (
-    <div className="text-center shrink-0 w-[50vw] sm:w-[33vw] md:w-[25vw] cursor-default group">
-      <p className="font-[var(--font-fustat)] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
+    <div className="text-center shrink-0 w-[45vw] sm:w-[33vw] md:w-[25vw] cursor-default group">
+      <p className="font-[var(--font-fustat)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
         {value}{suffix}
       </p>
       <p className="text-sm md:text-base text-text-secondary mt-2">{label}</p>
