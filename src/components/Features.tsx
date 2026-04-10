@@ -82,8 +82,7 @@ export default function Features() {
                 className="w-full h-auto block rounded-2xl"
                 preload="auto"
               >
-                <source src="/videos/Nicole clip feature.MOV" type="video/quicktime" />
-                <source src="/videos/Nicole clip feature.MOV" type="video/mp4" />
+                <source src="/videos/Nicole clip feature.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -103,8 +102,7 @@ export default function Features() {
                 className="w-full h-auto block rounded-2xl"
                 preload="auto"
               >
-                <source src="/videos/Analise meet.MOV" type="video/quicktime" />
-                <source src="/videos/Analise meet.MOV" type="video/mp4" />
+                <source src="/videos/Analise meet.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
