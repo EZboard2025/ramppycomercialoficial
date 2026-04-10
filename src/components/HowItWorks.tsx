@@ -81,11 +81,8 @@ export default function HowItWorks() {
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 <div className="bg-white border border-border-light rounded-2xl p-7 hover:border-primary-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                  {/* Step number circle */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-[52px] h-[52px] rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center relative z-10">
-                      <span className="font-[var(--font-fustat)] text-lg font-bold text-white">{step.number}</span>
-                    </div>
+                  {/* Step icon */}
+                  <div className="flex items-center mb-6">
                     <div className="w-11 h-11 rounded-xl bg-green-surface text-primary-green flex items-center justify-center">
                       {step.icon}
                     </div>
@@ -103,19 +100,6 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Demo CTA */}
-        <div className="mt-20 text-center">
-          <a
-            href="#planos"
-            className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-8 py-4 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-green/20"
-          >
-            Marcar teste grátis
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
       </div>
     </SectionWrapper>
   );

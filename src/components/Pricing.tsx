@@ -110,16 +110,16 @@ export default function Pricing() {
 
   return (
     <SectionWrapper id="planos" dark>
-      <div className="py-20 md:py-32">
+      <div className="py-12 md:py-14">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-5">
           <h2 className="font-[var(--font-fustat)] text-[36px] md:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white">
             Pricing
           </h2>
         </div>
 
         {/* Toggle */}
-        <div className="flex justify-center mb-14">
+        <div className="flex justify-center mb-8">
           <div className="inline-flex items-center bg-white/[0.06] rounded-full p-1 border border-white/10">
             <button
               onClick={() => setBilling("monthly")}

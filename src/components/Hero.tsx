@@ -1,7 +1,24 @@
 "use client";
+import { useRef, useCallback } from "react";
 import SectionWrapper from "./SectionWrapper";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleTimeUpdate = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || !video.duration) return;
+    // Fade out and restart 0.5s before end to avoid stutter
+    if (video.duration - video.currentTime < 0.5) {
+      video.style.opacity = "0";
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.play();
+        video.style.opacity = "1";
+      }, 400);
+    }
+  }, []);
+
   return (
     <SectionWrapper className="overflow-visible">
       <div className="py-16 md:py-24 lg:py-32">
@@ -35,7 +52,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="#como-funciona"
+                href="/como-funciona"
                 className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-6 py-3.5 rounded-full bg-white text-teal-medium border border-border-light hover:bg-surface-hover transition-all duration-300"
               >
                 Ver como funciona
@@ -48,14 +65,15 @@ export default function Hero() {
           <div className="flex-1 w-full lg:translate-x-[9.4vw] xl:translate-x-[14vw]">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
-                ref={(el) => { if (el) el.playbackRate = 1.25; }}
+                ref={videoRef}
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto block object-cover scale-[1.02]"
+                className="w-full h-auto block object-cover scale-[1.02] transition-opacity duration-400"
                 style={{ marginLeft: "-1%" }}
                 preload="auto"
+                onTimeUpdate={handleTimeUpdate}
               >
                 <source src="/videos/IMG_2973.MOV" type="video/quicktime" />
                 <source src="/videos/IMG_2973.MOV" type="video/mp4" />

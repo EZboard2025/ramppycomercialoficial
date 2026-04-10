@@ -12,7 +12,7 @@ export default function SectionWrapper({
   id?: string;
 }) {
   return (
-    <section className={`flex gap-[1px] ${id ? "scroll-mt-24" : ""}`} id={id}>
+    <section className={`flex gap-[1px] ${id ? "scroll-mt-0" : ""}`} id={id}>
       <div className="content-side rounded-r-lg" />
       <div
         className={`content-center ${
