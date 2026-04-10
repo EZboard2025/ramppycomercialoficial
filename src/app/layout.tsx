@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ramppy,Ecossistema Completo de Vendas com IA",
+  title: "Ramppy",
   description:
     "Treine vendas com IA, analise reuniões automaticamente, gerencie WhatsApp e receba coaching em tempo real. A plataforma completa para times de vendas.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     apple: "/images/favicon.png",
   },
   openGraph: {
-    title: "Ramppy,Ecossistema Completo de Vendas com IA",
+    title: "Ramppy",
     description:
       "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
     type: "website",
