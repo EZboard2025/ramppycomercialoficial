@@ -71,7 +71,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Video */}
-          <div className="flex-1 w-full mt-[55px] md:mt-0 lg:translate-x-[9.4vw] xl:translate-x-[14vw] order-last lg:order-none scale-125 md:scale-100 origin-center">
+          <div className="flex-1 w-full mt-[55px] md:mt-0 lg:translate-x-[9.4vw] xl:translate-x-[14vw] order-last lg:order-none md:scale-100 origin-center">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
                 ref={videoRef}
