@@ -159,6 +159,14 @@ export default function Navbar() {
         <div className="content-side rounded-l-lg" />
       </header>
 
+      {/* SVG filter for Liquid Glass refraction */}
+      <svg aria-hidden="true" style={{ position: "absolute", width: 0, height: 0 }}>
+        <filter id="liquid-glass" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.012" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
       {/* Desktop Dynamic Island */}
       <div className="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50" ref={islandRef}>
         {/* Island container */}
@@ -166,12 +174,15 @@ export default function Navbar() {
           className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${
             isAnyOpen && !closing
               ? "bg-white rounded-t-[24px] shadow-[0_8px_60px_rgba(0,0,0,0.12)]"
-              : "bg-white/60 backdrop-blur-[32px] backdrop-saturate-[1.6] rounded-full shadow-[0_12px_50px_rgba(0,0,0,0.1)]"
+              : "bg-white/60 rounded-full shadow-[0_0_40px_rgba(255,255,255,0.25),0_12px_50px_rgba(0,0,0,0.1),0_0_80px_rgba(255,255,255,0.15)]"
           }`}
           style={
             isAnyOpen && !closing
               ? undefined
-              : undefined
+              : {
+                  backdropFilter: "url(#liquid-glass) blur(12px) saturate(1.6)",
+                  WebkitBackdropFilter: "blur(12px) saturate(1.6)",
+                }
           }
           onMouseLeave={handleLeave}
         >
