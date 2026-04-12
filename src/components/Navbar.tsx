@@ -86,10 +86,8 @@ export default function Navbar() {
   const [closing, setClosing] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLAnchorElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
-  const [dropdownStyle, setDropdownStyle] = useState<{ left: number; width: number } | null>(null);
+  const islandRef = useRef<HTMLDivElement>(null);
+  const [dropdownStyle, setDropdownStyle] = useState<{ left: number; width: number; top: number } | null>(null);
 
   function closeMenu() {
     setClosing(true);
@@ -102,7 +100,7 @@ export default function Navbar() {
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+      if (islandRef.current && !islandRef.current.contains(e.target as Node)) {
         closeMenu();
       }
     }
@@ -116,13 +114,12 @@ export default function Navbar() {
       clearTimeout(closeTimeoutRef.current);
       setClosing(false);
     }
-    if (logoRef.current && ctaRef.current) {
-      const logoRect = logoRef.current.getBoundingClientRect();
-      const ctaRect = ctaRef.current.getBoundingClientRect();
-      const padding = 20;
+    if (islandRef.current) {
+      const rect = islandRef.current.getBoundingClientRect();
       setDropdownStyle({
-        left: logoRect.left - padding,
-        width: ctaRect.right - logoRect.left + padding * 2,
+        left: rect.left,
+        width: rect.width,
+        top: rect.bottom,
       });
     }
     setOpenMenu(key);
@@ -137,129 +134,128 @@ export default function Navbar() {
   const plansHref = localizeHref(locale, "/#planos");
 
   return (
-    <header className="flex gap-[1px] relative z-50" ref={headerRef}>
-      <div className="content-side rounded-r-lg" />
-      <div className="content-center overflow-visible">
-        {/* Top bar */}
-        <div className="flex items-center justify-between h-20 md:h-[80px] px-4 md:px-8 max-w-7xl mx-auto w-full">
-          {/* Mobile: Logo + CTA */}
-          <a href={homeHref} className="flex items-center shrink-0 lg:hidden">
+    <>
+      {/* Single header element: mobile nav + desktop spacer (no separator line) */}
+      <header className="flex relative z-50 lg:z-0 lg:-mb-[1px]">
+        <div className="content-side rounded-r-lg" />
+        <div className="content-center">
+          <div className="flex items-center justify-between h-20 px-4 lg:hidden">
+            <a href={homeHref} className="flex items-center shrink-0">
+              <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-7 object-contain" />
+            </a>
+            <a
+              href={plansHref}
+              className="font-[var(--font-fustat)] text-xs font-semibold px-4 py-2.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 inline-flex items-center gap-1.5"
+            >
+              {lbl.cta}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="hidden lg:block h-20" />
+        </div>
+        <div className="content-side rounded-l-lg" />
+      </header>
+
+      {/* Desktop Dynamic Island */}
+      <div className="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50" ref={islandRef}>
+        {/* Island container */}
+        <div
+          className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${
+            isAnyOpen && !closing
+              ? "bg-white rounded-t-[24px] shadow-[0_8px_60px_rgba(0,0,0,0.12)]"
+              : "bg-white/70 backdrop-blur-xl rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.06)] border border-white/60"
+          }`}
+          onMouseLeave={handleLeave}
+        >
+          {/* Logo */}
+          <a href={homeHref} className="flex items-center shrink-0 pl-2">
             <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-7 object-contain" />
           </a>
-          <a
-            href={plansHref}
-            className="lg:hidden font-[var(--font-fustat)] text-xs font-semibold px-4 py-2.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 inline-flex items-center gap-1.5"
-          >
-            {lbl.cta}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </a>
 
-          {/* Desktop Nav — logo + links + CTA all together centered */}
-          <div className="hidden lg:flex items-center justify-center gap-6 w-full relative z-50">
-            <a ref={logoRef} href={homeHref} className="flex items-center shrink-0">
-              <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-8 object-contain" />
-            </a>
-
-            <nav className="flex items-center gap-1">
-              {menuOrder.map((key) => (
-                <button
-                  key={key}
-                  className={`font-[var(--font-fustat)] text-[15px] font-semibold px-4 py-3 rounded-full flex items-center gap-1.5 transition-colors duration-200 ${
-                    openMenu === key
-                      ? "bg-surface-hover text-teal-dark"
-                      : "text-teal-medium hover:bg-surface-hover"
-                  }`}
-                  onMouseEnter={() => handleEnter(key)}
-                  onMouseLeave={handleLeave}
-                  onClick={() => (openMenu === key ? closeMenu() : handleEnter(key))}
-                >
-                  {menuData[key].title}
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    className={`transition-transform duration-200 ${openMenu === key ? "rotate-180" : ""}`}
-                  >
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              ))}
-
-              <a
-                href={plansHref}
-                className="font-[var(--font-fustat)] text-[15px] font-semibold text-teal-medium px-4 py-3 rounded-full hover:bg-surface-hover transition-colors duration-200"
-                onMouseEnter={() => {
-                  if (timeoutRef.current) clearTimeout(timeoutRef.current);
-                  closeMenu();
-                }}
+          {/* Nav links */}
+          <nav className="flex items-center gap-0.5 ml-2">
+            {menuOrder.map((key) => (
+              <button
+                key={key}
+                className={`font-[var(--font-fustat)] text-[14px] font-semibold px-3.5 py-2 rounded-full flex items-center gap-1.5 transition-colors duration-200 ${
+                  openMenu === key
+                    ? "bg-gray-100 text-teal-dark"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-teal-dark"
+                }`}
+                onMouseEnter={() => handleEnter(key)}
+                onClick={() => (openMenu === key ? closeMenu() : handleEnter(key))}
               >
-                {lbl.plans}
-              </a>
-            </nav>
+                {menuData[key].title}
+                <svg
+                  width="9"
+                  height="5"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  className={`transition-transform duration-200 ${openMenu === key ? "rotate-180" : ""}`}
+                >
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            ))}
 
             <a
-              ref={ctaRef}
               href={plansHref}
-              className="font-[var(--font-fustat)] text-[15px] font-semibold px-5 py-3 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 shrink-0"
+              className="font-[var(--font-fustat)] text-[14px] font-semibold text-gray-600 px-3.5 py-2 rounded-full hover:bg-gray-50 hover:text-teal-dark transition-colors duration-200"
+              onMouseEnter={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                closeMenu();
+              }}
+            >
+              {lbl.plans}
+            </a>
+          </nav>
+
+          {/* CTA with animated glow ring */}
+          <div className="relative inline-flex shrink-0 ml-1 rounded-full p-[2px] overflow-hidden">
+            <div className="absolute inset-0 glow-ring-bg animate-spin-slow" aria-hidden="true" />
+            <a
+              href={plansHref}
+              className="relative font-[var(--font-fustat)] text-[13px] font-semibold px-5 py-2.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300"
             >
               {lbl.cta}
             </a>
           </div>
         </div>
 
-        {/* Backdrop blur — covers entire screen */}
+        {/* Dropdown — attached below the island */}
         {isAnyOpen && (
           <div
-            className={`hidden lg:block fixed inset-0 z-40 bg-black/10 backdrop-blur-[2px] transition-all duration-500 ${closing ? "opacity-0" : "opacity-100"}`}
-            style={{ animation: closing ? undefined : "fadeIn 0.5s ease-out" }}
-            onClick={() => closeMenu()}
-          />
-        )}
-
-        {/* White background panel behind header bar */}
-        {isAnyOpen && dropdownStyle && (
-          <div
-            className={`hidden lg:block fixed top-0 z-[45] bg-white transition-opacity duration-250 ${closing ? "opacity-0" : "opacity-100"}`}
-            style={{ left: dropdownStyle.left, width: dropdownStyle.width, height: "80px" }}
-          />
-        )}
-
-        {/* Desktop Mega Dropdown */}
-        {isAnyOpen && dropdownStyle && (
-          <div
             key={closing ? "closing" : "open"}
-            className={`hidden lg:block fixed top-[80px] z-50 ${closing ? "animate-dropdown-close" : "animate-dropdown"}`}
-            style={{ left: dropdownStyle.left, width: dropdownStyle.width }}
+            className={`${closing ? "animate-dropdown-close" : "animate-dropdown"}`}
             onMouseEnter={() => { if (timeoutRef.current) clearTimeout(timeoutRef.current); if (closeTimeoutRef.current) { clearTimeout(closeTimeoutRef.current); setClosing(false); } }}
             onMouseLeave={handleLeave}
           >
-            <div className="bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] w-full">
-              <div className="border-t border-border-light/40 mx-6" />
-              <div className="px-10 py-8">
-                <div className="grid grid-cols-3 gap-10">
+            <div className={`bg-white w-full shadow-[0_20px_60px_rgba(0,0,0,0.1)] rounded-b-[24px] transition-all duration-300 ${closing ? "opacity-0" : "opacity-100"}`}>
+              <div className="border-t border-gray-100 mx-5" />
+              <div className="px-8 py-7">
+                <div className="grid grid-cols-3 gap-8">
                   {menuOrder.map((key) => (
                     <div key={key}>
                       <h3 className={`font-[var(--font-fustat)] text-xs font-bold uppercase tracking-wider mb-4 ${
-                        openMenu === key ? "text-primary-green" : "text-text-secondary/60"
+                        openMenu === key ? "text-primary-green" : "text-gray-400"
                       }`}>
                         {menuData[key].title}
                       </h3>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-0.5">
                         {menuData[key].items.map((item) => (
                           <a
                             key={item.label}
                             href={localizeHref(locale, item.href)}
-                            className="group flex flex-col gap-0.5 px-3 py-2.5 -mx-3 rounded-xl hover:bg-surface-hover transition-colors duration-150"
+                            className="group flex flex-col gap-0.5 px-3 py-2.5 -mx-3 rounded-xl hover:bg-gray-50 transition-colors duration-150"
                             onClick={() => closeMenu()}
                           >
                             <span className="font-[var(--font-fustat)] text-sm font-semibold text-teal-dark group-hover:text-primary-green transition-colors">
                               {item.label}
                             </span>
-                            <span className="text-xs text-text-secondary">
+                            <span className="text-xs text-gray-400">
                               {item.description}
                             </span>
                           </a>
@@ -273,8 +269,15 @@ export default function Navbar() {
           </div>
         )}
       </div>
-      <div className="content-side rounded-l-lg" />
-    </header>
+
+      {/* Backdrop blur — desktop only, when dropdown open */}
+      {isAnyOpen && (
+        <div
+          className={`hidden lg:block fixed inset-0 z-40 bg-black/5 backdrop-blur-[2px] transition-all duration-500 ${closing ? "opacity-0" : "opacity-100"}`}
+          style={{ animation: closing ? undefined : "fadeIn 0.5s ease-out" }}
+          onClick={() => closeMenu()}
+        />
+      )}
+    </>
   );
 }
-

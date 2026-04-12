@@ -234,6 +234,25 @@
   animation: cursor-blink 1s steps(1) infinite;
 }
 
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.glow-ring-bg {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(76, 175, 80, 1) 60deg,
+    rgba(76, 175, 80, 0.3) 120deg,
+    transparent 200deg,
+    transparent 360deg
+  );
+}
+
 .clip-text-subtle {
   background: var(--color-primary-green);
   background-image: linear-gradient(
