@@ -34,15 +34,27 @@ function useCountUp(target: number, trigger: number) {
   return value;
 }
 
-function StatItem({ target, suffix, label, trigger }: { target: number; suffix: string; label: string; trigger: number }) {
+function StatItem({
+  target,
+  suffix,
+  label,
+  trigger,
+  className = "shrink-0 w-[45vw] sm:w-[33vw] md:w-[25vw]",
+}: {
+  target: number;
+  suffix: string;
+  label: string;
+  trigger: number;
+  className?: string;
+}) {
   const value = useCountUp(target, trigger);
 
   return (
-    <div className="text-center shrink-0 w-[45vw] sm:w-[33vw] md:w-[25vw] cursor-default group">
-      <p className="font-[var(--font-fustat)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
+    <div className={`text-center cursor-default group ${className}`}>
+      <p className="font-[var(--font-fustat)] text-6xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-transform duration-300 group-hover:scale-110 clip-text-subtle">
         {value}{suffix}
       </p>
-      <p className="text-sm md:text-base text-text-secondary mt-2">{label}</p>
+      <p className="text-lg md:text-base text-text-secondary mt-3 md:mt-2">{label}</p>
     </div>
   );
 }
@@ -62,7 +74,7 @@ export default function LogoBar() {
   return (
     <SectionWrapper className="overflow-hidden">
       <div className="py-12 md:py-16 -mx-6 md:-mx-[4%] lg:-mx-[5%] xl:-mx-[5.4%]">
-        <div className="flex w-max animate-carousel">
+        <div className="hidden md:flex w-max animate-carousel">
           {items.map((stat, i) => (
             <StatItem
               key={i}
@@ -70,6 +82,18 @@ export default function LogoBar() {
               suffix={stat.suffix}
               label={stat.label}
               trigger={trigger}
+            />
+          ))}
+        </div>
+        <div className="md:hidden flex flex-col gap-20 px-6">
+          {stats.map((stat, i) => (
+            <StatItem
+              key={i}
+              target={stat.target}
+              suffix={stat.suffix}
+              label={stat.label}
+              trigger={trigger}
+              className="w-full"
             />
           ))}
         </div>

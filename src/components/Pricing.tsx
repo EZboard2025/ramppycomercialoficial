@@ -6,12 +6,11 @@ import SectionWrapper from "./SectionWrapper";
 const plans = [
   {
     name: "Pro",
-    subtitle: "Até10 vendedores",
+    subtitle: "Até 10 vendedores",
     monthlyPrice: "1.200",
     yearlyPrice: "960",
     features: [
-      "200 créditos/mes",
-      "Até10 vendedores",
+      "Até 10 vendedores",
       "Simulações de roleplay",
       "Avaliação SPIN completa",
       "Análise de Meet automática",
@@ -30,12 +29,11 @@ const plans = [
   },
   {
     name: "Team",
-    subtitle: "Até20 vendedores",
+    subtitle: "Até 20 vendedores",
     monthlyPrice: "1.999",
     yearlyPrice: "1.599",
     features: [
-      "400 créditos/mes",
-      "Até20 vendedores",
+      "Até 20 vendedores",
       "Tudo do Pro",
       "Dashboard de gestao",
       "Histórico completo",
@@ -59,7 +57,6 @@ const plans = [
     monthlyPrice: "4.999",
     yearlyPrice: "3.999",
     features: [
-      "1.000 créditos/mes",
       "20 a 50 vendedores",
       "Tudo do Team",
       "Creditos extras sob demanda",
@@ -106,7 +103,7 @@ const plans = [
 ];
 
 export default function Pricing() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
 
   return (
     <SectionWrapper id="planos" dark>
