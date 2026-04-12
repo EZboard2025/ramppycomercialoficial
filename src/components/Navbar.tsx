@@ -166,8 +166,13 @@ export default function Navbar() {
           className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${
             isAnyOpen && !closing
               ? "bg-white rounded-t-[24px] shadow-[0_8px_60px_rgba(0,0,0,0.12)]"
-              : "bg-white/70 backdrop-blur-xl rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.06)] border border-white/60"
+              : "bg-white/60 backdrop-blur-[32px] backdrop-saturate-[1.6] rounded-full shadow-[0_12px_50px_rgba(0,0,0,0.1)]"
           }`}
+          style={
+            isAnyOpen && !closing
+              ? undefined
+              : undefined
+          }
           onMouseLeave={handleLeave}
         >
           {/* Logo */}
