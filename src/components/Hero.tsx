@@ -79,8 +79,8 @@ const strings = {
     socialProof: "Aumente em até 46% suas conversões",
     h1MobileVariants: [
       ["Treine melhor.", "Venda ", "mais."],
-      ["Acelere o time.", "Venda ", "mais."],
-      ["Vendedores 10x.", "Sem ", "esforço."],
+      ["Treine certo.", "Venda ", "melhor."],
+      ["Mais reuniões.", "Mais ", "vendas."],
     ] as const,
     h1DesktopVariants: [
       ["Acabe com a ", "ineficiência", " do seu time de ", "vendas."],
@@ -98,8 +98,8 @@ const strings = {
     socialProof: "Boost your conversions by up to 46%",
     h1MobileVariants: [
       ["Train better.", "Sell ", "more."],
-      ["Sell smarter.", "Win ", "more."],
-      ["Sales 10x.", "Zero ", "guesswork."],
+      ["Train smart.", "Sell ", "better."],
+      ["More meetings.", "More ", "deals."],
     ] as const,
     h1DesktopVariants: [
       ["End the ", "inefficiency", " of your ", "sales team."],
@@ -155,7 +155,7 @@ export default function Hero() {
 
             {/* H1 */}
             <h1 className="font-[var(--font-fustat)] text-[52px] md:text-[42px] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.03em] md:tracking-[-0.05em] text-teal-dark mt-4 md:mt-0 lg:w-[42vw] xl:w-[42vw] lg:relative lg:z-10 min-h-[2.1em] md:min-h-[2.1em]">
-              <span className="md:hidden whitespace-nowrap">
+              <span className="md:hidden">
                 {mobile.typed[0]}
                 {mobile.typed[0].length === mobile.segments[0].length && <br />}
                 <span className="whitespace-nowrap">
