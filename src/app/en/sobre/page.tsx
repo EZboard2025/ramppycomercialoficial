@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import SobreContent from "@/components/pages/SobreContent";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/sobre",
   title: "About | Ramppy",
   description:
-    "Meet the story of Ramppy: from a 52-hour hackathon to the largest startup accelerator in Minas Gerais.",
-};
+    "The story of Ramppy — from a 52-hour hackathon to the AI sales platform helping Brazilian teams ramp up faster and sell more.",
+});
 
 export default function Page() {
   return (

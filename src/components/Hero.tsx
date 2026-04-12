@@ -12,12 +12,13 @@ function useTypewriter(
   pauseAtEmptyMs = 350,
 ) {
   const key = phrases.map((p) => p.join("\u0001")).join("\u0002");
+  const initialLen = phrases[0].reduce((a, s) => a + s.length, 0);
   const [phraseIdx, setPhraseIdx] = useState(0);
-  const [pos, setPos] = useState(0);
+  const [pos, setPos] = useState(initialLen);
 
   useEffect(() => {
     setPhraseIdx(0);
-    setPos(0);
+    setPos(initialLen);
     let cancelled = false;
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let currentPhrase = 0;
@@ -46,13 +47,14 @@ function useTypewriter(
       }
     }
 
-    timeoutId = setTimeout(() => typeStep(0), startDelayMs);
+    // Start with phrase 0 already fully typed, then begin the delete → next cycle.
+    timeoutId = setTimeout(() => deleteStep(initialLen - 1), pauseAtFullMs);
 
     return () => {
       cancelled = true;
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [key, typeSpeedMs, deleteSpeedMs, startDelayMs, pauseAtFullMs, pauseAtEmptyMs, phrases]);
+  }, [key, typeSpeedMs, deleteSpeedMs, startDelayMs, pauseAtFullMs, pauseAtEmptyMs, phrases, initialLen]);
 
   const segments = phrases[phraseIdx] ?? phrases[0];
   const typed: string[] = [];

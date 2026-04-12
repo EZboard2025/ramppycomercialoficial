@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import BlogListContent from "@/components/pages/BlogListContent";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog | Ramppy",
+export const metadata = buildMetadata({
+  locale: "pt",
+  path: "/blog",
+  title: "Blog da Ramppy — Vendas com IA, SPIN Selling e Gestão Comercial",
   description:
-    "Acompanhe as novidades da Ramppy: atualizações do produto, parcerias e conteúdo sobre vendas com IA.",
-};
+    "Artigos, novidades do produto, estudos e reflexões sobre vendas consultivas, IA aplicada e gestão de times comerciais.",
+});
 
 export default function BlogPage() {
   return (

@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import ComoFuncionaContent from "@/components/pages/ComoFuncionaContent";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/como-funciona",
   title: "How It Works | Ramppy",
   description:
-    "See the full Ramppy walkthrough: AI sales simulations, meeting analysis, and smart coaching for your team.",
-};
+    "The full Ramppy walkthrough: AI sales simulations, automatic meeting analysis and smart coaching built for B2B sales teams.",
+});
 
 export default function HowItWorksPage() {
   return (

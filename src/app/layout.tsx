@@ -1,30 +1,40 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import LangAttr from "@/components/LangAttr";
 
 export const metadata: Metadata = {
-  title: "Ramppy",
+  metadataBase: new URL(SITE_URL),
+  title: "Ramppy — Plataforma de vendas com IA",
   description:
     "Treine vendas com IA, analise reuniões automaticamente, gerencie WhatsApp e receba coaching em tempo real. A plataforma completa para times de vendas.",
-  keywords: [
-    "vendas",
-    "IA",
-    "inteligencia artificial",
-    "treinamento de vendas",
-    "SPIN selling",
-    "roleplay",
-    "análise de reuniões",
-    "copiloto de vendas",
-  ],
+  applicationName: "Ramppy",
   icons: {
     icon: "/images/favicon.png",
     shortcut: "/images/favicon.png",
     apple: "/images/favicon.png",
   },
   openGraph: {
-    title: "Ramppy",
+    title: "Ramppy — Plataforma de vendas com IA",
     description:
       "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
+    url: SITE_URL,
+    siteName: "Ramppy",
+    locale: "pt_BR",
     type: "website",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Ramppy" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ramppy — Plataforma de vendas com IA",
+    description:
+      "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
 };
 
@@ -47,7 +57,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-[var(--font-inter-tight)]">{children}</body>
+      <body className="font-[var(--font-inter-tight)]">
+        <LangAttr />
+        {children}
+      </body>
     </html>
   );
 }

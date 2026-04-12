@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import MetodologiaSpinContent from "@/components/pages/MetodologiaSpinContent";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "SPIN Methodology | Ramppy",
+export const metadata = buildMetadata({
+  locale: "en",
+  path: "/metodologia-spin",
+  title: "SPIN Selling Methodology | Ramppy",
   description:
-    "Learn how Ramppy applies SPIN Selling with AI to automatically evaluate and develop salespeople.",
-};
+    "Situation, Problem, Implication and Need-Payoff. See how Ramppy uses AI to apply SPIN Selling and evaluate reps in real conversations.",
+});
 
 export default function MetodologiaSpinEnPage() {
   return (
