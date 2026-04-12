@@ -3,9 +3,9 @@ import PageShell from "@/components/PageShell";
 import LegalContent from "@/components/pages/LegalContent";
 
 export const metadata: Metadata = {
-  title: "Termos e Privacidade | Ramppy",
+  title: "Terms and Privacy | Ramppy",
   description:
-    "Termos de uso, política de privacidade e segurança da plataforma Ramppy.",
+    "Terms of use, privacy policy, and security of the Ramppy platform.",
 };
 
 export default function LegalPage() {

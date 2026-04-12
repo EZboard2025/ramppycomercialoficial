@@ -3,12 +3,12 @@ import PageShell from "@/components/PageShell";
 import ParceirosContent from "@/components/pages/ParceirosContent";
 
 export const metadata: Metadata = {
-  title: "Parceiros | Ramppy",
+  title: "Partners | Ramppy",
   description:
-    "Conheça nossos parceiros e o programa de parceria da Ramppy para consultores de vendas.",
+    "Meet our partners and discover Ramppy's partner program for sales consultants.",
 };
 
-export default function ParceirosPage() {
+export default function ParceirosPageEn() {
   return (
     <PageShell>
       <ParceirosContent />

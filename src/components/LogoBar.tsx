@@ -2,13 +2,22 @@
 
 import { useEffect, useState } from "react";
 import SectionWrapper from "./SectionWrapper";
+import { useLocale } from "@/i18n/LocaleContext";
 
-const stats = [
-  { target: 50, suffix: "%", label: "Redução no tempo de ramp-up" },
-  { target: 46, suffix: "%", label: "Maior conversão em vendas" },
-  { target: 35, suffix: "%", label: "Mais reuniões marcadas" },
-  { target: 33, suffix: "%", label: "Menos tempo de onboarding" },
-];
+const statsByLocale = {
+  pt: [
+    { target: 50, suffix: "%", label: "Redução no tempo de ramp-up" },
+    { target: 46, suffix: "%", label: "Maior conversão em vendas" },
+    { target: 35, suffix: "%", label: "Mais reuniões marcadas" },
+    { target: 33, suffix: "%", label: "Menos tempo de onboarding" },
+  ],
+  en: [
+    { target: 50, suffix: "%", label: "Lower ramp-up time" },
+    { target: 46, suffix: "%", label: "Higher sales conversion" },
+    { target: 35, suffix: "%", label: "More meetings booked" },
+    { target: 33, suffix: "%", label: "Faster onboarding" },
+  ],
+};
 
 const ANIMATION_DURATION = 1500;
 const REPEAT_INTERVAL = 8000;
@@ -60,6 +69,8 @@ function StatItem({
 }
 
 export default function LogoBar() {
+  const locale = useLocale();
+  const stats = statsByLocale[locale];
   const [trigger, setTrigger] = useState(0);
 
   useEffect(() => {

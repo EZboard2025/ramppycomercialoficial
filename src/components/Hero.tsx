@@ -1,9 +1,127 @@
 "use client";
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import SectionWrapper from "./SectionWrapper";
+import { useLocale, localizeHref } from "@/i18n/LocaleContext";
+
+function useTypewriter(
+  phrases: readonly (readonly string[])[],
+  typeSpeedMs = 45,
+  deleteSpeedMs = 25,
+  startDelayMs = 250,
+  pauseAtFullMs = 2500,
+  pauseAtEmptyMs = 350,
+) {
+  const key = phrases.map((p) => p.join("\u0001")).join("\u0002");
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [pos, setPos] = useState(0);
+
+  useEffect(() => {
+    setPhraseIdx(0);
+    setPos(0);
+    let cancelled = false;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let currentPhrase = 0;
+    const totalLenFor = (idx: number) => phrases[idx].reduce((a, s) => a + s.length, 0);
+
+    function typeStep(next: number) {
+      if (cancelled) return;
+      setPos(next);
+      const total = totalLenFor(currentPhrase);
+      if (next < total) {
+        timeoutId = setTimeout(() => typeStep(next + 1), typeSpeedMs);
+      } else {
+        timeoutId = setTimeout(() => deleteStep(total - 1), pauseAtFullMs);
+      }
+    }
+
+    function deleteStep(next: number) {
+      if (cancelled) return;
+      setPos(next);
+      if (next > 0) {
+        timeoutId = setTimeout(() => deleteStep(next - 1), deleteSpeedMs);
+      } else {
+        currentPhrase = (currentPhrase + 1) % phrases.length;
+        setPhraseIdx(currentPhrase);
+        timeoutId = setTimeout(() => typeStep(0), pauseAtEmptyMs);
+      }
+    }
+
+    timeoutId = setTimeout(() => typeStep(0), startDelayMs);
+
+    return () => {
+      cancelled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [key, typeSpeedMs, deleteSpeedMs, startDelayMs, pauseAtFullMs, pauseAtEmptyMs, phrases]);
+
+  const segments = phrases[phraseIdx] ?? phrases[0];
+  const typed: string[] = [];
+  let remaining = pos;
+  for (const s of segments) {
+    const take = Math.min(remaining, s.length);
+    typed.push(s.slice(0, take));
+    remaining -= take;
+  }
+  return { typed, segments };
+}
+
+function Cursor() {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-block w-[3px] md:w-[4px] h-[0.85em] align-middle ml-1 bg-primary-green animate-cursor-blink"
+    />
+  );
+}
+
+const strings = {
+  pt: {
+    socialProof: "Aumente em até 46% suas conversões",
+    h1MobileVariants: [
+      ["Treine melhor.", "Venda ", "mais."],
+      ["Acelere o time.", "Venda ", "mais."],
+      ["Vendedores 10x.", "Sem ", "esforço."],
+    ] as const,
+    h1DesktopVariants: [
+      ["Acabe com a ", "ineficiência", " do seu time de ", "vendas."],
+      ["Transforme a ", "performance", " do seu time ", "comercial."],
+      ["Multiplique as ", "conversões", " do seu time de ", "vendas."],
+      ["Destrave o ", "potencial", " do seu time ", "comercial."],
+    ] as const,
+    subtitleMobile: "Simulações, avaliação e gestão do seu time com inteligência artificial.",
+    subtitleDesktop:
+      "O ecossistema completo de vendas com IA: treinamento, simulações, avaliação e gestão do seu time otimizados com inteligência artificial.",
+    ctaPrimary: "Comece grátis",
+    ctaSecondary: "Ver como funciona",
+  },
+  en: {
+    socialProof: "Boost your conversions by up to 46%",
+    h1MobileVariants: [
+      ["Train better.", "Sell ", "more."],
+      ["Sell smarter.", "Win ", "more."],
+      ["Sales 10x.", "Zero ", "guesswork."],
+    ] as const,
+    h1DesktopVariants: [
+      ["End the ", "inefficiency", " of your ", "sales team."],
+      ["Transform the ", "performance", " of your ", "sales team."],
+      ["Multiply the ", "conversions", " of your ", "sales team."],
+      ["Unlock the ", "potential", " of your ", "sales team."],
+    ] as const,
+    subtitleMobile: "Simulations, evaluation and team management with artificial intelligence.",
+    subtitleDesktop:
+      "The complete AI sales ecosystem: training, simulations, evaluation and team management supercharged with artificial intelligence.",
+    ctaPrimary: "Start free",
+    ctaSecondary: "See how it works",
+  },
+};
 
 export default function Hero() {
+  const locale = useLocale();
+  const t = strings[locale];
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const desktop = useTypewriter(t.h1DesktopVariants);
+  const mobile = useTypewriter(t.h1MobileVariants);
 
   const handleTimeUpdate = useCallback(() => {
     const video = videoRef.current;
@@ -32,19 +150,33 @@ export default function Hero() {
                 <img src="/images/1769295670916.jpg" alt="Arthur" className="w-7 h-7 rounded-full border-2 border-white object-cover" />
                 <img src="/images/Matheus Muniz.png" alt="Matheus" className="w-7 h-7 rounded-full border-2 border-white object-cover" />
               </div>
-              <span className="text-xs text-text-secondary font-medium">Aumente em até 46% suas conversões</span>
+              <span className="text-xs text-text-secondary font-medium">{t.socialProof}</span>
             </div>
 
             {/* H1 */}
-            <h1 className="font-[var(--font-fustat)] text-[52px] md:text-[42px] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.03em] md:tracking-[-0.05em] text-teal-dark mt-4 md:mt-0">
-              <span className="md:hidden whitespace-nowrap">Treine melhor.<br /><span className="whitespace-nowrap">Venda <span className="clip-text">mais.</span></span></span>
-              <span className="hidden md:inline">Acabe com a <span className="clip-text">ineficiência</span><br />do seu time de{" "}<span className="clip-text">vendas.</span></span>
+            <h1 className="font-[var(--font-fustat)] text-[52px] md:text-[42px] lg:text-[3.5vw] xl:text-[3.75vw] font-semibold leading-[105%] tracking-[-0.03em] md:tracking-[-0.05em] text-teal-dark mt-4 md:mt-0 lg:w-[42vw] xl:w-[42vw] lg:relative lg:z-10 min-h-[2.1em] md:min-h-[2.1em]">
+              <span className="md:hidden whitespace-nowrap">
+                {mobile.typed[0]}
+                {mobile.typed[0].length === mobile.segments[0].length && <br />}
+                <span className="whitespace-nowrap">
+                  {mobile.typed[1]}
+                  <span className="clip-text">{mobile.typed[2]}</span>
+                </span>
+                <Cursor />
+              </span>
+              <span className="hidden md:inline">
+                {desktop.typed[0]}
+                <span className="clip-text">{desktop.typed[1]}</span>
+                {desktop.typed[2]}
+                <span className="clip-text">{desktop.typed[3]}</span>
+                <Cursor />
+              </span>
             </h1>
 
             {/* Subtitle */}
             <p className="mt-7 md:mt-6 text-[17px] md:text-lg font-normal md:font-medium leading-relaxed md:leading-7 text-text-secondary/80 md:text-text-secondary">
-              <span className="md:hidden max-w-[240px] block">Simulações, avaliação e gestão do seu time com inteligência artificial.</span>
-              <span className="hidden md:inline">O ecossistema completo de vendas com IA: treinamento, simulações, avaliação e gestão do seu time otimizados com inteligência artificial.</span>
+              <span className="md:hidden max-w-[240px] block">{t.subtitleMobile}</span>
+              <span className="hidden md:inline">{t.subtitleDesktop}</span>
             </p>
 
             {/* CTAs */}
@@ -53,7 +185,7 @@ export default function Hero() {
                 href="#planos"
                 className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                Comece grátis
+                {t.ctaPrimary}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 md:w-5 md:h-5">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 16l4-4-4-4" />
@@ -61,10 +193,10 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="/como-funciona"
+                href={localizeHref(locale, "/como-funciona")}
                 className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full text-teal-medium md:bg-white md:border md:border-border-light hover:bg-surface-hover transition-all duration-300"
               >
-                Ver como funciona
+                {t.ctaSecondary}
               </a>
             </div>
 

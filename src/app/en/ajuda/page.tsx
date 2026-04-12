@@ -3,9 +3,9 @@ import PageShell from "@/components/PageShell";
 import AjudaContent from "@/components/pages/AjudaContent";
 
 export const metadata: Metadata = {
-  title: "Central de Ajuda | Ramppy",
+  title: "Help Center | Ramppy",
   description:
-    "Tire suas dúvidas sobre a Ramppy: simulações, análise de reuniões, planos e muito mais.",
+    "Get answers about Ramppy: simulations, meeting analysis, plans, and more.",
 };
 
 export default function AjudaPage() {

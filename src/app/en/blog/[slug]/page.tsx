@@ -15,14 +15,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  if (!post) return { title: "Post não encontrado | Ramppy" };
+  if (!post) return { title: "Post not found | Ramppy" };
   return {
-    title: `${post.title} | Blog Ramppy`,
+    title: `${post.title} | Ramppy Blog`,
     description: post.excerpt,
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function Page({ params }: Props) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();

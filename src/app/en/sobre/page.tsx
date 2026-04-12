@@ -3,9 +3,9 @@ import PageShell from "@/components/PageShell";
 import SobreContent from "@/components/pages/SobreContent";
 
 export const metadata: Metadata = {
-  title: "Sobre | Ramppy",
+  title: "About | Ramppy",
   description:
-    "Conheça a história da Ramppy: de um hackathon de 52 horas à maior aceleração de startups de Minas Gerais.",
+    "Meet the story of Ramppy: from a 52-hour hackathon to the largest startup accelerator in Minas Gerais.",
 };
 
 export default function Page() {

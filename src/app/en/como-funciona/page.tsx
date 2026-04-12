@@ -3,12 +3,12 @@ import PageShell from "@/components/PageShell";
 import ComoFuncionaContent from "@/components/pages/ComoFuncionaContent";
 
 export const metadata: Metadata = {
-  title: "Como Funciona | Ramppy",
+  title: "How It Works | Ramppy",
   description:
-    "Conheça o passo a passo completo da Ramppy: simulação de vendas com IA, análise de reuniões e coaching inteligente para seu time.",
+    "See the full Ramppy walkthrough: AI sales simulations, meeting analysis, and smart coaching for your team.",
 };
 
-export default function ComoFuncionaPage() {
+export default function HowItWorksPage() {
   return (
     <PageShell>
       <ComoFuncionaContent />

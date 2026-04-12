@@ -1,34 +1,89 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useLocale, localizeHref } from "@/i18n/LocaleContext";
 
-const menuData = {
-  Produto: [
-    { label: "Simulação", description: "Treine vendedores com IA", href: "/#funcionalidades" },
-    { label: "Análise Meet", description: "Avalie reuniões reais", href: "/como-funciona#passo-04" },
-    { label: "Copiloto Nicole", description: "IA assistente de vendas", href: "/#nicole" },
-    { label: "Gestão", description: "Gerencie seu time", href: "/como-funciona#passo-06" },
-  ],
-  Recursos: [
-    { label: "Como funciona", description: "Entenda o fluxo completo", href: "/como-funciona" },
-    { label: "Metodologia SPIN", description: "Framework de vendas", href: "/metodologia-spin" },
-    { label: "Blog", description: "Artigos e novidades", href: "/blog" },
-    { label: "Central de ajuda", description: "Dúvidas frequentes", href: "/ajuda" },
-  ],
-  Empresa: [
-    { label: "Sobre nós", description: "Conheça a Ramppy", href: "/sobre" },
-    { label: "Contato", description: "Fale conosco", href: "/contato" },
-    { label: "Parceiros", description: "Programa de parceiros", href: "/parceiros" },
-  ],
+type MenuKey = "product" | "resources" | "company";
+type MenuItem = { label: string; description: string; href: string };
+
+const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
+  product: {
+    title: "Produto",
+    items: [
+      { label: "Simulação", description: "Treine vendedores com IA", href: "/#funcionalidades" },
+      { label: "Análise Meet", description: "Avalie reuniões reais", href: "/como-funciona#passo-04" },
+      { label: "Copiloto Nicole", description: "IA assistente de vendas", href: "/#nicole" },
+      { label: "Gestão", description: "Gerencie seu time", href: "/como-funciona#passo-06" },
+    ],
+  },
+  resources: {
+    title: "Recursos",
+    items: [
+      { label: "Como funciona", description: "Entenda o fluxo completo", href: "/como-funciona" },
+      { label: "Metodologia SPIN", description: "Framework de vendas", href: "/metodologia-spin" },
+      { label: "Blog", description: "Artigos e novidades", href: "/blog" },
+      { label: "Central de ajuda", description: "Dúvidas frequentes", href: "/ajuda" },
+    ],
+  },
+  company: {
+    title: "Empresa",
+    items: [
+      { label: "Sobre nós", description: "Conheça a Ramppy", href: "/sobre" },
+      { label: "Contato", description: "Fale conosco", href: "/contato" },
+      { label: "Parceiros", description: "Programa de parceiros", href: "/parceiros" },
+    ],
+  },
 };
 
-const menuKeys = Object.keys(menuData) as (keyof typeof menuData)[];
+const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
+  product: {
+    title: "Product",
+    items: [
+      { label: "Simulation", description: "Train sales reps with AI", href: "/#funcionalidades" },
+      { label: "Meet Analysis", description: "Review real meetings", href: "/como-funciona#passo-04" },
+      { label: "Nicole Copilot", description: "AI sales assistant", href: "/#nicole" },
+      { label: "Management", description: "Lead your team", href: "/como-funciona#passo-06" },
+    ],
+  },
+  resources: {
+    title: "Resources",
+    items: [
+      { label: "How it works", description: "Understand the full flow", href: "/como-funciona" },
+      { label: "SPIN Methodology", description: "Sales framework", href: "/metodologia-spin" },
+      { label: "Blog", description: "Articles and news", href: "/blog" },
+      { label: "Help center", description: "Frequently asked questions", href: "/ajuda" },
+    ],
+  },
+  company: {
+    title: "Company",
+    items: [
+      { label: "About us", description: "Meet Ramppy", href: "/sobre" },
+      { label: "Contact", description: "Get in touch", href: "/contato" },
+      { label: "Partners", description: "Partner program", href: "/parceiros" },
+    ],
+  },
+};
+
+const labels = {
+  pt: {
+    plans: "Planos",
+    cta: "Marcar teste grátis",
+  },
+  en: {
+    plans: "Plans",
+    cta: "Book free trial",
+  },
+};
+
+const menuOrder: MenuKey[] = ["product", "resources", "company"];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const locale = useLocale();
+  const menuData = locale === "en" ? menuDataEn : menuDataPt;
+  const lbl = labels[locale];
+
+  const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const [closing, setClosing] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -55,7 +110,7 @@ export default function Navbar() {
     return () => document.removeEventListener("click", handleClick);
   }, []);
 
-  function handleEnter(label: string) {
+  function handleEnter(key: MenuKey) {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
@@ -70,14 +125,16 @@ export default function Navbar() {
         width: ctaRect.right - logoRect.left + padding * 2,
       });
     }
-    setOpenMenu(label);
+    setOpenMenu(key);
   }
 
   function handleLeave() {
     timeoutRef.current = setTimeout(() => closeMenu(), 200);
   }
 
-  const isAnyOpen = openMenu !== null && menuKeys.includes(openMenu as keyof typeof menuData);
+  const isAnyOpen = openMenu !== null;
+  const homeHref = localizeHref(locale, "/");
+  const plansHref = localizeHref(locale, "/#planos");
 
   return (
     <header className="flex gap-[1px] relative z-50" ref={headerRef}>
@@ -86,14 +143,14 @@ export default function Navbar() {
         {/* Top bar */}
         <div className="flex items-center justify-between h-20 md:h-[80px] px-4 md:px-8 max-w-7xl mx-auto w-full">
           {/* Mobile: Logo + CTA */}
-          <a href="/" className="flex items-center shrink-0 lg:hidden">
+          <a href={homeHref} className="flex items-center shrink-0 lg:hidden">
             <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-7 object-contain" />
           </a>
           <a
-            href="/#planos"
+            href={plansHref}
             className="lg:hidden font-[var(--font-fustat)] text-xs font-semibold px-4 py-2.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 inline-flex items-center gap-1.5"
           >
-            Marcar teste grátis
+            {lbl.cta}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />
@@ -102,12 +159,12 @@ export default function Navbar() {
 
           {/* Desktop Nav — logo + links + CTA all together centered */}
           <div className="hidden lg:flex items-center justify-center gap-6 w-full relative z-50">
-            <a ref={logoRef} href="/" className="flex items-center shrink-0">
+            <a ref={logoRef} href={homeHref} className="flex items-center shrink-0">
               <img src="/images/Logo Moderna Verde branco (1).png" alt="Ramppy" className="h-8 object-contain" />
             </a>
 
             <nav className="flex items-center gap-1">
-              {menuKeys.map((key) => (
+              {menuOrder.map((key) => (
                 <button
                   key={key}
                   className={`font-[var(--font-fustat)] text-[15px] font-semibold px-4 py-3 rounded-full flex items-center gap-1.5 transition-colors duration-200 ${
@@ -117,9 +174,9 @@ export default function Navbar() {
                   }`}
                   onMouseEnter={() => handleEnter(key)}
                   onMouseLeave={handleLeave}
-                  onClick={() => openMenu === key ? closeMenu() : handleEnter(key)}
+                  onClick={() => (openMenu === key ? closeMenu() : handleEnter(key))}
                 >
-                  {key}
+                  {menuData[key].title}
                   <svg
                     width="10"
                     height="6"
@@ -133,27 +190,25 @@ export default function Navbar() {
               ))}
 
               <a
-                href="/#planos"
+                href={plansHref}
                 className="font-[var(--font-fustat)] text-[15px] font-semibold text-teal-medium px-4 py-3 rounded-full hover:bg-surface-hover transition-colors duration-200"
                 onMouseEnter={() => {
                   if (timeoutRef.current) clearTimeout(timeoutRef.current);
                   closeMenu();
                 }}
               >
-                Planos
+                {lbl.plans}
               </a>
             </nav>
 
             <a
               ref={ctaRef}
-              href="/#planos"
+              href={plansHref}
               className="font-[var(--font-fustat)] text-[15px] font-semibold px-5 py-3 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 shrink-0"
             >
-              Marcar teste grátis
+              {lbl.cta}
             </a>
           </div>
-
-          {/* Mobile Menu Button - hidden, replaced by CTA */}
         </div>
 
         {/* Backdrop blur — covers entire screen */}
@@ -165,7 +220,7 @@ export default function Navbar() {
           />
         )}
 
-        {/* White background panel behind header bar — same position as dropdown */}
+        {/* White background panel behind header bar */}
         {isAnyOpen && dropdownStyle && (
           <div
             className={`hidden lg:block fixed top-0 z-[45] bg-white transition-opacity duration-250 ${closing ? "opacity-0" : "opacity-100"}`}
@@ -173,7 +228,7 @@ export default function Navbar() {
           />
         )}
 
-        {/* Desktop Mega Dropdown — aligned with nav bar (logo to CTA) */}
+        {/* Desktop Mega Dropdown */}
         {isAnyOpen && dropdownStyle && (
           <div
             key={closing ? "closing" : "open"}
@@ -186,18 +241,18 @@ export default function Navbar() {
               <div className="border-t border-border-light/40 mx-6" />
               <div className="px-10 py-8">
                 <div className="grid grid-cols-3 gap-10">
-                  {menuKeys.map((key) => (
+                  {menuOrder.map((key) => (
                     <div key={key}>
                       <h3 className={`font-[var(--font-fustat)] text-xs font-bold uppercase tracking-wider mb-4 ${
                         openMenu === key ? "text-primary-green" : "text-text-secondary/60"
                       }`}>
-                        {key}
+                        {menuData[key].title}
                       </h3>
                       <div className="flex flex-col gap-1">
-                        {menuData[key].map((item) => (
+                        {menuData[key].items.map((item) => (
                           <a
                             key={item.label}
-                            href={item.href}
+                            href={localizeHref(locale, item.href)}
                             className="group flex flex-col gap-0.5 px-3 py-2.5 -mx-3 rounded-xl hover:bg-surface-hover transition-colors duration-150"
                             onClick={() => closeMenu()}
                           >
@@ -217,10 +272,9 @@ export default function Navbar() {
             </div>
           </div>
         )}
-
-        {/* Mobile Nav */}
       </div>
       <div className="content-side rounded-l-lg" />
     </header>
   );
 }
+

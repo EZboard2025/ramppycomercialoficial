@@ -5,10 +5,10 @@ import BlogListContent from "@/components/pages/BlogListContent";
 export const metadata: Metadata = {
   title: "Blog | Ramppy",
   description:
-    "Acompanhe as novidades da Ramppy: atualizações do produto, parcerias e conteúdo sobre vendas com IA.",
+    "Follow news from Ramppy: product updates, partnerships, and content about AI-powered sales.",
 };
 
-export default function BlogPage() {
+export default function Page() {
   return (
     <PageShell>
       <BlogListContent />

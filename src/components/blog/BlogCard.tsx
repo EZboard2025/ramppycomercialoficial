@@ -1,11 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import { formatDate } from "@/lib/format-date";
+import { useLocale, localizeHref } from "@/i18n/LocaleContext";
 
 const categoryColors: Record<string, string> = {
   "Atualização": "bg-green-100 text-green-700",
   "Parceria": "bg-blue-100 text-blue-700",
   "Evento": "bg-purple-100 text-purple-700",
   "Conteúdo": "bg-orange-100 text-orange-700",
+};
+
+const strings = {
+  pt: { readTimeSuffix: "de leitura" },
+  en: { readTimeSuffix: "read" },
 };
 
 type Article = {
@@ -19,10 +27,12 @@ type Article = {
 };
 
 export default function BlogCard({ article }: { article: Article }) {
-  const formattedDate = formatDate(article.date);
+  const locale = useLocale();
+  const t = strings[locale];
+  const formattedDate = formatDate(article.date, locale);
 
   return (
-    <Link href={`/blog/${article.slug}`} className="block group">
+    <Link href={localizeHref(locale, `/blog/${article.slug}`)} className="block group">
       <div className="bg-white border border-border-light rounded-2xl overflow-hidden hover:border-primary-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
         {article.image ? (
           <div className="w-full h-48 overflow-hidden">
@@ -48,7 +58,7 @@ export default function BlogCard({ article }: { article: Article }) {
           <div className="flex items-center gap-3 text-xs text-text-secondary/70 mt-auto pt-4 border-t border-border-light">
             <span>{formattedDate}</span>
             <span className="w-1 h-1 bg-text-secondary/30 rounded-full" />
-            <span>{article.readTime} de leitura</span>
+            <span>{article.readTime} {t.readTimeSuffix}</span>
           </div>
         </div>
       </div>

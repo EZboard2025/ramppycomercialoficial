@@ -2,107 +2,155 @@
 
 import { useState } from "react";
 import SectionWrapper from "./SectionWrapper";
+import { useLocale } from "@/i18n/LocaleContext";
 
-const plans = [
-  {
-    name: "Pro",
-    subtitle: "Até 10 vendedores",
-    monthlyPrice: "1.200",
-    yearlyPrice: "960",
-    features: [
-      "Até 10 vendedores",
-      "Simulações de roleplay",
-      "Avaliação SPIN completa",
-      "Análise de Meet automática",
-      "Copiloto Nicole IA",
-      "App Desktop",
-    ],
-    cta: "Começar agora",
-    highlighted: false,
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" stroke="#22c55e" strokeWidth="1.5" />
-        <circle cx="16" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-        <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Team",
-    subtitle: "Até 20 vendedores",
-    monthlyPrice: "1.999",
-    yearlyPrice: "1.599",
-    features: [
-      "Até 20 vendedores",
-      "Tudo do Pro",
-      "Dashboard de gestao",
-      "Histórico completo",
-      "PDI personalizado + desafios",
-      "Personas customizadas",
-    ],
-    cta: "Começar agora",
-    highlighted: false,
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="12" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-        <circle cx="22" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-        <path d="M4 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M14 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Business",
-    subtitle: "De 20 a 50 vendedores",
-    monthlyPrice: "4.999",
-    yearlyPrice: "3.999",
-    features: [
-      "20 a 50 vendedores",
-      "Tudo do Team",
-      "Creditos extras sob demanda",
-      "Objeções customizadas",
-      "Onboarding dedicado",
-      "Suporte prioritário",
-    ],
-    cta: "Começar agora",
-    highlighted: true,
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="4" y="8" width="24" height="18" rx="3" stroke="#22c55e" strokeWidth="1.5" />
-        <path d="M4 14h24" stroke="#22c55e" strokeWidth="1.5" />
-        <circle cx="16" cy="12" r="2" fill="#22c55e" />
-        <path d="M10 20h4M10 23h8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Enterprise",
-    subtitle: "+50 vendedores",
-    monthlyPrice: null,
-    yearlyPrice: null,
-    features: [
-      "Creditos sob demanda",
-      "+50 vendedores",
-      "Tudo do Business",
-      "API de integração",
-      "SLA garantido",
-      "Gestor de conta dedicado",
-      "Treinamento personalizado",
-    ],
-    cta: "Falar com vendas",
-    highlighted: false,
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="6" y="4" width="20" height="24" rx="3" stroke="#22c55e" strokeWidth="1.5" />
-        <path d="M11 10h10M11 14h10M11 18h6" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="22" cy="22" r="6" fill="#0f1c14" stroke="#22c55e" strokeWidth="1.5" />
-        <path d="M20 22h4M22 20v4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
+const planIcons = [
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" stroke="#22c55e" strokeWidth="1.5" />
+      <circle cx="16" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
+      <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="12" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
+      <circle cx="22" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
+      <path d="M4 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect x="4" y="8" width="24" height="18" rx="3" stroke="#22c55e" strokeWidth="1.5" />
+      <path d="M4 14h24" stroke="#22c55e" strokeWidth="1.5" />
+      <circle cx="16" cy="12" r="2" fill="#22c55e" />
+      <path d="M10 20h4M10 23h8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect x="6" y="4" width="20" height="24" rx="3" stroke="#22c55e" strokeWidth="1.5" />
+      <path d="M11 10h10M11 14h10M11 18h6" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="22" cy="22" r="6" fill="#0f1c14" stroke="#22c55e" strokeWidth="1.5" />
+      <path d="M20 22h4M22 20v4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
 ];
 
+const plansByLocale = {
+  pt: {
+    title: "Pricing",
+    monthly: "Mensal",
+    yearly: "Anual",
+    billedYearly: "Cobrado anualmente",
+    custom: "Personalizado",
+    popular: "Popular",
+    perMonth: "/mes",
+    currency: "R$",
+    includes: "Inclui:",
+    everythingFrom: (p: string) => `Tudo do ${p}, mais:`,
+    everythingTeamPlus: "Tudo do Team, mais:",
+    trust: ["Sem cartão de crédito", "Cancele quando quiser", "Suporte em português"],
+    whatsappMessage: (plan: string) => `Olá, tenho interesse no plano ${plan} da Ramppy`,
+    plans: [
+      {
+        name: "Pro",
+        subtitle: "Até 10 vendedores",
+        monthlyPrice: "1.200",
+        yearlyPrice: "960",
+        features: ["Até 10 vendedores", "Simulações de roleplay", "Avaliação SPIN completa", "Análise de Meet automática", "Copiloto Nicole IA", "App Desktop"],
+        cta: "Começar agora",
+        highlighted: false,
+      },
+      {
+        name: "Team",
+        subtitle: "Até 20 vendedores",
+        monthlyPrice: "1.999",
+        yearlyPrice: "1.599",
+        features: ["Até 20 vendedores", "Tudo do Pro", "Dashboard de gestao", "Histórico completo", "PDI personalizado + desafios", "Personas customizadas"],
+        cta: "Começar agora",
+        highlighted: false,
+      },
+      {
+        name: "Business",
+        subtitle: "De 20 a 50 vendedores",
+        monthlyPrice: "4.999",
+        yearlyPrice: "3.999",
+        features: ["20 a 50 vendedores", "Tudo do Team", "Creditos extras sob demanda", "Objeções customizadas", "Onboarding dedicado", "Suporte prioritário"],
+        cta: "Começar agora",
+        highlighted: true,
+      },
+      {
+        name: "Enterprise",
+        subtitle: "+50 vendedores",
+        monthlyPrice: null,
+        yearlyPrice: null,
+        features: ["Creditos sob demanda", "+50 vendedores", "Tudo do Business", "API de integração", "SLA garantido", "Gestor de conta dedicado", "Treinamento personalizado"],
+        cta: "Falar com vendas",
+        highlighted: false,
+      },
+    ],
+  },
+  en: {
+    title: "Pricing",
+    monthly: "Monthly",
+    yearly: "Yearly",
+    billedYearly: "Billed annually",
+    custom: "Custom",
+    popular: "Popular",
+    perMonth: "/mo",
+    currency: "R$",
+    includes: "Includes:",
+    everythingFrom: (p: string) => `Everything in ${p}, plus:`,
+    everythingTeamPlus: "Everything in Team, plus:",
+    trust: ["No credit card", "Cancel anytime", "Portuguese-speaking support"],
+    whatsappMessage: (plan: string) => `Hi, I'm interested in the ${plan} plan at Ramppy`,
+    plans: [
+      {
+        name: "Pro",
+        subtitle: "Up to 10 reps",
+        monthlyPrice: "1,200",
+        yearlyPrice: "960",
+        features: ["Up to 10 reps", "Roleplay simulations", "Full SPIN evaluation", "Automatic Meet analysis", "Nicole AI Copilot", "Desktop App"],
+        cta: "Get started",
+        highlighted: false,
+      },
+      {
+        name: "Team",
+        subtitle: "Up to 20 reps",
+        monthlyPrice: "1,999",
+        yearlyPrice: "1,599",
+        features: ["Up to 20 reps", "Everything in Pro", "Management dashboard", "Full history", "Custom PDI + challenges", "Custom personas"],
+        cta: "Get started",
+        highlighted: false,
+      },
+      {
+        name: "Business",
+        subtitle: "From 20 to 50 reps",
+        monthlyPrice: "4,999",
+        yearlyPrice: "3,999",
+        features: ["20 to 50 reps", "Everything in Team", "Extra credits on demand", "Custom objections", "Dedicated onboarding", "Priority support"],
+        cta: "Get started",
+        highlighted: true,
+      },
+      {
+        name: "Enterprise",
+        subtitle: "50+ reps",
+        monthlyPrice: null,
+        yearlyPrice: null,
+        features: ["Credits on demand", "50+ reps", "Everything in Business", "Integration API", "Guaranteed SLA", "Dedicated account manager", "Custom training"],
+        cta: "Talk to sales",
+        highlighted: false,
+      },
+    ],
+  },
+};
+
 export default function Pricing() {
+  const locale = useLocale();
+  const t = plansByLocale[locale];
+  const plans = t.plans;
   const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
 
   return (
@@ -111,7 +159,7 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-5">
           <h2 className="font-[var(--font-fustat)] text-2xl md:text-[36px] lg:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white">
-            Pricing
+            {t.title}
           </h2>
         </div>
 
@@ -126,7 +174,7 @@ export default function Pricing() {
                   : "text-white/50 hover:text-white/70"
               }`}
             >
-              Mensal
+              {t.monthly}
             </button>
             <button
               onClick={() => setBilling("yearly")}
@@ -136,7 +184,7 @@ export default function Pricing() {
                   : "text-white/50 hover:text-white/70"
               }`}
             >
-              Anual
+              {t.yearly}
               <span className="ml-2 text-[11px] text-emerald-400 font-semibold">-20%</span>
             </button>
           </div>
@@ -155,14 +203,14 @@ export default function Pricing() {
             >
               {plan.highlighted && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary-green text-white text-xs font-bold px-5 py-1.5 rounded-full tracking-wide uppercase">
-                  Popular
+                  {t.popular}
                 </div>
               )}
 
               <div className={`p-5 md:p-7 flex flex-col ${plan.highlighted ? "pt-8 md:pt-10" : ""}`}>
                 {/* Icon */}
                 <div className="mb-5 opacity-80">
-                  {plan.icon}
+                  {planIcons[idx]}
                 </div>
 
                 {/* Plan Name */}
@@ -178,27 +226,27 @@ export default function Pricing() {
                   {plan.monthlyPrice ? (
                     <>
                       <span className="font-[var(--font-fustat)] text-2xl md:text-[32px] lg:text-[36px] font-bold text-white leading-none">
-                        R${billing === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
+                        {t.currency}{billing === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
-                      <span className="text-sm text-white/40 ml-1">/mes</span>
+                      <span className="text-sm text-white/40 ml-1">{t.perMonth}</span>
                     </>
                   ) : (
                     <span className="font-[var(--font-fustat)] text-xl md:text-[28px] lg:text-[32px] font-bold text-white leading-none">
-                      Personalizado
+                      {t.custom}
                     </span>
                   )}
                 </div>
                 <div className="h-5">
                   {plan.monthlyPrice && billing === "yearly" && (
                     <p className="text-xs text-emerald-400/70">
-                      Cobrado anualmente
+                      {t.billedYearly}
                     </p>
                   )}
                 </div>
 
                 {/* CTA */}
                 <a
-                  href={`https://wa.me/5531995525157?text=${encodeURIComponent(`Olá, tenho interesse no plano ${plan.name} da Ramppy`)}`}
+                  href={`https://wa.me/5531995525157?text=${encodeURIComponent(t.whatsappMessage(plan.name))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-auto font-[var(--font-fustat)] w-full text-center text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 block ${
@@ -217,7 +265,7 @@ export default function Pricing() {
               {/* Features */}
               <div className="p-5 md:p-7 pt-4 md:pt-6 flex-1">
                 <p className="text-xs font-medium text-white/30 uppercase tracking-wider mb-4">
-                  {plan.highlighted ? "Tudo do Team, mais:" : idx === 0 ? "Inclui:" : `Tudo do ${plans[idx - 1]?.name}, mais:`}
+                  {plan.highlighted ? t.everythingTeamPlus : idx === 0 ? t.includes : t.everythingFrom(plans[idx - 1]?.name ?? "")}
                 </p>
                 <ul className="space-y-3">
                   {plan.features.map((feature, fidx) => (
@@ -246,18 +294,12 @@ export default function Pricing() {
 
         {/* Trust note */}
         <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 md:mt-14 text-xs md:text-sm text-white/35">
-          <span className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-            Sem cartão de crédito
-          </span>
-          <span className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-            Cancele quando quiser
-          </span>
-          <span className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-            Suporte em português
-          </span>
+          {t.trust.map((item) => (
+            <span key={item} className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
+              {item}
+            </span>
+          ))}
         </div>
       </div>
     </SectionWrapper>
