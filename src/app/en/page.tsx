@@ -13,7 +13,7 @@ import { buildMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   locale: "en",
   path: "/",
-  title: "Ramppy — AI Sales Training Platform",
+  title: "Ramppy — AI Sales Ecosystem",
   description:
     "Train sales with AI, analyze meetings automatically, and get real-time coaching. The complete platform for sales teams — roleplay, SPIN Selling evaluation and management.",
 });

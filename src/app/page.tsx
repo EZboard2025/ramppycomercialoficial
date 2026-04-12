@@ -16,7 +16,7 @@ import { buildMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   locale: "pt",
   path: "/",
-  title: "Ramppy — Plataforma de vendas com IA",
+  title: "Ramppy — Ecossistema de vendas com IA",
   description:
     "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real. A plataforma completa para times de vendas — simulações, avaliação SPIN e gestão.",
 });

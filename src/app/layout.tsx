@@ -5,7 +5,7 @@ import LangAttr from "@/components/LangAttr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Ramppy — Plataforma de vendas com IA",
+  title: "Ramppy — Ecossistema de vendas com IA",
   description:
     "Treine vendas com IA, analise reuniões automaticamente, gerencie WhatsApp e receba coaching em tempo real. A plataforma completa para times de vendas.",
   applicationName: "Ramppy",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     apple: "/images/favicon.png",
   },
   openGraph: {
-    title: "Ramppy — Plataforma de vendas com IA",
+    title: "Ramppy — Ecossistema de vendas com IA",
     description:
       "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
     url: SITE_URL,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramppy — Plataforma de vendas com IA",
+    title: "Ramppy — Ecossistema de vendas com IA",
     description:
       "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
     images: [DEFAULT_OG_IMAGE],

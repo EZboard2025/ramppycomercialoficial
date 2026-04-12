@@ -129,6 +129,61 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => closeMenu(), 200);
   }
 
+  // Jelly-on-scroll-stop: only wobbles when the user stops scrolling, using the last recorded velocity
+  const [jellyTransform, setJellyTransform] = useState("translateX(-50%)");
+  const [jellyTransition, setJellyTransition] = useState(true);
+  useEffect(() => {
+    let lastY = typeof window !== "undefined" ? window.scrollY : 0;
+    let lastT = performance.now();
+    let peakV = 0;
+    let scrolling = false;
+    let stopTimer: ReturnType<typeof setTimeout> | null = null;
+    let restTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function onScroll() {
+      const now = performance.now();
+      const dt = Math.max(1, now - lastT);
+      const dy = window.scrollY - lastY;
+      const velocity = dy / dt; // px/ms
+      lastY = window.scrollY;
+      lastT = now;
+      if (Math.abs(velocity) > Math.abs(peakV)) peakV = velocity;
+
+      if (!scrolling) {
+        scrolling = true;
+        // Snap any ongoing bounce back to rest without transition so the bar is still during scroll
+        setJellyTransition(false);
+        setJellyTransform("translateX(-50%)");
+        if (restTimer) clearTimeout(restTimer);
+      }
+
+      if (stopTimer) clearTimeout(stopTimer);
+      stopTimer = setTimeout(() => {
+        scrolling = false;
+        const v = Math.max(-4, Math.min(4, peakV));
+        const dragY = -v * 6;
+        const stretchY = 1 + Math.abs(v) * 0.06;
+        const squashX = 1 - Math.abs(v) * 0.03;
+        const jelly = `translateX(-50%) translateY(${dragY.toFixed(2)}px) scaleX(${squashX.toFixed(3)}) scaleY(${stretchY.toFixed(3)})`;
+        // Re-enable transition first, then apply jelly on next frame so the spring animates
+        setJellyTransition(true);
+        requestAnimationFrame(() => {
+          setJellyTransform(jelly);
+          if (restTimer) clearTimeout(restTimer);
+          restTimer = setTimeout(() => setJellyTransform("translateX(-50%)"), 60);
+        });
+        peakV = 0;
+      }, 90);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (stopTimer) clearTimeout(stopTimer);
+      if (restTimer) clearTimeout(restTimer);
+    };
+  }, []);
+
   const isAnyOpen = openMenu !== null;
   const homeHref = localizeHref(locale, "/");
   const plansHref = localizeHref(locale, "/#planos");
@@ -168,7 +223,16 @@ export default function Navbar() {
       </svg>
 
       {/* Desktop Dynamic Island */}
-      <div className="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50" ref={islandRef}>
+      <div
+        className="hidden lg:block fixed top-5 left-1/2 z-50"
+        ref={islandRef}
+        style={{
+          transform: jellyTransform,
+          transformOrigin: "50% 50%",
+          transition: jellyTransition ? "transform 320ms cubic-bezier(.34,1.56,.64,1)" : "none",
+          willChange: "transform",
+        }}
+      >
         {/* Island container */}
         <div
           className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${
