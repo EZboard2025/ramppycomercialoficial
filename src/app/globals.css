@@ -242,6 +242,11 @@
   animation: spin-slow 3s linear infinite;
 }
 
+@keyframes snake-trace {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -1; }
+}
+
 .glow-ring-bg {
   background: conic-gradient(
     from 0deg,
