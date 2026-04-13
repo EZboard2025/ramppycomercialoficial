@@ -64,6 +64,35 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
   },
 };
 
+const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
+  product: {
+    title: "Producto",
+    items: [
+      { label: "Simulación", description: "Entrena a tu equipo con IA", href: "/#funcionalidades" },
+      { label: "Análisis Meet", description: "Evalúa reuniones reales", href: "/como-funciona#passo-04" },
+      { label: "Copiloto Nicole", description: "Asistente de ventas con IA", href: "/#nicole" },
+      { label: "Gestión", description: "Lidera tu equipo", href: "/como-funciona#passo-06" },
+    ],
+  },
+  resources: {
+    title: "Recursos",
+    items: [
+      { label: "Cómo funciona", description: "Entiende el flujo completo", href: "/como-funciona" },
+      { label: "Metodología SPIN", description: "Framework de ventas", href: "/metodologia-spin" },
+      { label: "Blog", description: "Artículos y novedades", href: "/blog" },
+      { label: "Centro de ayuda", description: "Preguntas frecuentes", href: "/ajuda" },
+    ],
+  },
+  company: {
+    title: "Empresa",
+    items: [
+      { label: "Sobre nosotros", description: "Conoce Ramppy", href: "/sobre" },
+      { label: "Contacto", description: "Habla con nosotros", href: "/contato" },
+      { label: "Partners", description: "Programa de partners", href: "/parceiros" },
+    ],
+  },
+};
+
 const labels = {
   pt: {
     plans: "Planos",
@@ -73,13 +102,17 @@ const labels = {
     plans: "Plans",
     cta: "Book free trial",
   },
+  es: {
+    plans: "Planes",
+    cta: "Prueba gratis",
+  },
 };
 
 const menuOrder: MenuKey[] = ["product", "resources", "company"];
 
 export default function Navbar() {
   const locale = useLocale();
-  const menuData = locale === "en" ? menuDataEn : menuDataPt;
+  const menuData = locale === "en" ? menuDataEn : locale === "es" ? menuDataEs : menuDataPt;
   const lbl = labels[locale];
 
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
@@ -129,61 +162,6 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => closeMenu(), 200);
   }
 
-  // Jelly-on-scroll-stop: only wobbles when the user stops scrolling, using the last recorded velocity
-  const [jellyTransform, setJellyTransform] = useState("translateX(-50%)");
-  const [jellyTransition, setJellyTransition] = useState(true);
-  useEffect(() => {
-    let lastY = typeof window !== "undefined" ? window.scrollY : 0;
-    let lastT = performance.now();
-    let peakV = 0;
-    let scrolling = false;
-    let stopTimer: ReturnType<typeof setTimeout> | null = null;
-    let restTimer: ReturnType<typeof setTimeout> | null = null;
-
-    function onScroll() {
-      const now = performance.now();
-      const dt = Math.max(1, now - lastT);
-      const dy = window.scrollY - lastY;
-      const velocity = dy / dt; // px/ms
-      lastY = window.scrollY;
-      lastT = now;
-      if (Math.abs(velocity) > Math.abs(peakV)) peakV = velocity;
-
-      if (!scrolling) {
-        scrolling = true;
-        // Snap any ongoing bounce back to rest without transition so the bar is still during scroll
-        setJellyTransition(false);
-        setJellyTransform("translateX(-50%)");
-        if (restTimer) clearTimeout(restTimer);
-      }
-
-      if (stopTimer) clearTimeout(stopTimer);
-      stopTimer = setTimeout(() => {
-        scrolling = false;
-        const v = Math.max(-4, Math.min(4, peakV));
-        const dragY = -v * 6;
-        const stretchY = 1 + Math.abs(v) * 0.06;
-        const squashX = 1 - Math.abs(v) * 0.03;
-        const jelly = `translateX(-50%) translateY(${dragY.toFixed(2)}px) scaleX(${squashX.toFixed(3)}) scaleY(${stretchY.toFixed(3)})`;
-        // Re-enable transition first, then apply jelly on next frame so the spring animates
-        setJellyTransition(true);
-        requestAnimationFrame(() => {
-          setJellyTransform(jelly);
-          if (restTimer) clearTimeout(restTimer);
-          restTimer = setTimeout(() => setJellyTransform("translateX(-50%)"), 60);
-        });
-        peakV = 0;
-      }, 90);
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (stopTimer) clearTimeout(stopTimer);
-      if (restTimer) clearTimeout(restTimer);
-    };
-  }, []);
-
   const isAnyOpen = openMenu !== null;
   const homeHref = localizeHref(locale, "/");
   const plansHref = localizeHref(locale, "/#planos");
@@ -223,16 +201,7 @@ export default function Navbar() {
       </svg>
 
       {/* Desktop Dynamic Island */}
-      <div
-        className="hidden lg:block fixed top-5 left-1/2 z-50"
-        ref={islandRef}
-        style={{
-          transform: jellyTransform,
-          transformOrigin: "50% 50%",
-          transition: jellyTransition ? "transform 320ms cubic-bezier(.34,1.56,.64,1)" : "none",
-          willChange: "transform",
-        }}
-      >
+      <div className="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50" ref={islandRef}>
         {/* Island container */}
         <div
           className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${

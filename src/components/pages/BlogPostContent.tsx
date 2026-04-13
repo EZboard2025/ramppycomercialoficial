@@ -26,6 +26,12 @@ const strings = {
     viewOnLinkedin: "View on LinkedIn",
     viewOnLinkedinInline: "View on LinkedIn ↗",
   },
+  es: {
+    backToBlog: "Volver al blog",
+    readTimeSuffix: "de lectura",
+    viewOnLinkedin: "Ver en LinkedIn",
+    viewOnLinkedinInline: "Ver en LinkedIn ↗",
+  },
 };
 
 type Post = {

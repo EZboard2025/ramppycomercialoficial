@@ -12,10 +12,16 @@ const statsByLocale = {
     { target: 33, suffix: "%", label: "Menos tempo de onboarding" },
   ],
   en: [
-    { target: 50, suffix: "%", label: "Lower ramp-up time" },
+    { target: 50, suffix: "%", label: "Shorter ramp-up time" },
     { target: 46, suffix: "%", label: "Higher sales conversion" },
     { target: 35, suffix: "%", label: "More meetings booked" },
     { target: 33, suffix: "%", label: "Faster onboarding" },
+  ],
+  es: [
+    { target: 50, suffix: "%", label: "Menor tiempo de ramp-up" },
+    { target: 46, suffix: "%", label: "Mayor conversión en ventas" },
+    { target: 35, suffix: "%", label: "Más reuniones agendadas" },
+    { target: 33, suffix: "%", label: "Onboarding más rápido" },
   ],
 };
 

@@ -28,6 +28,18 @@ const strings = {
     whatsappDescription: "We reply in minutes. Click to start a conversation.",
     whatsappMessage: "Hi%2C%20I%27d%20like%20to%20talk%20to%20Ramppy",
   },
+  es: {
+    badge: "Contacto",
+    heroTitle: "Habla con nosotros",
+    heroDescription:
+      "¿Quieres saber más sobre Ramppy, agendar una demo o resolver una duda? Elige el mejor canal y te respondemos rápido.",
+    teamTitle: "Nuestro equipo",
+    coFounder: "Co-fundador",
+    linkedin: "LinkedIn",
+    whatsappTitle: "Habla por WhatsApp",
+    whatsappDescription: "Respondemos en minutos. Haz clic para iniciar una conversación.",
+    whatsappMessage: "Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20Ramppy",
+  },
 };
 
 const team = [

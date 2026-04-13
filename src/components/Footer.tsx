@@ -63,6 +63,36 @@ const strings = {
       { label: "Security", href: "/legal#seguranca" },
     ],
   },
+  es: {
+    tagline: "El ecosistema completo de ventas con IA. Entrena, analiza y haz crecer tu equipo comercial.",
+    product: "Producto",
+    resources: "Recursos",
+    company: "Empresa",
+    legal: "Legal",
+    copyright: "© 2026 Ramppy. Todos los derechos reservados.",
+    productItems: [
+      { label: "Simulación", href: "/#funcionalidades" },
+      { label: "Análisis Meet", href: "/como-funciona#passo-04" },
+      { label: "Copiloto Nicole", href: "/#nicole" },
+      { label: "Gestión", href: "/como-funciona#passo-06" },
+    ],
+    resourceItems: [
+      { label: "Cómo funciona", href: "/como-funciona" },
+      { label: "Metodología SPIN", href: "/metodologia-spin" },
+      { label: "Blog", href: "/blog" },
+      { label: "Centro de ayuda", href: "/ajuda" },
+    ],
+    companyItems: [
+      { label: "Sobre nosotros", href: "/sobre" },
+      { label: "Contacto", href: "/contato" },
+      { label: "Partners", href: "/parceiros" },
+    ],
+    legalItems: [
+      { label: "Términos de uso", href: "/legal#termos" },
+      { label: "Privacidad", href: "/legal#privacidade" },
+      { label: "Seguridad", href: "/legal#seguranca" },
+    ],
+  },
 };
 
 export default function Footer() {
@@ -172,17 +202,38 @@ export default function Footer() {
             <p className="text-sm text-text-secondary/60">
               {t.copyright}
             </p>
-            <a
-              href={localizeHref(locale === "pt" ? "en" : "pt", "/")}
-              className="font-[var(--font-fustat)] text-xs font-bold tracking-wider text-text-secondary hover:text-primary-green border border-border-light rounded-full px-3 py-1.5 transition-colors"
-              aria-label={locale === "pt" ? "Switch to English" : "Mudar para Português"}
-            >
-              {locale === "pt" ? "EN" : "PT"}
-            </a>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
       <div className="content-side rounded-l-lg" />
     </footer>
+  );
+}
+
+function LanguageSwitcher() {
+  const locale = useLocale();
+  const options: { code: "pt" | "en" | "es"; label: string }[] = [
+    { code: "pt", label: "PT" },
+    { code: "en", label: "EN" },
+    { code: "es", label: "ES" },
+  ];
+  return (
+    <div className="inline-flex items-center gap-0.5 border border-border-light rounded-full p-0.5">
+      {options.map((opt) => (
+        <a
+          key={opt.code}
+          href={localizeHref(opt.code, "/")}
+          aria-current={locale === opt.code ? "page" : undefined}
+          className={`font-[var(--font-fustat)] text-xs font-bold tracking-wider px-3 py-1 rounded-full transition-colors ${
+            locale === opt.code
+              ? "bg-primary-green text-white"
+              : "text-text-secondary hover:text-primary-green"
+          }`}
+        >
+          {opt.label}
+        </a>
+      ))}
+    </div>
   );
 }

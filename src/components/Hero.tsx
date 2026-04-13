@@ -96,6 +96,25 @@ const strings = {
     ctaPrimary: "Comece grátis",
     ctaSecondary: "Ver como funciona",
   },
+  es: {
+    socialProof: "Aumenta hasta un 46% tus conversiones",
+    h1MobileVariants: [
+      ["Entrena mejor.", "Vende ", "más."],
+      ["Entrena con cabeza.", "Vende ", "mejor."],
+      ["Más reuniones.", "Más ", "ventas."],
+    ] as const,
+    h1DesktopVariants: [
+      ["Acaba con la ", "ineficiencia", " de tu equipo de ", "ventas."],
+      ["Transforma el ", "rendimiento", " de tu equipo ", "comercial."],
+      ["Multiplica las ", "conversiones", " de tu equipo de ", "ventas."],
+      ["Desbloquea el ", "potencial", " de tu equipo ", "comercial."],
+    ] as const,
+    subtitleMobile: "Simulaciones, evaluación y gestión de tu equipo con inteligencia artificial.",
+    subtitleDesktop:
+      "El ecosistema completo de ventas con IA: entrenamiento, simulaciones, evaluación y gestión de tu equipo potenciados con inteligencia artificial.",
+    ctaPrimary: "Empieza gratis",
+    ctaSecondary: "Ver cómo funciona",
+  },
   en: {
     socialProof: "Boost your conversions by up to 46%",
     h1MobileVariants: [

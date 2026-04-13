@@ -262,6 +262,135 @@ const strings = {
     contactTitle: "Questions about terms or privacy?",
     contactBody: "Get in touch with our team.",
   },
+  es: {
+    badge: "Legal",
+    heroTitle: "Términos y Privacidad",
+    lastUpdated: "Última actualización: abril de 2026",
+
+    termsTitle: "Términos de Uso",
+    terms: [
+      {
+        title: "1. Aceptación de los términos",
+        body: "Al acceder y utilizar la plataforma Ramppy, usted acepta estos Términos de Uso. Si no está de acuerdo con alguna parte de estos términos, no utilice la plataforma. El uso continuado de la plataforma constituye la aceptación de cualquier modificación a estos términos.",
+      },
+      {
+        title: "2. Descripción del servicio",
+        body: "Ramppy es una plataforma SaaS de entrenamiento y asistencia en ventas con inteligencia artificial. El servicio incluye simulaciones de ventas con IA, análisis automático de reuniones, asistente virtual (Nicole IA) y un panel de gestión para equipos comerciales.",
+      },
+      {
+        title: "3. Cuenta y acceso",
+        body: "El acceso a la plataforma se otorga por invitación del responsable de la empresa contratante. Cada usuario es responsable de mantener la confidencialidad de sus credenciales de acceso. Debe notificar a Ramppy de inmediato sobre cualquier uso no autorizado de su cuenta.",
+      },
+    ],
+    ipTitle: "4. Propiedad intelectual",
+    ipBody:
+      "Todo el contenido de la plataforma Ramppy — incluyendo, entre otros, el software, algoritmos, interfaz, diseño, textos, metodologías de evaluación, modelos de IA y documentación — es propiedad exclusiva de Ramppy y está protegido por las leyes de propiedad intelectual.",
+    ipProhibitionsLabel: "Prohibiciones absolutas:",
+    ipProhibitions: [
+      "Copiar, reproducir, distribuir o crear obras derivadas de cualquier parte de la plataforma",
+      "Realizar ingeniería inversa, descompilar o desensamblar el software",
+      "Compartir, filtrar o hacer público cualquier contenido, dato, evaluación o funcionalidad de la plataforma",
+      "Utilizar datos de la plataforma para entrenar modelos de IA externos",
+      "Capturar pantallas, grabar o exportar contenido para uso fuera de la plataforma sin autorización expresa",
+    ],
+    termsAfter: [
+      {
+        title: "5. Uso aceptable",
+        body: "La plataforma debe utilizarse exclusivamente con fines de entrenamiento y gestión de equipos de ventas. Está prohibido usar la plataforma con fines ilegales, abusivos o que violen los derechos de terceros. Ramppy se reserva el derecho de suspender o cancelar cuentas que infrinjan estos términos.",
+      },
+      {
+        title: "6. Planes y pago",
+        body: "Los planes y precios están disponibles en la página de planes del sitio. El pago se realiza de forma mensual o anual, según el plan elegido. No hay permanencia — la cancelación puede hacerse en cualquier momento directamente desde la plataforma.",
+      },
+      {
+        title: "7. Limitación de responsabilidad",
+        body: "Ramppy presta el servicio \u201Ctal cual\u201D. No garantizamos que la plataforma esté disponible de forma ininterrumpida o libre de errores. Las evaluaciones generadas por IA son herramientas de apoyo y no sustituyen el criterio profesional humano. Ramppy no se responsabiliza por decisiones tomadas basándose exclusivamente en los análisis de la plataforma.",
+      },
+      {
+        title: "8. Rescisión",
+        body: "Ramppy podrá suspender o cancelar su acceso a la plataforma en cualquier momento, con o sin causa, previa notificación. En caso de incumplimiento de estos términos, especialmente de las cláusulas de propiedad intelectual, la cancelación será inmediata y sin previo aviso.",
+      },
+    ],
+
+    privacyTitle: "Política de Privacidad",
+    dataTitle: "1. Datos que recopilamos",
+    dataPersonalLabel: "Datos personales:",
+    dataPersonal: "Nombre, correo electrónico e información de perfil proporcionados en el registro.",
+    dataUsageLabel: "Datos de uso:",
+    dataUsage:
+      "Transcripciones de simulaciones y reuniones analizadas, puntuaciones de evaluación SPIN e historial de actividad en la plataforma.",
+    dataIntegrationLabel: "Datos de integración:",
+    dataIntegration:
+      "Información de Google Calendar para la programación automática del bot de análisis de reuniones.",
+    dataImportantLabel: "Importante:",
+    dataImportant:
+      "No almacenamos audio ni video de las simulaciones ni de las reuniones. Solo se procesan y almacenan las transcripciones en texto.",
+
+    useTitle: "2. Cómo usamos sus datos",
+    useItems: [
+      "Generar evaluaciones SPIN Selling de simulaciones y reuniones",
+      "Personalizar la experiencia de entrenamiento y coaching a través de Nicole IA",
+      "Proporcionar métricas e informes de rendimiento al responsable del equipo",
+      "Mejorar la calidad de los modelos de evaluación de la plataforma",
+      "Enviar comunicaciones sobre el servicio y actualizaciones de la plataforma",
+    ],
+
+    shareTitle: "3. Con quién compartimos",
+    shareIntro:
+      "Sus datos son procesados por los siguientes proveedores tecnológicos, estrictamente para el funcionamiento de la plataforma:",
+    shareItems: [
+      { name: "OpenAI", desc: "Procesamiento de lenguaje natural para evaluaciones y asistente de IA" },
+      { name: "Recall AI", desc: "Transcripción automática de reuniones" },
+      { name: "Supabase", desc: "Base de datos y autenticación" },
+      { name: "Hostinger", desc: "Alojamiento de la aplicación" },
+    ],
+    shareOutro:
+      "No vendemos, alquilamos ni compartimos sus datos personales con terceros para fines de marketing o publicidad.",
+
+    rightsTitle: "4. Sus derechos (LGPD)",
+    rightsIntro:
+      "De acuerdo con la Ley General de Protección de Datos de Brasil (Ley nº 13.709/2018), usted tiene derecho a:",
+    rightsItems: [
+      "Acceder a sus datos personales almacenados en la plataforma",
+      "Solicitar la corrección de datos incorrectos o desactualizados",
+      "Solicitar la eliminación de sus datos personales",
+      "Revocar el consentimiento para el tratamiento de datos",
+      "Solicitar la portabilidad de sus datos",
+    ],
+    rightsContactBefore: "Para ejercer cualquiera de estos derechos, contáctenos al correo ",
+    rightsContactAfter: ".",
+
+    retentionTitle: "5. Retención de datos",
+    retentionBody:
+      "Sus datos se conservan mientras su cuenta esté activa. Tras la cancelación de la suscripción, los datos se retienen durante 30 días para una posible reactivación. Pasado ese período, los datos se eliminan de forma permanente, salvo cuando exista una obligación legal de conservación.",
+
+    securityTitle: "Seguridad",
+    securityItems: [
+      {
+        title: "Sin almacenamiento de audio/video",
+        desc: "No almacenamos grabaciones de audio ni video. Solo se procesan y almacenan de forma segura las transcripciones en texto.",
+      },
+      {
+        title: "Base de datos protegida",
+        desc: "Utilizamos Supabase con Row Level Security (RLS), garantizando que cada empresa acceda únicamente a sus propios datos, con aislamiento completo entre organizaciones.",
+      },
+      {
+        title: "Comunicación cifrada",
+        desc: "Todas las comunicaciones entre su navegador y nuestros servidores están protegidas mediante HTTPS/TLS.",
+      },
+      {
+        title: "Autenticación segura",
+        desc: "Inicio de sesión mediante Google OAuth o credenciales con hash seguro. Soporte para autenticación de dos factores.",
+      },
+      {
+        title: "Código versionado",
+        desc: "Todo el código fuente está versionado en GitHub con acceso restringido al equipo de desarrollo.",
+      },
+    ],
+
+    contactTitle: "¿Dudas sobre términos o privacidad?",
+    contactBody: "Póngase en contacto con nuestro equipo.",
+  },
 } as const;
 
 export default function LegalContent() {
@@ -368,7 +497,7 @@ export default function LegalContent() {
                 </p>
                 <ul className="space-y-2 text-text-secondary">
                   {t.shareItems.map((s) => (
-                    <li key={s.name}>• <strong className="text-teal-dark">{s.name}</strong>:{s.desc}</li>
+                    <li key={s.name}>• <strong className="text-teal-dark">{s.name}</strong>: {s.desc}</li>
                   ))}
                 </ul>
                 <p className="text-text-secondary leading-relaxed mt-3">

@@ -22,6 +22,13 @@ const strings = {
       "Product updates, partnerships, events, and content about sales and AI.",
     latestTitle: "Latest posts",
   },
+  es: {
+    heroBadge: "Blog",
+    heroTitle: "Novedades de Ramppy",
+    heroSubtitle:
+      "Actualizaciones del producto, partners, eventos y contenido sobre ventas e IA.",
+    latestTitle: "Últimas publicaciones",
+  },
 };
 
 export default function BlogListContent() {

@@ -20,7 +20,7 @@ export type AjudaLocaleStrings = {
   sections: FaqCategory[];
 };
 
-export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings } = {
+export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es: AjudaLocaleStrings } = {
   pt: {
     heroBadge: "Ajuda",
     heroTitle: "Central de Ajuda",
@@ -192,6 +192,94 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings } = 
             question: "How does the credit system work?",
             answer:
               "Each simulation or meeting analysis consumes credits. The amount available depends on your plan. Extra credits can be purchased on demand.",
+          },
+        ],
+      },
+    ],
+  },
+  es: {
+    heroBadge: "Ayuda",
+    heroTitle: "Centro de Ayuda",
+    heroSubtitle: "Encuentra respuestas a las preguntas más frecuentes sobre Ramppy.",
+    faqHeading: "Preguntas frecuentes",
+    supportTitle: "¿No encontraste lo que buscabas?",
+    supportSubtitle: "Nuestro equipo de soporte está listo para ayudarte.",
+    supportCta: "Hablar con soporte",
+    whatsappHref:
+      "https://wa.me/5531995525157?text=Hola%2C%20necesito%20ayuda%20con%20Ramppy",
+    sections: [
+      {
+        title: "Primeros pasos",
+        items: [
+          {
+            question: "¿Necesito instalar algún software?",
+            answer:
+              "Ramppy funciona 100% en el navegador. Para el análisis de reuniones, solo conecta tu Google Calendar. También puedes descargar la versión beta de la app de escritorio para funcionalidades adicionales.",
+          },
+          {
+            question: "¿Cuánto tarda la configuración?",
+            answer:
+              "Podemos configurar Ramppy para tu empresa en una sola reunión de implementación. Nuestro equipo se encarga de todo contigo y ofrece soporte continuo después de la implementación.",
+          },
+        ],
+      },
+      {
+        title: "Simulaciones",
+        items: [
+          {
+            question: "¿Cómo funciona la simulación con IA?",
+            answer:
+              "Configuras el escenario (persona, objeciones, contexto) e inicias una videollamada con un cliente virtual. La IA responde en tiempo real por voz.",
+          },
+          {
+            question: "¿Puedo personalizar los escenarios?",
+            answer:
+              "Sí. Defines edad, temperamento, objeciones específicas y contexto de venta. Cada simulación puede ser diferente.",
+          },
+          {
+            question: "¿Cómo se calcula la nota SPIN?",
+            answer:
+              "La IA analiza la transcripción y evalúa la calidad de las preguntas en los 4 pilares: Situación, Problema, Implicación y Necesidad de Solución. Cada pilar recibe una nota de 0 a 10.",
+          },
+        ],
+      },
+      {
+        title: "Análisis de reuniones",
+        items: [
+          {
+            question: "¿Cómo conecto Google Meet?",
+            answer:
+              "En la plataforma, conecta tu cuenta de Google en 'Mi Perfil' y luego accede a 'Calendario'. El bot entrará automáticamente en las reuniones agendadas.",
+          },
+          {
+            question: "¿El bot graba la reunión?",
+            answer:
+              "El bot transcribe la reunión en tiempo real. La transcripción se usa para generar la evaluación SPIN. El audio no se almacena.",
+          },
+          {
+            question: "¿Quién tiene acceso al análisis?",
+            answer:
+              "El vendedor y el manager del equipo tienen acceso. Los permisos pueden configurarse por perfil.",
+          },
+        ],
+      },
+      {
+        title: "Planes y facturación",
+        items: [
+          {
+            question: "¿Puedo cancelar en cualquier momento?",
+            answer:
+              "Sí. No hay compromisos a largo plazo. Puedes cancelar directamente en la plataforma en cualquier momento.",
+          },
+          {
+            question: "¿Hay período de prueba?",
+            answer:
+              "Sí. Todos los planes incluyen un período de prueba gratuito para que experimentes la plataforma.",
+          },
+          {
+            question: "¿Cómo funciona el sistema de créditos?",
+            answer:
+              "Cada simulación o análisis de reunión consume créditos. La cantidad disponible depende de tu plan. Los créditos extra pueden adquirirse bajo demanda.",
           },
         ],
       },

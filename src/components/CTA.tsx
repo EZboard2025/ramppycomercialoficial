@@ -18,6 +18,13 @@ const strings = {
     cta: "Start free now",
     whatsappMessage: "Hi, I want to start using Ramppy",
   },
+  es: {
+    titleA: "¿Listo para transformar tus ",
+    titleB: "ventas?",
+    subtitle: "Empieza gratis hoy y ve resultados en la primera semana. Sin configuración compleja, sin tarjeta de crédito.",
+    cta: "Empezar gratis ahora",
+    whatsappMessage: "Hola, quiero empezar a usar Ramppy",
+  },
 };
 
 export default function CTA() {

@@ -32,6 +32,34 @@ const strings = {
     meetBody2:
       "O gestor acompanha o desempenho real de cada vendedor em negociações de verdade. Identifique padrões, compare evolução e saiba exatamente onde cada um precisa melhorar.",
   },
+  es: {
+    simBadge: "Simulación de ventas",
+    simTitleA: "Practica",
+    simTitleB: " antes de vender de verdad",
+    simBodyMobile: "Tu vendedor entrena con un cliente virtual por voz. Escenarios configurables, evaluación SPIN automática.",
+    simBodyDesktop:
+      "El vendedor practica conversaciones de ventas con un cliente virtual generado por inteligencia artificial. El escenario es configurable — edad, temperamento, perfil del comprador, objeciones específicas — y la conversación ocurre por voz, con transcripción automática.",
+    simBody2:
+      "Al final, una evaluación detallada basada en SPIN Selling clasifica el desempeño en múltiples indicadores: Situación, Problema, Implicación y Necesidad de Solución.",
+    nicoleBadge: "Nicole IA",
+    nicoleTitleA: "Tu asistente de ",
+    nicoleTitleB: "ventas",
+    nicoleTitleC: " personal",
+    nicoleBodyMobile: "Una IA que monitorea el desempeño, organiza la agenda y analiza las reuniones de tu equipo en tiempo real.",
+    nicoleBodyDesktop:
+      "Nicole es la asistente de IA de Ramppy. Monitorea el desempeño de cada vendedor, organiza la agenda, analiza reuniones y sugiere los próximos pasos, todo en tiempo real, directo en la plataforma.",
+    nicoleBody2:
+      "¿Necesitas saber cómo fue la última llamada? ¿Quieres comparar vendedores? ¿Necesitas un resumen del día? Solo pregunta. Nicole tiene contexto completo de tu equipo y responde al instante.",
+    meetBadge: "Análisis de reuniones",
+    meetTitleA: "Análisis de cada ",
+    meetTitleB: "reunión",
+    meetTitleC: " real",
+    meetBodyMobile: "Un bot entra en las reuniones de Meet, transcribe y evalúa con SPIN Selling. Sin instalar nada.",
+    meetBodyDesktop:
+      "Conecta tu Google Calendar y listo. Un bot entra automáticamente en cada reunión de Google Meet, transcribe todo y aplica la misma evaluación SPIN Selling usada en las simulaciones. Sin instalar nada, sin configurar nada.",
+    meetBody2:
+      "El manager monitorea el desempeño real de cada vendedor en negociaciones reales. Identifica patrones, compara la evolución y sabe exactamente en qué necesita mejorar cada uno.",
+  },
   en: {
     simBadge: "Sales simulation",
     simTitleA: "Practice",

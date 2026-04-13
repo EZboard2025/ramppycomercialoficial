@@ -115,7 +115,7 @@ const strings = {
       "To be the go-to platform for intelligent sales development in Latin America, where every rep has an AI assistant that learns from their reality and evolves with their practice.",
     valuesTitle: "Values",
     valuesText:
-      "Continuous learning. Radical personalization. Data-driven decisions. Simplicity in experience. Ethics and transparency. AI supports the rep, it never replaces them.",
+      "Continuous learning. Radical personalization. Data-driven decisions. Simplicity in experience. Ethics and transparency. AI supports the rep — it never replaces them.",
 
     principlesTitle: "What we believe in",
     principles: [
@@ -134,6 +134,72 @@ const strings = {
       {
         title: "Shared intelligence",
         desc: "What one rep learns benefits the whole team. The system turns successful messages into examples that improve suggestions for everyone.",
+      },
+    ],
+  },
+  es: {
+    heroBadge: "Sobre nosotros",
+    heroTitle: "Una idea de 52 horas que se hizo realidad",
+    heroSubtitle:
+      "Ramppy nació en un hackathon, sobrevivió a pasantías no remuneradas, fue aceptada en la mayor aceleradora de Minas Gerais y hoy transforma la forma en que las empresas capacitan a sus vendedores.",
+
+    story1Badge: "Cómo empezó",
+    story1Title: "52 horas para demostrar que la idea funcionaba",
+    story1P1:
+      "Todo comenzó en un hackathon en 2025. Teníamos 52 horas para crear una startup desde cero y presentarla ante un jurado. Quedamos en 2º lugar y ahí decidimos que la idea era demasiado buena para dejarla morir.",
+    story1P2:
+      "Para llevarla adelante, hicimos pasantías no remuneradas solo para aprender a programar. Cuando se abrieron las inscripciones para Growthway, la mayor aceleradora de startups de Minas Gerais, ni siquiera sabíamos si estábamos listos. Aplicamos de todos modos.",
+    story1ImgAlt: "Equipo GrowthWay primer batch 2025",
+
+    story2Badge: "El punto de inflexión",
+    story2Title: "Nos aceptaron. Y todo cambió.",
+    story2P1:
+      "Con la mentoría de Growthway y el apoyo de Newhack, logramos transformar aquella idea de hackathon en una plataforma real que resuelve de verdad la ineficiencia en la capacitación de vendedores.",
+    story2P2:
+      "Del hackathon al pitch en Google Brasil. De las pasantías no remuneradas a la aceleradora. Cada paso se construyó sobre la base de la persistencia.",
+    story2ImgAlt: "Pitch en Google Brasil",
+
+    foundersBadge: "Founders",
+    foundersTitle: "Quiénes están construyendo Ramppy",
+    coFounder: "Co-founder",
+
+    partnersBadge: "Primer Batch 2025",
+    partnersText:
+      "Fuimos seleccionados para Growthway, la mayor aceleradora de startups de Minas Gerais, en alianza con Newhack. Con mentoría de primer nivel y apoyo estratégico, estamos transformando la forma en que las empresas capacitan a sus vendedores.",
+
+    problemTitle: "El problema que resolvemos",
+    problemP1:
+      "El mercado de ventas en Brasil aún depende de capacitaciones puntuales, charlas motivacionales y seguimiento manual por parte de los gestores. Este modelo tiene baja escalabilidad, cero personalización y una desconexión total entre teoría y práctica.",
+    problemP2:
+      "Ramppy es la plataforma que conecta simulación con IA, análisis de reuniones reales, coaching automático y gestión de desempeño en un solo lugar. Cada interacción genera datos. Cada dato genera evolución.",
+
+    missionTitle: "Misión",
+    missionText:
+      "Democratizar el acceso a una capacitación comercial de alta calidad mediante la inteligencia artificial, formando vendedores de manera continua, personalizada y medible.",
+    visionTitle: "Visión",
+    visionText:
+      "Ser la plataforma de referencia en desarrollo comercial inteligente en América Latina, donde cada vendedor tenga un asistente de IA que aprenda de su realidad y evolucione con su práctica.",
+    valuesTitle: "Valores",
+    valuesText:
+      "Aprendizaje continuo. Personalización radical. Decisiones basadas en datos. Simplicidad en la experiencia. Ética y transparencia. La IA acompaña al vendedor, nunca lo reemplaza.",
+
+    principlesTitle: "En qué creemos",
+    principles: [
+      {
+        title: "La práctica vence a la teoría",
+        desc: "El desarrollo ocurre en la práctica diaria, no en eventos aislados. Cada simulación, cada llamada, cada conversación genera aprendizaje real.",
+      },
+      {
+        title: "Cada vendedor es único",
+        desc: "Rechazamos la capacitación genérica. La IA adapta contenido, desafíos y asistencia al contexto de cada persona y empresa.",
+      },
+      {
+        title: "Datos, no suposiciones",
+        desc: "Cada competencia se evalúa numéricamente, cada avance se rastrea y cada recomendación se fundamenta en datos concretos.",
+      },
+      {
+        title: "Inteligencia compartida",
+        desc: "Lo que aprende un vendedor beneficia a todo el equipo. El sistema convierte mensajes exitosos en ejemplos que mejoran las sugerencias para todos.",
       },
     ],
   },

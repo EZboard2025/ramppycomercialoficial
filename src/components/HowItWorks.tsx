@@ -88,6 +88,34 @@ const strings = {
       },
     ],
   },
+  es: {
+    badge: "Implementación",
+    titleA: "Lo implementamos ",
+    titleB: "contigo",
+    subtitle: "No estás solo. Nuestro equipo te acompaña desde el primer acceso hasta los primeros resultados.",
+    steps: [
+      {
+        number: "01",
+        title: "Reunión de diagnóstico",
+        description: "Entendemos la realidad actual de tu equipo: procesos, desafíos y objetivos. Todo para personalizar la plataforma a tu negocio.",
+      },
+      {
+        number: "02",
+        title: "Configuración asistida",
+        description: "Nuestro equipo configura personas, escenarios y objeciones junto a ti. Tu equipo empieza a entrenar con el contexto correcto desde el día uno.",
+      },
+      {
+        number: "03",
+        title: "Onboarding del equipo",
+        description: "Entrenamos a tus vendedores y gestores en la plataforma. Todos salen usándola desde el primer día.",
+      },
+      {
+        number: "04",
+        title: "Acompañamiento continuo",
+        description: "Nuestro equipo hace seguimiento de los resultados contigo, ajusta escenarios y se asegura de que la plataforma evolucione con tu equipo.",
+      },
+    ],
+  },
 };
 
 export default function HowItWorks() {

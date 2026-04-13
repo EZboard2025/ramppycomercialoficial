@@ -14,6 +14,7 @@ const categoryColors: Record<string, string> = {
 const strings = {
   pt: { readTimeSuffix: "de leitura" },
   en: { readTimeSuffix: "read" },
+  es: { readTimeSuffix: "de lectura" },
 };
 
 type Article = {

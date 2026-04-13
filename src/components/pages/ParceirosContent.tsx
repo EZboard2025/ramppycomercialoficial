@@ -70,7 +70,7 @@ const strings = {
   },
   en: {
     heroBadge: "Partners",
-    heroTitle: "Those who walk alongside Ramppy",
+    heroTitle: "The people walking with Ramppy",
     heroSubtitle:
       "Meet the companies that are part of our journey and discover our partner program for sales consultants.",
 
@@ -131,6 +131,70 @@ const strings = {
     ctaButton: "I want to become a partner",
     whatsappUrl:
       "https://wa.me/5531995525157?text=Hi%2C%20I%27m%20interested%20in%20Ramppy%27s%20partner%20program",
+  },
+  es: {
+    heroBadge: "Partners",
+    heroTitle: "Quienes caminan junto a Ramppy",
+    heroSubtitle:
+      "Conoce a las empresas que forman parte de nuestro recorrido y descubre nuestro programa de partners para consultores de ventas.",
+
+    ecosystemBadge: "Ecosistema",
+    ecosystemTitle: "Empresas partners",
+    ecosystemSubtitle:
+      "De la aceleración al mercado, estas son las empresas que forman parte de nuestra historia.",
+
+    partners: [
+      { name: "Growthway", logo: "/images/gpEEaKIzXt5vOrnP2EA3vRSbUUU.svg", url: "https://growthway.vc/", desc: "Aceleradora" },
+      { name: "Newhack", logo: "/images/Newhack logo.png", url: "https://newhack.vc/", desc: "Venture Builder" },
+      { name: "Sebrae", logo: "/images/Sebrae logo.png", url: null, desc: "Apoyo institucional" },
+      { name: "Google", logo: "/images/google.png", url: null, desc: "Demoday & Pitch" },
+      { name: "Be Honest", logo: "/images/be honest logo.png", url: null, desc: "Partner comercial" },
+      { name: "Be Growth", logo: "/images/be growth.png", url: null, desc: "Partner comercial" },
+      { name: "Grupo Escalar", logo: "/images/grupo escalar.png", url: null, desc: "Partner comercial" },
+    ],
+
+    programBadge: "Programa de partners para consultores",
+    programTitlePrefix: "Te pagamos ",
+    programTitleHighlight: "30%",
+    programTitleSuffix: " del valor de la mensualidad. Todos los meses.",
+    programSubtitle:
+      "Para consultores de ventas que quieren construir ingresos recurrentes sin aumentar su carga de trabajo.",
+
+    problemBadge: "El problema",
+    problemTitle: "Termina el proyecto, terminan los ingresos",
+    problemP1:
+      "La mayoría de los consultores ya entrega capacitaciones a sus clientes. El problema es que cuando el proyecto termina, los ingresos terminan con él.",
+    problemP2:
+      "Y lo peor: sin acompañamiento continuo, todo lo que se enseñó se pierde en pocas semanas. Tus clientes ya gastan miles en capacitación. La brecha no es la falta de inversión, es la falta de acompañamiento sistemático.",
+
+    solutionBadge: "La solución",
+    solutionTitle: "La extensión digital de tu trabajo",
+    solutionP1:
+      "Presentas Ramppy a tus clientes y te pagamos el 30% del valor de la mensualidad, todos los meses, mientras el cliente use la plataforma.",
+    solutionP2:
+      "Sigues haciendo lo que ya haces bien: desarrollar metodologías, estructurar procesos y capacitar equipos. La diferencia es que ahora cuentas con una herramienta que garantiza que todo eso se practique mucho después de que salgas de la empresa.",
+
+    howItWorksTitle: "Cómo funciona",
+    howItWorksSteps: [
+      { step: "01", title: "Tú recomiendas", desc: "Presenta Ramppy a tus clientes como una extensión de tu trabajo de consultoría." },
+      { step: "02", title: "El cliente contrata", desc: "Ramppy se encarga de la implementación, el soporte y la evolución de la plataforma con el cliente." },
+      { step: "03", title: "Tú cobras", desc: "El 30% del valor de la mensualidad llega a tu cuenta cada mes, mientras el cliente esté activo." },
+    ],
+
+    whyTitle: "Por qué tiene sentido",
+    whyItems: [
+      { title: "Ingresos recurrentes", desc: "Deja de depender solo de proyectos puntuales. Cada cliente referido se convierte en ingresos mensuales." },
+      { title: "Sin trabajo extra", desc: "No tienes que dar soporte, implementar ni gestionar la plataforma. Ramppy se encarga de todo." },
+      { title: "Tu trabajo perdura", desc: "La IA garantiza que las metodologías y procesos que enseñaste se sigan practicando día a día." },
+      { title: "Resuelve la brecha real", desc: "Con la IA entrenando y evaluando a los vendedores de forma continua, cierras la brecha entre 'aprender' y 'aplicar'." },
+    ],
+
+    ctaTitle: "¿Quieres ser partner?",
+    ctaSubtitle:
+      "Habla con nosotros y descubre cómo la alianza puede funcionar para tu negocio.",
+    ctaButton: "Quiero ser partner",
+    whatsappUrl:
+      "https://wa.me/5531995525157?text=Hola%2C%20quiero%20ser%20partner%20de%20Ramppy",
   },
 };
 

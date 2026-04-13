@@ -81,6 +81,44 @@ const strings = {
       },
     ],
   },
+  es: {
+    badge: "Cómo funciona",
+    heroTitle: "Del setup al resultado en minutos",
+    heroSubtitle:
+      "Ramppy funciona en etapas simples. Cada una está pensada para que tu equipo evolucione sin complicaciones, con resultados visibles desde el primer día.",
+    steps: [
+      {
+        badge: "Paso 01",
+        title: "El manager configura los escenarios",
+        text: "El manager selecciona personas, tipo de venta y objeciones directamente en el panel. Cada simulación se arma a medida de la realidad del equipo.",
+      },
+      {
+        badge: "Paso 02",
+        title: "El vendedor prepara su sesión",
+        text: "Antes de empezar, el vendedor configura los detalles de la simulación: elige el escenario, ajusta el contexto e inicia la sesión en pocos clics.",
+      },
+      {
+        badge: "Paso 03",
+        title: "Simulación por voz con IA",
+        text: "El vendedor entra en una videollamada con un cliente virtual. La conversación ocurre por voz, en tiempo real, con transcripción automática. Es como entrenar con un cliente real, sin el riesgo.",
+      },
+      {
+        badge: "Paso 04",
+        title: "Análisis automático de reuniones reales",
+        text: "Conecta tu Google Calendar y listo. Un bot entra automáticamente en cada reunión de Google Meet, transcribe todo y aplica la misma evaluación de las simulaciones.",
+      },
+      {
+        badge: "Paso 05",
+        title: "Historial con evaluación detallada",
+        text: "Cada simulación y reunión real queda registrada con la evaluación SPIN completa. El vendedor sigue su evolución en los 4 pilares: Situación, Problema, Implicación y Necesidad de Solución.",
+      },
+      {
+        badge: "Paso 06",
+        title: "Dashboard completo para el manager",
+        text: "Visión detallada de cada vendedor: desempeño, comparativos del equipo, próximas reuniones, follow-ups por WhatsApp y transcripción de cada venta. Todo en un solo lugar.",
+      },
+    ],
+  },
 };
 
 const stepMedia = [

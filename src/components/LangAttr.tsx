@@ -8,7 +8,8 @@ export default function LangAttr() {
   useEffect(() => {
     if (!pathname) return;
     const isEn = pathname === "/en" || pathname.startsWith("/en/");
-    document.documentElement.lang = isEn ? "en" : "pt-BR";
+    const isEs = pathname === "/es" || pathname.startsWith("/es/");
+    document.documentElement.lang = isEn ? "en" : isEs ? "es" : "pt-BR";
   }, [pathname]);
   return null;
 }

@@ -176,7 +176,7 @@ const strings = {
     heroTitle: "SPIN Selling: the science behind every Ramppy evaluation",
     heroSubtitle:
       "Created by Neil Rackham after analyzing over 35,000 sales calls in 23 countries, SPIN is the framework Ramppy uses to evaluate every interaction your team has.",
-    researchTitle: "The largest sales research ever conducted",
+    researchTitle: "The largest sales study ever conducted",
     researchSubtitle:
       "Neil Rackham and the Huthwaite Research Group led a 12-year study that forever changed the way we understand complex sales.",
     researchStats: [
@@ -188,7 +188,7 @@ const strings = {
     findingsTitle: "What the research uncovered",
     findings: [
       "Aggressive closing techniques are counterproductive in complex sales — they reduced success rates by 23%.",
-      "Salespeople who avoided traditional closing techniques had higher satisfaction rates and more loyal customers.",
+      "Salespeople who avoided traditional closing techniques had higher customer satisfaction rates and more loyal customers.",
       "Success in complex sales depends, more than anything else, on how the investigation phase is conducted.",
       "Top performers ask 4x more implication questions than average salespeople.",
     ],
@@ -337,6 +337,172 @@ const strings = {
     ],
     sourcesLabel: "Sources:",
   },
+  es: {
+    heroBadge: "Metodología",
+    heroTitle: "SPIN Selling: la ciencia detrás de cada evaluación de Ramppy",
+    heroSubtitle:
+      "Creada por Neil Rackham tras analizar más de 35.000 llamadas de ventas en 23 países, la metodología SPIN es el marco que Ramppy utiliza para evaluar cada interacción de tu equipo.",
+    researchTitle: "La mayor investigación sobre ventas jamás realizada",
+    researchSubtitle:
+      "Neil Rackham y el Huthwaite Research Group dirigieron un estudio de 12 años que cambió para siempre la forma en que entendemos las ventas complejas.",
+    researchStats: [
+      { number: "35.000+", label: "llamadas de ventas analizadas" },
+      { number: "10.000", label: "vendedores estudiados" },
+      { number: "23", label: "países investigados" },
+      { number: "12", label: "años de investigación" },
+    ],
+    findingsTitle: "Lo que reveló la investigación",
+    findings: [
+      "Las técnicas de cierre agresivo son contraproducentes en ventas complejas: redujeron el éxito en un 23%.",
+      "Los vendedores que no usaban técnicas tradicionales de cierre obtenían tasas de satisfacción más altas y clientes más fieles.",
+      "El éxito en ventas complejas depende, más que de cualquier otra cosa, de cómo se conduce la fase de investigación.",
+      "Los vendedores de alto desempeño hacen 4x más preguntas de implicación que los vendedores promedio.",
+    ],
+    pillarsBadge: "Los 4 pilares",
+    pillarsTitleS: "Situación",
+    pillarsTitleP: "Problema",
+    pillarsTitleI: "Implicación",
+    pillarsTitleN: "Necesidad de Solución",
+    pillarExamples: "Ejemplos de preguntas:",
+    // S
+    sName: "Situación",
+    sDesc:
+      "Preguntas para entender el contexto actual del cliente. Son el punto de partida de la conversación: estás mapeando el escenario antes de profundizar.",
+    sExamples: [
+      '"¿Cuántos vendedores tienes en el equipo?"',
+      '"¿Qué CRM usan hoy?"',
+      '"¿Cómo es el proceso de onboarding actual?"',
+    ],
+    sWarning:
+      "Cuidado: la tasa de éxito cae 11% por cada pregunta de situación más allá de 4. Investiga antes de la reunión.",
+    // P
+    pName: "Problema",
+    pDesc:
+      "Preguntas para descubrir dolores, dificultades e insatisfacciones. El objetivo es identificar necesidades implícitas: problemas que el cliente reconoce pero aún no considera urgentes.",
+    pExamples: [
+      '"¿Cuál es el mayor desafío del equipo hoy?"',
+      '"¿Dónde pierden más negocios?"',
+      '"¿Están satisfechos con la tasa de conversión actual?"',
+    ],
+    pQuote:
+      '"Si no puedes resolver un problema para tu cliente, entonces no hay base para una venta." — Neil Rackham',
+    // I
+    iName: "Implicación",
+    iDesc:
+      "Las preguntas más poderosas del marco. Hacen que el cliente calcule el costo real de no actuar. Transforman problemas pequeños en cuestiones urgentes.",
+    iResearchLabel: "Dato de la investigación:",
+    iResearchText: (
+      <>
+        Los negocios con 4+ preguntas de implicación cierran{" "}
+        <strong>34% más rápido</strong>. Los mejores vendedores hacen{" "}
+        <strong>4x más</strong> preguntas de implicación.
+      </>
+    ),
+    iExamples: [
+      '"¿Cuánto cuesta cada vendedor que no alcanza la meta?"',
+      '"¿Cómo afecta esto a la moral del equipo?"',
+      '"¿Cuál es el impacto en la facturación?"',
+    ],
+    iCaption:
+      "Son las más difíciles porque exigen un conocimiento profundo del negocio del cliente y no pueden improvisarse.",
+    // N
+    nName: "Necesidad de Solución",
+    nDesc:
+      "Preguntas que hacen que el cliente articule el valor de la solución con sus propias palabras. En lugar de convencerlo tú, el cliente se convence a sí mismo. Las objeciones caen un 55% cuando las necesidades explícitas se desarrollan antes de la oferta.",
+    nExamples: [
+      '"Si el ramp-up fuera 50% más rápido, ¿cuál sería el impacto?"',
+      '"¿Cómo sería tener visibilidad total de las llamadas?"',
+      '"¿Qué cambiaría si cada vendedor recibiera coaching diario?"',
+    ],
+    nQuote:
+      '"Las preguntas de Need-payoff enfocan la atención en soluciones, no en problemas. Y hacen que los clientes te cuenten los beneficios." — Neil Rackham',
+    // Ramppy + SPIN
+    ramppyBadge: "Ramppy + SPIN",
+    ramppyTitle: "Cómo Ramppy evalúa con SPIN",
+    ramppyP1:
+      "Cada simulación y reunión real es transcrita y analizada por la IA de Ramppy. La IA identifica cada pregunta hecha por el vendedor, la clasifica en el pilar SPIN correcto y evalúa calidad, profundidad y timing.",
+    ramppyP2:
+      "El resultado es una nota de 0 a 10 en cada pilar, con feedback específico sobre lo que salió bien y lo que se puede mejorar. Todo automático, sin sesgo humano, después de cada interacción.",
+    ramppyBullets: [
+      {
+        label: "Evaluación objetiva",
+        desc: "La IA analiza sin sesgo humano, con criterios consistentes",
+      },
+      {
+        label: "Feedback instantáneo",
+        desc: "Resultado disponible segundos después de cada llamada",
+      },
+      {
+        label: "Evolución medible",
+        desc: "Sigue tu nota SPIN a lo largo del tiempo",
+      },
+    ],
+    scoreHeaderTitle: "Análisis SPIN",
+    scoreHeaderSummary: "S: 8.0   P: 8.0   I: 7.0   N: 8.0",
+    scoreLabelSituacao: "SITUACIÓN",
+    scoreLabelProblema: "PROBLEMA",
+    scoreLabelImplicacao: "IMPLICACIÓN",
+    scoreLabelNecessidade: "NECESIDAD",
+    scoreAverageLabel: "PROMEDIO GENERAL SPIN",
+    scorePillarSituacao: "Situación",
+    scorePillarProblema: "Problema",
+    scorePillarImplicacao: "Implicación",
+    scorePillarNecessidade: "Necesidad de Solución",
+    subScoresSituacao: [
+      { label: "Adaptabilidad", score: 8 },
+      { label: "Preguntas abiertas", score: 8 },
+      { label: "Mapeo de escenario", score: 8 },
+    ],
+    subScoresProblema: [
+      { label: "Profundidad", score: 7 },
+      { label: "Empatía", score: 9 },
+      { label: "Comprensión de impacto", score: 8 },
+      { label: "Identificación de problemas", score: 8 },
+      { label: "Exploración de consecuencias", score: 8 },
+    ],
+    subScoresImplicacao: [
+      { label: "Riesgos concretos", score: 6 },
+      { label: "Consecuencias de la inacción", score: 7 },
+      { label: "Amplificación de urgencia", score: 7 },
+      { label: "Urgencia no agresiva", score: 8 },
+    ],
+    subScoresNecessidade: [
+      { label: "Credibilidad", score: 8 },
+      { label: "Personalización", score: 8 },
+      { label: "Claridad de beneficios", score: 8 },
+      { label: "Claridad de la solución", score: 8 },
+      { label: "Eficacia del CTA", score: 7 },
+    ],
+    // Impact numbers
+    impactTitle: "Los números no mienten",
+    impactStats: [
+      {
+        stat: "+34%",
+        desc: "más rápido para cerrar negocios con 4+ preguntas de implicación",
+      },
+      {
+        stat: "-55%",
+        desc: "de objeciones cuando se desarrollan necesidades explícitas vía SPIN",
+      },
+      {
+        stat: "87%",
+        desc: "de los negocios por encima de US$100k usaron la secuencia SPIN",
+      },
+      {
+        stat: "4x",
+        desc: "más preguntas de implicación hechas por vendedores de alto desempeño",
+      },
+      {
+        stat: "-23%",
+        desc: "en la tasa de éxito al usar cierre agresivo en ventas complejas",
+      },
+      {
+        stat: "50%",
+        desc: "de las Fortune 100 usan SPIN para entrenar a sus equipos de ventas",
+      },
+    ],
+    sourcesLabel: "Fuentes:",
+  },
 };
 
 export default function MetodologiaSpinContent() {
@@ -421,7 +587,7 @@ export default function MetodologiaSpinContent() {
               <span className="text-amber-500">{t.pillarsTitleP}</span>,{" "}
               <span className="text-red-500">{t.pillarsTitleI}</span>
               {" "}
-              {locale === "pt" ? "e" : "&"}{" "}
+              {locale === "pt" ? "e" : locale === "es" ? "y" : "&"}{" "}
               <span className="text-emerald-500">{t.pillarsTitleN}</span>
             </h2>
           </div>
