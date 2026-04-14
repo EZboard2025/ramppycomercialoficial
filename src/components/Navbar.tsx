@@ -117,6 +117,7 @@ export default function Navbar() {
 
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const [closing, setClosing] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const islandRef = useRef<HTMLDivElement>(null);
@@ -139,6 +140,35 @@ export default function Navbar() {
     }
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
+  }, []);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let lastSignificantScrollTs = Date.now();
+    function onScroll() {
+      const y = window.scrollY;
+      if (y < 80) {
+        setHidden(false);
+        lastSignificantScrollTs = Date.now();
+      } else if (y > lastY + 4) {
+        setHidden(true);
+        lastSignificantScrollTs = Date.now();
+      } else if (y < lastY - 4) {
+        setHidden(false);
+        lastSignificantScrollTs = Date.now();
+      }
+      lastY = y;
+    }
+    const idleInterval = setInterval(() => {
+      if (Date.now() - lastSignificantScrollTs >= 6000) {
+        setHidden(false);
+      }
+    }, 500);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearInterval(idleInterval);
+    };
   }, []);
 
   function handleEnter(key: MenuKey) {
@@ -169,7 +199,11 @@ export default function Navbar() {
   return (
     <>
       {/* Single header element: mobile nav + desktop spacer (no separator line) */}
-      <header className="flex relative z-50 lg:z-0 lg:-mb-[1px]">
+      <header
+        className={`flex relative z-50 lg:z-0 lg:-mb-[1px] transition-transform duration-300 ${
+          hidden ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
         <div className="content-side rounded-r-lg" />
         <div className="content-center">
           <div className="flex items-center justify-between h-20 px-4 lg:hidden">
@@ -201,7 +235,12 @@ export default function Navbar() {
       </svg>
 
       {/* Desktop Dynamic Island */}
-      <div className="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50" ref={islandRef}>
+      <div
+        className={`hidden lg:block fixed top-5 left-1/2 z-50 transition-transform duration-300 ${
+          hidden && !isAnyOpen ? "-translate-x-1/2 -translate-y-[150%]" : "-translate-x-1/2 translate-y-0"
+        }`}
+        ref={islandRef}
+      >
         {/* Island container */}
         <div
           className={`flex items-center gap-2 px-4 py-3 transition-all duration-300 ${

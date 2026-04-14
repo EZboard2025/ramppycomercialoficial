@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LangAttr from "@/components/LangAttr";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -60,6 +61,7 @@ export default function RootLayout({
       <body className="font-[var(--font-inter-tight)]">
         <LangAttr />
         {children}
+        <BackToTop />
       </body>
     </html>
   );
