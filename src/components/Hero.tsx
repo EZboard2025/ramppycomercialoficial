@@ -204,7 +204,7 @@ export default function Hero() {
             <div className="flex flex-row items-center gap-3 md:gap-4 mt-[40px] md:mt-10">
               <a
                 href="#planos"
-                className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
               >
                 {t.ctaPrimary}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 md:w-5 md:h-5">
