@@ -51,14 +51,14 @@ const plansByLocale = {
     includes: "Inclui:",
     everythingFrom: (p: string) => `Tudo do ${p}, mais:`,
     everythingTeamPlus: "Tudo do Team, mais:",
-    trust: ["Sem cartão de crédito", "Cancele quando quiser", "Suporte em português"],
+    trust: ["Cancele quando quiser", "Suporte em português"],
     whatsappMessage: (plan: string) => `Olá, tenho interesse no plano ${plan} da Ramppy`,
     plans: [
       {
         name: "Pro",
         subtitle: "Até 10 vendedores",
-        monthlyPrice: "1.200",
-        yearlyPrice: "960",
+        monthlyPrice: "2.400",
+        yearlyPrice: "1.920",
         features: ["Até 10 vendedores", "Simulações de roleplay", "Avaliação SPIN completa", "Análise de Meet automática", "Copiloto Nicole IA", "App Desktop"],
         cta: "Começar agora",
         highlighted: false,
@@ -66,8 +66,8 @@ const plansByLocale = {
       {
         name: "Team",
         subtitle: "Até 20 vendedores",
-        monthlyPrice: "1.999",
-        yearlyPrice: "1.599",
+        monthlyPrice: "3.499",
+        yearlyPrice: "2.799",
         features: ["Até 20 vendedores", "Tudo do Pro", "Dashboard de gestao", "Histórico completo", "PDI personalizado + desafios", "Personas customizadas"],
         cta: "Começar agora",
         highlighted: false,
@@ -75,8 +75,8 @@ const plansByLocale = {
       {
         name: "Business",
         subtitle: "De 20 a 50 vendedores",
-        monthlyPrice: "4.999",
-        yearlyPrice: "3.999",
+        monthlyPrice: "7.499",
+        yearlyPrice: "5.999",
         features: ["20 a 50 vendedores", "Tudo do Team", "Creditos extras sob demanda", "Objeções customizadas", "Onboarding dedicado", "Suporte prioritário"],
         cta: "Começar agora",
         highlighted: true,
@@ -104,7 +104,7 @@ const plansByLocale = {
     includes: "Incluye:",
     everythingFrom: (p: string) => `Todo lo de ${p}, y además:`,
     everythingTeamPlus: "Todo lo de Team, y además:",
-    trust: ["Sin tarjeta de crédito", "Cancela cuando quieras", "Soporte en español"],
+    trust: ["Cancela cuando quieras", "Soporte en español"],
     whatsappMessage: (plan: string) => `Hola, me interesa el plan ${plan} de Ramppy`,
     plans: [
       {
@@ -157,7 +157,7 @@ const plansByLocale = {
     includes: "Includes:",
     everythingFrom: (p: string) => `Everything in ${p}, plus:`,
     everythingTeamPlus: "Everything in Team, plus:",
-    trust: ["No credit card", "Cancel anytime", "Dedicated support"],
+    trust: ["Cancel anytime", "Dedicated support"],
     whatsappMessage: (plan: string) => `Hi, I'm interested in the ${plan} plan at Ramppy`,
     plans: [
       {

@@ -134,70 +134,9 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Nicole IA */}
-        <div id="nicole" className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16 relative mt-6 md:mt-8 lg:ml-[3vw] xl:ml-[4vw]">
-          {/* Text - Left */}
-          <div className="flex-1 max-w-lg lg:pt-32">
-            <span className="text-xs font-bold text-primary-green bg-green-surface px-3 py-1.5 rounded-full uppercase tracking-wider">
-              {t.nicoleBadge}
-            </span>
-            <h2 className="font-[var(--font-fustat)] text-xl md:text-[32px] lg:text-[42px] font-semibold text-teal-dark leading-[115%] tracking-tight mt-4 md:mt-5 mb-4 md:mb-5">
-              {t.nicoleTitleA}
-              <span className="relative inline-block isolate">
-                <span className="relative z-10">{t.nicoleTitleB}</span>
-                <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
-                </svg>
-              </span>
-              {t.nicoleTitleC}
-            </h2>
-            <p className="text-sm md:text-lg text-text-secondary leading-relaxed">
-              <span className="md:hidden">{t.nicoleBodyMobile}</span>
-              <span className="hidden md:inline">{t.nicoleBodyDesktop}</span>
-            </p>
-            <p className="hidden md:block text-lg text-text-secondary leading-relaxed mt-6">
-              {t.nicoleBody2}
-            </p>
-          </div>
-
-          {/* Video - Right */}
-          <div className="flex-1 w-full max-w-[500px] lg:ml-auto lg:mt-16">
-            <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
-              <video
-                ref={(el) => { if (el) el.playbackRate = 1; }}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto block rounded-2xl"
-                preload="auto"
-              >
-                <source src="/videos/nicole.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-
         {/* Analise de Reuniao */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative mt-6 md:mt-8">
-          {/* Video - Left (after text on mobile) */}
-          <div className="flex-1 w-full lg:translate-x-[calc(-5vw+80px)] xl:translate-x-[calc(-7vw+80px)] lg:-translate-y-[30px] order-last lg:order-first">
-            <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
-              <video
-                ref={(el) => { if (el) el.playbackRate = 1; }}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto block rounded-2xl"
-                preload="auto"
-              >
-                <source src="/videos/analise-meet.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-
-          {/* Text - Right */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative mt-16 md:mt-32">
+          {/* Text - Left */}
           <div className="flex-1 max-w-lg">
             <span className="text-xs font-bold text-primary-green bg-green-surface px-3 py-1.5 rounded-full uppercase tracking-wider">
               {t.meetBadge}
@@ -218,6 +157,67 @@ export default function Features() {
             </p>
             <p className="hidden md:block text-base text-text-secondary leading-relaxed mt-6">
               {t.meetBody2}
+            </p>
+          </div>
+
+          {/* Video - Right */}
+          <div className="flex-1 w-full lg:translate-x-[calc(5vw-80px)] xl:translate-x-[calc(7vw-80px)] lg:-translate-y-[30px]">
+            <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
+              <video
+                ref={(el) => { if (el) el.playbackRate = 1; }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto block rounded-2xl"
+                preload="auto"
+              >
+                <source src="/videos/analise-meet.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+
+        {/* Nicole IA */}
+        <div id="nicole" className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16 relative mt-6 md:mt-8 lg:mr-[3vw] xl:mr-[4vw]">
+          {/* Video - Left (after text on mobile) */}
+          <div className="flex-1 w-full max-w-[500px] lg:mt-16 order-last lg:order-first">
+            <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
+              <video
+                ref={(el) => { if (el) el.playbackRate = 1; }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto block rounded-2xl"
+                preload="auto"
+              >
+                <source src="/videos/nicole.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          {/* Text - Right */}
+          <div className="flex-1 max-w-lg lg:pt-32 lg:ml-auto">
+            <span className="text-xs font-bold text-primary-green bg-green-surface px-3 py-1.5 rounded-full uppercase tracking-wider">
+              {t.nicoleBadge}
+            </span>
+            <h2 className="font-[var(--font-fustat)] text-xl md:text-[32px] lg:text-[42px] font-semibold text-teal-dark leading-[115%] tracking-tight mt-4 md:mt-5 mb-4 md:mb-5">
+              {t.nicoleTitleA}
+              <span className="relative inline-block isolate">
+                <span className="relative z-10">{t.nicoleTitleB}</span>
+                <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
+                </svg>
+              </span>
+              {t.nicoleTitleC}
+            </h2>
+            <p className="text-sm md:text-lg text-text-secondary leading-relaxed">
+              <span className="md:hidden">{t.nicoleBodyMobile}</span>
+              <span className="hidden md:inline">{t.nicoleBodyDesktop}</span>
+            </p>
+            <p className="hidden md:block text-lg text-text-secondary leading-relaxed mt-6">
+              {t.nicoleBody2}
             </p>
           </div>
         </div>
