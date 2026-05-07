@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import SectionWrapper from "./SectionWrapper";
 import { useLocale } from "@/i18n/LocaleContext";
 
@@ -58,37 +57,10 @@ const plansByLocale = {
       {
         name: "Pro",
         subtitle: "Até 10 vendedores",
-        monthlyPrice: "250",
-        yearlyPrice: "230",
+        monthlyPrice: "379,99",
+        yearlyPrice: "379,99",
         features: ["Até 10 vendedores", "Simulações de roleplay", "Avaliação SPIN completa", "Análise de Meet automática", "Copiloto Nicole IA", "App Desktop"],
         cta: "Começar agora",
-        highlighted: false,
-      },
-      {
-        name: "Team",
-        subtitle: "11 a 20 vendedores",
-        monthlyPrice: "230",
-        yearlyPrice: "210",
-        features: ["11 a 20 vendedores", "Tudo do Pro", "Dashboard de gestao", "Histórico completo", "PDI personalizado + desafios", "Personas customizadas"],
-        cta: "Começar agora",
-        highlighted: false,
-      },
-      {
-        name: "Business",
-        subtitle: "21 a 50 vendedores",
-        monthlyPrice: "210",
-        yearlyPrice: "190",
-        features: ["21 a 50 vendedores", "Tudo do Team", "Creditos extras sob demanda", "Objeções customizadas", "Onboarding dedicado", "Suporte prioritário"],
-        cta: "Começar agora",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        subtitle: "+50 vendedores",
-        monthlyPrice: null,
-        yearlyPrice: null,
-        features: ["Creditos sob demanda", "+50 vendedores", "Tudo do Business", "API de integração", "SLA garantido", "Gestor de conta dedicado", "Treinamento personalizado"],
-        cta: "Falar com vendas",
         highlighted: false,
       },
     ],
@@ -112,37 +84,10 @@ const plansByLocale = {
       {
         name: "Pro",
         subtitle: "Hasta 10 vendedores",
-        monthlyPrice: "50",
-        yearlyPrice: "45",
+        monthlyPrice: "75,99",
+        yearlyPrice: "75,99",
         features: ["Hasta 10 vendedores", "Simulaciones de roleplay", "Evaluación SPIN completa", "Análisis de Meet automático", "Copiloto Nicole IA", "App Desktop"],
         cta: "Empezar ahora",
-        highlighted: false,
-      },
-      {
-        name: "Team",
-        subtitle: "11 a 20 vendedores",
-        monthlyPrice: "45",
-        yearlyPrice: "40",
-        features: ["11 a 20 vendedores", "Todo lo de Pro", "Panel de gestión", "Historial completo", "PDI personalizado + desafíos", "Personas customizadas"],
-        cta: "Empezar ahora",
-        highlighted: false,
-      },
-      {
-        name: "Business",
-        subtitle: "21 a 50 vendedores",
-        monthlyPrice: "40",
-        yearlyPrice: "35",
-        features: ["21 a 50 vendedores", "Todo lo de Team", "Créditos extra bajo demanda", "Objeciones customizadas", "Onboarding dedicado", "Soporte prioritario"],
-        cta: "Empezar ahora",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        subtitle: "+50 vendedores",
-        monthlyPrice: null,
-        yearlyPrice: null,
-        features: ["Créditos bajo demanda", "+50 vendedores", "Todo lo de Business", "API de integración", "SLA garantizado", "Gestor de cuenta dedicado", "Capacitación personalizada"],
-        cta: "Hablar con ventas",
         highlighted: false,
       },
     ],
@@ -166,37 +111,10 @@ const plansByLocale = {
       {
         name: "Pro",
         subtitle: "Up to 10 reps",
-        monthlyPrice: "50",
-        yearlyPrice: "45",
+        monthlyPrice: "75.99",
+        yearlyPrice: "75.99",
         features: ["Up to 10 reps", "Roleplay simulations", "Full SPIN evaluation", "Automatic Meet analysis", "Nicole AI Copilot", "Desktop App"],
         cta: "Get started",
-        highlighted: false,
-      },
-      {
-        name: "Team",
-        subtitle: "11 to 20 reps",
-        monthlyPrice: "45",
-        yearlyPrice: "40",
-        features: ["11 to 20 reps", "Everything in Pro", "Management dashboard", "Full history", "Custom PDI + challenges", "Custom personas"],
-        cta: "Get started",
-        highlighted: false,
-      },
-      {
-        name: "Business",
-        subtitle: "21 to 50 reps",
-        monthlyPrice: "40",
-        yearlyPrice: "35",
-        features: ["21 to 50 reps", "Everything in Team", "Extra credits on demand", "Custom objections", "Dedicated onboarding", "Priority support"],
-        cta: "Get started",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        subtitle: "50+ reps",
-        monthlyPrice: null,
-        yearlyPrice: null,
-        features: ["Credits on demand", "50+ reps", "Everything in Business", "Integration API", "Guaranteed SLA", "Dedicated account manager", "Custom training"],
-        cta: "Talk to sales",
         highlighted: false,
       },
     ],
@@ -207,7 +125,6 @@ export default function Pricing() {
   const locale = useLocale();
   const t = plansByLocale[locale];
   const plans = t.plans;
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
 
   return (
     <SectionWrapper id="planos" dark>
@@ -219,35 +136,8 @@ export default function Pricing() {
           </h2>
         </div>
 
-        {/* Toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center bg-white/[0.06] rounded-full p-1 border border-white/10">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={`relative px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                billing === "monthly"
-                  ? "bg-white/[0.12] text-white shadow-sm border border-white/15"
-                  : "text-white/50 hover:text-white/70"
-              }`}
-            >
-              {t.monthly}
-            </button>
-            <button
-              onClick={() => setBilling("yearly")}
-              className={`relative px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                billing === "yearly"
-                  ? "bg-white/[0.12] text-white shadow-sm border border-white/15"
-                  : "text-white/50 hover:text-white/70"
-              }`}
-            >
-              {t.yearly}
-              <span className="ml-2 text-[11px] text-emerald-400 font-semibold">{t.discountBadge}</span>
-            </button>
-          </div>
-        </div>
-
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1200px] mx-auto items-stretch">
+        <div className="grid grid-cols-1 gap-5 max-w-md mx-auto items-stretch">
           {plans.map((plan, idx) => (
             <div
               key={idx}
@@ -282,7 +172,7 @@ export default function Pricing() {
                   {plan.monthlyPrice ? (
                     <>
                       <span className="font-[var(--font-fustat)] text-2xl md:text-[32px] lg:text-[36px] font-bold text-white leading-none">
-                        {t.currency}{billing === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
+                        {t.currency}{plan.monthlyPrice}
                       </span>
                       <span className="text-sm text-white/40 ml-1">{t.perMonth}</span>
                     </>
@@ -290,13 +180,6 @@ export default function Pricing() {
                     <span className="font-[var(--font-fustat)] text-xl md:text-[28px] lg:text-[32px] font-bold text-white leading-none">
                       {t.custom}
                     </span>
-                  )}
-                </div>
-                <div className="h-5">
-                  {plan.monthlyPrice && billing === "yearly" && (
-                    <p className="text-xs text-emerald-400/70">
-                      {t.billedYearly}
-                    </p>
                   )}
                 </div>
 
