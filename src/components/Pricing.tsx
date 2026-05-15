@@ -333,10 +333,11 @@ export default function Pricing() {
         {/* Credits add-on */}
         <section className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 py-12 md:py-16">
           <div className="md:col-span-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
+            <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-green">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary-green" aria-hidden />
               {t.credits.eyebrow}
             </p>
-            <h3 className="mt-4 font-[var(--font-fustat)] text-[24px] md:text-[28px] font-medium leading-[1.15] tracking-[-0.02em] text-[#0A0A0A]">
+            <h3 className="mt-4 font-[var(--font-fustat)] text-[26px] md:text-[32px] font-semibold leading-[1.1] tracking-[-0.025em] text-[#0A0A0A]">
               {t.credits.title}
             </h3>
           </div>
@@ -351,7 +352,7 @@ export default function Pricing() {
                   key={b}
                   className="flex items-start gap-3 text-[14px] text-[#1F2937]"
                 >
-                  <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-[#0A0A0A]" />
+                  <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-primary-green" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -363,7 +364,7 @@ export default function Pricing() {
               href={buildWa(t.whatsappCredits)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-[14px] font-medium text-[#0A0A0A] border-b border-[#0A0A0A] pb-1 hover:gap-3 transition-all duration-200"
+              className="group inline-flex items-center gap-2 text-[14px] font-medium text-primary-green border-b border-primary-green pb-1 hover:gap-3 hover:text-primary-light hover:border-primary-light transition-all duration-200"
             >
               <span>{t.ctaCredits}</span>
               <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
