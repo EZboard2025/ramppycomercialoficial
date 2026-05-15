@@ -89,9 +89,9 @@ export default function LogoBar() {
   const items = [...stats, ...stats];
 
   return (
-    <SectionWrapper className="overflow-hidden">
+    <SectionWrapper className="hidden md:block overflow-hidden">
       <div className="py-12 md:py-16 -mx-6 md:-mx-[4%] lg:-mx-[5%] xl:-mx-[5.4%]">
-        <div className="hidden md:flex w-max animate-carousel">
+        <div className="flex w-max animate-carousel">
           {items.map((stat, i) => (
             <StatItem
               key={i}
@@ -99,18 +99,6 @@ export default function LogoBar() {
               suffix={stat.suffix}
               label={stat.label}
               trigger={trigger}
-            />
-          ))}
-        </div>
-        <div className="md:hidden flex flex-col gap-20 px-6">
-          {stats.map((stat, i) => (
-            <StatItem
-              key={i}
-              target={stat.target}
-              suffix={stat.suffix}
-              label={stat.label}
-              trigger={trigger}
-              className="w-full"
             />
           ))}
         </div>

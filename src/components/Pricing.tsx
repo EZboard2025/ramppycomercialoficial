@@ -19,6 +19,7 @@ type Copy = {
   subtitle: string;
   popular: string;
   includes: string;
+  includesScope: string;
   ctaPlan: string;
   ctaCredits: string;
   whatsappPlan: (plan: string) => string;
@@ -40,6 +41,7 @@ const COPY: Record<Locale, Copy> = {
     subtitle: "Escolha o plano que combina com o seu time.",
     popular: "Mais popular",
     includes: "Inclui",
+    includesScope: "Para análise de reuniões",
     ctaPlan: "Falar com consultor",
     ctaCredits: "Quero comprar créditos",
     whatsappPlan: (plan) => `Olá, tenho interesse no plano ${plan} da Ramppy.`,
@@ -89,6 +91,7 @@ const COPY: Record<Locale, Copy> = {
     subtitle: "Elige el plan que va con tu equipo.",
     popular: "Más popular",
     includes: "Incluye",
+    includesScope: "Para análisis de reuniones",
     ctaPlan: "Hablar con un consultor",
     ctaCredits: "Quiero comprar créditos",
     whatsappPlan: (plan) => `Hola, me interesa el plan ${plan} de Ramppy.`,
@@ -138,6 +141,7 @@ const COPY: Record<Locale, Copy> = {
     subtitle: "Pick the plan that fits your team.",
     popular: "Most popular",
     includes: "Includes",
+    includesScope: "For meeting analysis",
     ctaPlan: "Talk to a consultant",
     ctaCredits: "I want to buy credits",
     whatsappPlan: (plan) => `Hi, I'm interested in the ${plan} plan at Ramppy.`,
@@ -292,9 +296,11 @@ export default function Pricing() {
                   <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </a>
 
-                {/* Includes label */}
-                <p className="mt-12 text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
-                  {t.includes}
+                {/* Includes label + scope */}
+                <p className="mt-12 flex flex-wrap items-baseline gap-x-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
+                  <span>{t.includes}</span>
+                  <span className="text-[#9CA3AF]">·</span>
+                  <span className="text-primary-green/85">{t.includesScope}</span>
                 </p>
 
                 {/* Feature list */}
@@ -382,6 +388,10 @@ export default function Pricing() {
               <span>{item}</span>
             </span>
           ))}
+          <span
+            className="flex items-center gap-2 text-[12px] text-[#6B7280] md:before:inline-block md:before:h-1 md:before:w-1 md:before:rounded-full md:before:bg-[#D1D5DB] md:before:mr-3"
+          >
+          </span>
         </div>
       </div>
     </SectionWrapper>

@@ -192,7 +192,7 @@ export default function Features() {
                 className="w-full h-auto block rounded-2xl"
                 preload="auto"
               >
-                <source src="/videos/dashboard.mp4" type="video/mp4" />
+                <source src="/videos/historico.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
