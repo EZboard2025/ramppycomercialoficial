@@ -3,240 +3,383 @@
 import SectionWrapper from "./SectionWrapper";
 import { useLocale } from "@/i18n/LocaleContext";
 
-const planIcons = [
-  (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="14" stroke="#22c55e" strokeWidth="1.5" />
-      <circle cx="16" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-      <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="12" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-      <circle cx="22" cy="12" r="4" stroke="#22c55e" strokeWidth="1.5" />
-      <path d="M4 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M14 26c0-4.4 3.6-8 8-8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <rect x="4" y="8" width="24" height="18" rx="3" stroke="#22c55e" strokeWidth="1.5" />
-      <path d="M4 14h24" stroke="#22c55e" strokeWidth="1.5" />
-      <circle cx="16" cy="12" r="2" fill="#22c55e" />
-      <path d="M10 20h4M10 23h8" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <rect x="6" y="4" width="20" height="24" rx="3" stroke="#22c55e" strokeWidth="1.5" />
-      <path d="M11 10h10M11 14h10M11 18h6" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="22" cy="22" r="6" fill="#0f1c14" stroke="#22c55e" strokeWidth="1.5" />
-      <path d="M20 22h4M22 20v4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-];
+type Locale = "pt" | "es" | "en";
 
-const plansByLocale = {
+type Plan = {
+  key: "standard" | "pro";
+  name: string;
+  subtitle: string;
+  features: string[];
+  popular?: boolean;
+};
+
+type Copy = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  popular: string;
+  includes: string;
+  ctaPlan: string;
+  ctaCredits: string;
+  whatsappPlan: (plan: string) => string;
+  whatsappCredits: string;
+  plans: Plan[];
+  credits: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    bullets: string[];
+  };
+  trust: string[];
+};
+
+const COPY: Record<Locale, Copy> = {
   pt: {
-    title: "Pricing",
-    monthly: "Mensal",
-    yearly: "Anual",
-    billedYearly: "Cobrado anualmente",
-    custom: "Personalizado",
-    popular: "Popular",
-    perMonth: "/vendedor/mês",
-    discountBadge: "-8%",
-    currency: "R$",
-    includes: "Inclui:",
-    everythingFrom: (p: string) => `Tudo do ${p}, mais:`,
-    everythingTeamPlus: "Tudo do Team, mais:",
-    trust: ["Cancele quando quiser", "Suporte em português"],
-    whatsappMessage: (plan: string) => `Olá, tenho interesse no plano ${plan} da Ramppy`,
+    eyebrow: "Planos",
+    title: "Planos",
+    subtitle: "Escolha o plano que combina com o seu time.",
+    popular: "Mais popular",
+    includes: "Inclui",
+    ctaPlan: "Falar com consultor",
+    ctaCredits: "Quero comprar créditos",
+    whatsappPlan: (plan) => `Olá, tenho interesse no plano ${plan} da Ramppy.`,
+    whatsappCredits:
+      "Olá, quero comprar créditos para simulações com cliente sintético na Ramppy.",
     plans: [
       {
+        key: "standard",
+        name: "Standard",
+        subtitle: "Pro começo da operação",
+        features: [
+          "Transcrição da call sem bot",
+          "Resumo personalizado da call",
+          "Dashboard para o gestor",
+          "Nota geral da transcrição",
+        ],
+      },
+      {
+        key: "pro",
         name: "Pro",
-        subtitle: "Até 10 vendedores",
-        monthlyPrice: "379,99",
-        yearlyPrice: "379,99",
-        features: ["Até 10 vendedores", "Simulações de roleplay", "Avaliação SPIN completa", "Análise de Meet automática", "Copiloto Nicole IA", "App Desktop"],
-        cta: "Começar agora",
-        highlighted: false,
+        subtitle: "Evolução do Standard",
+        popular: true,
+        features: [
+          "Nota com explicação detalhada",
+          "Avaliação completa de cada call",
+          "Insights sobre objeções e padrões",
+          "Relatórios comparativos entre vendedores",
+        ],
       },
     ],
+    credits: {
+      eyebrow: "Comprados à parte",
+      title: "Créditos para simulações com cliente sintético",
+      description:
+        "Para rodar simulações com cliente sintético você precisa de créditos, comprados à parte do plano. Cada simulação consome créditos do seu saldo. Sem mensalidade extra, sem fidelidade.",
+      bullets: [
+        "Disponível em qualquer plano",
+        "Pacotes flexíveis e sob demanda",
+        "Créditos não expiram",
+      ],
+    },
+    trust: ["Cancele quando quiser", "Suporte em português", "Sem fidelidade"],
   },
   es: {
-    title: "Precios",
-    monthly: "Mensual",
-    yearly: "Anual",
-    billedYearly: "Facturado anualmente",
-    custom: "Personalizado",
-    popular: "Popular",
-    perMonth: "/vendedor/mes",
-    discountBadge: "-10%",
-    currency: "$",
-    includes: "Incluye:",
-    everythingFrom: (p: string) => `Todo lo de ${p}, y además:`,
-    everythingTeamPlus: "Todo lo de Team, y además:",
-    trust: ["Cancela cuando quieras", "Soporte en español"],
-    whatsappMessage: (plan: string) => `Hola, me interesa el plan ${plan} de Ramppy`,
+    eyebrow: "Planes",
+    title: "Planes",
+    subtitle: "Elige el plan que va con tu equipo.",
+    popular: "Más popular",
+    includes: "Incluye",
+    ctaPlan: "Hablar con un consultor",
+    ctaCredits: "Quiero comprar créditos",
+    whatsappPlan: (plan) => `Hola, me interesa el plan ${plan} de Ramppy.`,
+    whatsappCredits:
+      "Hola, quiero comprar créditos para simulaciones con cliente sintético en Ramppy.",
     plans: [
       {
+        key: "standard",
+        name: "Standard",
+        subtitle: "Para empezar la operación",
+        features: [
+          "Transcripción de la llamada sin bot",
+          "Resumen personalizado de la llamada",
+          "Dashboard para el gestor",
+          "Nota general de la transcripción",
+        ],
+      },
+      {
+        key: "pro",
         name: "Pro",
-        subtitle: "Hasta 10 vendedores",
-        monthlyPrice: "75,99",
-        yearlyPrice: "75,99",
-        features: ["Hasta 10 vendedores", "Simulaciones de roleplay", "Evaluación SPIN completa", "Análisis de Meet automático", "Copiloto Nicole IA", "App Desktop"],
-        cta: "Empezar ahora",
-        highlighted: false,
+        subtitle: "Evolución del Standard",
+        popular: true,
+        features: [
+          "Nota con explicación detallada",
+          "Evaluación completa de cada llamada",
+          "Insights sobre objeciones y patrones",
+          "Reportes comparativos entre vendedores",
+        ],
       },
     ],
+    credits: {
+      eyebrow: "Comprados aparte",
+      title: "Créditos para simulaciones con cliente sintético",
+      description:
+        "Para correr simulaciones con cliente sintético necesitas créditos, comprados aparte del plan. Cada simulación consume créditos de tu saldo. Sin mensualidad extra, sin permanencia.",
+      bullets: [
+        "Disponible en cualquier plan",
+        "Paquetes flexibles y bajo demanda",
+        "Los créditos no expiran",
+      ],
+    },
+    trust: ["Cancela cuando quieras", "Soporte en español", "Sin permanencia"],
   },
   en: {
-    title: "Pricing",
-    monthly: "Monthly",
-    yearly: "Yearly",
-    billedYearly: "Billed annually",
-    custom: "Custom",
-    popular: "Popular",
-    perMonth: "/rep/mo",
-    discountBadge: "-10%",
-    currency: "$",
-    includes: "Includes:",
-    everythingFrom: (p: string) => `Everything in ${p}, plus:`,
-    everythingTeamPlus: "Everything in Team, plus:",
-    trust: ["Cancel anytime", "Dedicated support"],
-    whatsappMessage: (plan: string) => `Hi, I'm interested in the ${plan} plan at Ramppy`,
+    eyebrow: "Plans",
+    title: "Plans",
+    subtitle: "Pick the plan that fits your team.",
+    popular: "Most popular",
+    includes: "Includes",
+    ctaPlan: "Talk to a consultant",
+    ctaCredits: "I want to buy credits",
+    whatsappPlan: (plan) => `Hi, I'm interested in the ${plan} plan at Ramppy.`,
+    whatsappCredits:
+      "Hi, I'd like to buy credits for roleplay simulations at Ramppy.",
     plans: [
       {
+        key: "standard",
+        name: "Standard",
+        subtitle: "To get the operation started",
+        features: [
+          "Call transcription without bot",
+          "Custom call summary",
+          "Manager dashboard",
+          "General transcription score",
+        ],
+      },
+      {
+        key: "pro",
         name: "Pro",
-        subtitle: "Up to 10 reps",
-        monthlyPrice: "75.99",
-        yearlyPrice: "75.99",
-        features: ["Up to 10 reps", "Roleplay simulations", "Full SPIN evaluation", "Automatic Meet analysis", "Nicole AI Copilot", "Desktop App"],
-        cta: "Get started",
-        highlighted: false,
+        subtitle: "Evolution of Standard",
+        popular: true,
+        features: [
+          "Score with detailed explanation",
+          "Full call evaluation",
+          "Objection and pattern insights",
+          "Cross-rep comparison reports",
+        ],
       },
     ],
+    credits: {
+      eyebrow: "Bought separately",
+      title: "Credits for roleplay simulations",
+      description:
+        "To run AI roleplay simulations you need credits, bought separately from your plan. Each simulation consumes credits from your balance. No extra monthly fee, no lock-in.",
+      bullets: [
+        "Available on any plan",
+        "Flexible, on-demand packs",
+        "Credits never expire",
+      ],
+    },
+    trust: ["Cancel anytime", "Dedicated support", "No lock-in"],
   },
 };
 
+const WHATSAPP = "https://wa.me/5531995525157";
+const buildWa = (msg: string) => `${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+
+function Check({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M3.5 8.5l3 3 6-6.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function Arrow({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M3.5 8h9M9 4.5L12.5 8 9 11.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function Pricing() {
-  const locale = useLocale();
-  const t = plansByLocale[locale];
-  const plans = t.plans;
+  const locale = useLocale() as Locale;
+  const t = COPY[locale];
 
   return (
-    <SectionWrapper id="planos" dark>
-      <div className="py-12 md:py-14">
+    <SectionWrapper id="planos">
+      <div className="py-20 md:py-28 lg:py-32 text-[#0A0A0A]">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-5">
-          <h2 className="font-[var(--font-fustat)] text-2xl md:text-[36px] lg:text-[56px] font-semibold leading-[110%] tracking-[-0.04em] text-white">
-            {t.title}
+        <header className="max-w-3xl">
+          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
+            {t.eyebrow}
+          </p>
+          <h2 className="mt-4 font-[var(--font-fustat)] text-[40px] md:text-[56px] lg:text-[64px] font-medium leading-[1.02] tracking-[-0.035em] text-[#0A0A0A]">
+            {t.subtitle}
           </h2>
-        </div>
+        </header>
 
-        {/* Plans Grid */}
-        <div className="grid grid-cols-1 gap-5 max-w-md mx-auto items-stretch">
-          {plans.map((plan, idx) => (
-            <div
-              key={idx}
-              className={`relative rounded-2xl flex flex-col transition-all duration-300 ${
-                plan.highlighted
-                  ? "bg-white/[0.06] border-2 border-primary-green/60 shadow-[0_0_40px_-10px_rgba(34,197,94,0.15)]"
-                  : "bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.05]"
-              }`}
-            >
-              {plan.highlighted && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary-green text-white text-xs font-bold px-5 py-1.5 rounded-full tracking-wide uppercase">
-                  {t.popular}
-                </div>
-              )}
+        {/* Hairline */}
+        <div className="mt-16 md:mt-20 h-px w-full bg-[#E5E7EB]" />
 
-              <div className={`p-5 md:p-7 flex flex-col ${plan.highlighted ? "pt-8 md:pt-10" : ""}`}>
-                {/* Icon */}
-                <div className="mb-5 opacity-80">
-                  {planIcons[idx]}
-                </div>
+        {/* Plans — two columns separated by a single hairline */}
+        <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-[#E5E7EB]">
+          {t.plans.map((plan) => {
+            const popular = !!plan.popular;
+            return (
+              <article
+                key={plan.key}
+                className={[
+                  "relative flex flex-col",
+                  "px-6 md:px-10 lg:px-14",
+                  "pt-12 md:pt-16 pb-12 md:pb-16",
+                  popular
+                    ? "bg-primary-green/[0.025] md:-mx-px"
+                    : "",
+                ].join(" ")}
+              >
+                {popular && (
+                  <span
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-primary-green"
+                    aria-hidden="true"
+                  />
+                )}
 
-                {/* Plan Name */}
-                <h3 className="font-[var(--font-fustat)] text-xl font-bold text-white">
-                  {plan.name}
-                </h3>
-                <p className="text-sm text-white/40 mt-1">
-                  {plan.subtitle}
-                </p>
-
-                {/* Price */}
-                <div className="mt-5 mb-2">
-                  {plan.monthlyPrice ? (
-                    <>
-                      <span className="font-[var(--font-fustat)] text-2xl md:text-[32px] lg:text-[36px] font-bold text-white leading-none">
-                        {t.currency}{plan.monthlyPrice}
-                      </span>
-                      <span className="text-sm text-white/40 ml-1">{t.perMonth}</span>
-                    </>
-                  ) : (
-                    <span className="font-[var(--font-fustat)] text-xl md:text-[28px] lg:text-[32px] font-bold text-white leading-none">
-                      {t.custom}
+                {/* Plan label row */}
+                <div className="flex items-baseline justify-between">
+                  <h3 className="font-[var(--font-fustat)] text-[28px] md:text-[32px] font-medium tracking-[-0.02em] text-[#0A0A0A]">
+                    {plan.name}
+                  </h3>
+                  {popular && (
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-green">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary-green" aria-hidden />
+                      {t.popular}
                     </span>
                   )}
                 </div>
 
+                <p className="mt-2 text-[15px] leading-relaxed text-[#6B7280]">
+                  {plan.subtitle}
+                </p>
+
                 {/* CTA */}
                 <a
-                  href={`https://wa.me/5531995525157?text=${encodeURIComponent(t.whatsappMessage(plan.name))}`}
+                  href={buildWa(t.whatsappPlan(plan.name))}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-auto font-[var(--font-fustat)] w-full text-center text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 block ${
-                    plan.highlighted
-                      ? "bg-white text-teal-dark hover:bg-white/90 shadow-lg"
-                      : "bg-white/[0.08] text-white hover:bg-white/[0.12] border border-white/[0.1]"
-                  }`}
+                  className={[
+                    "group mt-10 inline-flex w-full items-center justify-center gap-2",
+                    "h-11 rounded-full px-5 text-[14px] font-medium",
+                    "transition-all duration-200",
+                    popular
+                      ? "bg-primary-green text-white hover:bg-primary-light shadow-[0_8px_24px_-12px_rgba(45,140,60,0.65)]"
+                      : "bg-white text-[#0A0A0A] border border-[#E5E7EB] hover:border-[#0A0A0A]",
+                  ].join(" ")}
                 >
-                  {plan.cta}
+                  <span>{t.ctaPlan}</span>
+                  <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </a>
-              </div>
 
-              {/* Divider */}
-              <div className={`mx-7 border-t ${plan.highlighted ? "border-white/10" : "border-white/[0.06]"}`} />
-
-              {/* Features */}
-              <div className="p-5 md:p-7 pt-4 md:pt-6 flex-1">
-                <p className="text-xs font-medium text-white/30 uppercase tracking-wider mb-4">
-                  {plan.highlighted ? t.everythingTeamPlus : idx === 0 ? t.includes : t.everythingFrom(plans[idx - 1]?.name ?? "")}
+                {/* Includes label */}
+                <p className="mt-12 text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
+                  {t.includes}
                 </p>
-                <ul className="space-y-3">
-                  {plan.features.map((feature, fidx) => (
-                    <li key={fidx} className="flex items-start gap-3">
-                      <svg
-                        className="w-4 h-4 mt-0.5 flex-shrink-0 text-emerald-400/80"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span className="text-[13px] text-white/55 leading-snug">
+
+                {/* Feature list */}
+                <ul className="mt-4 divide-y divide-[#EEF0F2]">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 py-3.5"
+                    >
+                      <Check
+                        className={[
+                          "mt-[3px] h-4 w-4 flex-shrink-0",
+                          popular ? "text-primary-green" : "text-[#0A0A0A]",
+                        ].join(" ")}
+                      />
+                      <span className="text-[15px] leading-relaxed text-[#1F2937]">
                         {feature}
                       </span>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          ))}
+              </article>
+            );
+          })}
         </div>
 
-        {/* Trust note */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 md:mt-14 text-xs md:text-sm text-white/35">
-          {t.trust.map((item) => (
+        {/* Hairline */}
+        <div className="h-px w-full bg-[#E5E7EB]" />
+
+        {/* Credits add-on */}
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 py-12 md:py-16">
+          <div className="md:col-span-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
+              {t.credits.eyebrow}
+            </p>
+            <h3 className="mt-4 font-[var(--font-fustat)] text-[24px] md:text-[28px] font-medium leading-[1.15] tracking-[-0.02em] text-[#0A0A0A]">
+              {t.credits.title}
+            </h3>
+          </div>
+
+          <div className="md:col-span-5">
+            <p className="text-[15px] leading-[1.65] text-[#4B5563]">
+              {t.credits.description}
+            </p>
+            <ul className="mt-6 space-y-2.5">
+              {t.credits.bullets.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 text-[14px] text-[#1F2937]"
+                >
+                  <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-[#0A0A0A]" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-3 md:flex md:items-end md:justify-end">
+            <a
+              href={buildWa(t.whatsappCredits)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 text-[14px] font-medium text-[#0A0A0A] border-b border-[#0A0A0A] pb-1 hover:gap-3 transition-all duration-200"
+            >
+              <span>{t.ctaCredits}</span>
+              <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
+          </div>
+        </section>
+
+        {/* Hairline */}
+        <div className="h-px w-full bg-[#E5E7EB]" />
+
+        {/* Trust strip */}
+        <div className="flex flex-wrap items-center gap-x-10 gap-y-3 pt-8 text-[12px] text-[#6B7280]">
+          {t.trust.map((item, i) => (
             <span key={item} className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-              {item}
+              {i > 0 && (
+                <span
+                  className="hidden md:inline-block h-1 w-1 rounded-full bg-[#D1D5DB] -ml-5 mr-3"
+                  aria-hidden
+                />
+              )}
+              <Check className="h-3.5 w-3.5 text-primary-green" />
+              <span>{item}</span>
             </span>
           ))}
         </div>

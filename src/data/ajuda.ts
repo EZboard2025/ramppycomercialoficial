@@ -61,9 +61,9 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
               "Sim. Você define idade, temperamento, objeções específicas e contexto da venda. Cada simulação pode ser diferente.",
           },
           {
-            question: "Como é calculada a nota SPIN?",
+            question: "Como é calculada a nota da call?",
             answer:
-              "A IA analisa a transcrição e avalia a qualidade das perguntas nos 4 pilares: Situação, Problema, Implicação e Necessidade de Solução. Cada pilar recebe uma nota de 0 a 10.",
+              "A IA analisa a transcrição e avalia a qualidade da conversa em vários indicadores de qualidade da venda. Cada indicador recebe uma nota de 0 a 10.",
           },
         ],
       },
@@ -71,14 +71,14 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
         title: "Análise de reuniões",
         items: [
           {
-            question: "Como conectar o Google Meet?",
+            question: "Como funciona a análise de reuniões?",
             answer:
-              "Na plataforma, conecte sua conta Google em 'Meu Perfil' e depois acesse 'Agenda'. O bot entrará automaticamente nas reuniões agendadas.",
+              "O vendedor instala o app desktop da Ramppy uma única vez. A partir daí, cada reunião é capturada silenciosamente direto do dispositivo, sem nenhum bot entrar na chamada e sem aviso para o prospect. Funciona em Google Meet, Zoom e Teams. Opcionalmente, conecte sua conta Google em 'Meu Perfil' para que o app detecte reuniões da sua agenda automaticamente.",
           },
           {
-            question: "O bot grava a reunião?",
+            question: "Como funciona a gravação?",
             answer:
-              "O bot transcreve a reunião em tempo real. A transcrição é usada para gerar a avaliação SPIN. O áudio não é armazenado.",
+              "O app desktop captura o áudio localmente do dispositivo do vendedor e transcreve a reunião em tempo real. A transcrição é usada para gerar a avaliação automática.",
           },
           {
             question: "Quem tem acesso à análise?",
@@ -149,9 +149,9 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
               "Yes. You set the age, temperament, specific objections, and sales context. Every simulation can be different.",
           },
           {
-            question: "How is the SPIN score calculated?",
+            question: "How is the call score calculated?",
             answer:
-              "The AI analyzes the transcript and evaluates the quality of the questions across the 4 pillars: Situation, Problem, Implication, and Need-payoff. Each pillar gets a score from 0 to 10.",
+              "The AI analyzes the transcript and evaluates the conversation across multiple sales quality indicators. Each indicator gets a score from 0 to 10.",
           },
         ],
       },
@@ -159,14 +159,14 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
         title: "Meeting analysis",
         items: [
           {
-            question: "How do I connect Google Meet?",
+            question: "How does meeting analysis work?",
             answer:
-              "In the platform, connect your Google account under 'My Profile' and then go to 'Calendar'. The bot will automatically join scheduled meetings.",
+              "The rep installs the Ramppy desktop app once. From there, every meeting is captured silently from the device, with no bot ever joining the call and no notice for the prospect. It works on Google Meet, Zoom and Teams. Optionally, connect your Google account under 'My Profile' so the app can auto-detect meetings from your calendar.",
           },
           {
-            question: "Does the bot record the meeting?",
+            question: "How does the recording work?",
             answer:
-              "The bot transcribes the meeting in real time. The transcript is used to generate the SPIN evaluation. Audio is not stored.",
+              "The desktop app captures audio locally from the rep's device and transcribes the meeting in real time. The transcript is used to generate the automatic evaluation.",
           },
           {
             question: "Who has access to the analysis?",
@@ -237,9 +237,9 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
               "Sí. Defines edad, temperamento, objeciones específicas y contexto de venta. Cada simulación puede ser diferente.",
           },
           {
-            question: "¿Cómo se calcula la nota SPIN?",
+            question: "¿Cómo se calcula la nota de la llamada?",
             answer:
-              "La IA analiza la transcripción y evalúa la calidad de las preguntas en los 4 pilares: Situación, Problema, Implicación y Necesidad de Solución. Cada pilar recibe una nota de 0 a 10.",
+              "La IA analiza la transcripción y evalúa la conversación en varios indicadores de calidad de la venta. Cada indicador recibe una nota de 0 a 10.",
           },
         ],
       },
@@ -247,14 +247,14 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
         title: "Análisis de reuniones",
         items: [
           {
-            question: "¿Cómo conecto Google Meet?",
+            question: "¿Cómo funciona el análisis de reuniones?",
             answer:
-              "En la plataforma, conecta tu cuenta de Google en 'Mi Perfil' y luego accede a 'Calendario'. El bot entrará automáticamente en las reuniones agendadas.",
+              "El vendedor instala la app de escritorio de Ramppy una sola vez. A partir de ahí, cada reunión se captura silenciosamente desde el dispositivo, sin que ningún bot entre en la llamada y sin aviso para el prospect. Funciona en Google Meet, Zoom y Teams. Opcionalmente, conecta tu cuenta de Google en 'Mi Perfil' para que la app detecte reuniones de tu calendario automáticamente.",
           },
           {
-            question: "¿El bot graba la reunión?",
+            question: "¿Cómo funciona la grabación?",
             answer:
-              "El bot transcribe la reunión en tiempo real. La transcripción se usa para generar la evaluación SPIN. El audio no se almacena.",
+              "La app de escritorio captura el audio localmente desde el dispositivo del vendedor y transcribe la reunión en tiempo real. La transcripción se usa para generar la evaluación automática.",
           },
           {
             question: "¿Quién tiene acceso al análisis?",

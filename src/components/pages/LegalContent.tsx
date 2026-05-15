@@ -60,18 +60,18 @@ const strings = {
     dataPersonal: "Nome, e-mail e informações de perfil fornecidas no cadastro.",
     dataUsageLabel: "Dados de uso:",
     dataUsage:
-      "Transcrições de simulações e reuniões analisadas, notas de avaliação SPIN, histórico de atividades na plataforma.",
+      "Transcrições de simulações e reuniões analisadas, notas de avaliação, histórico de atividades na plataforma.",
     dataIntegrationLabel: "Dados de integração:",
     dataIntegration:
-      "Informações do Google Agenda para agendamento automático do bot de análise de reuniões.",
+      "Informações do Google Agenda para detecção automática de reuniões pelo aplicativo desktop de análise de reuniões.",
     dataImportantLabel: "Importante:",
     dataImportant:
-      "Não armazenamos áudio ou vídeo das simulações ou reuniões. Apenas as transcrições em texto são processadas e armazenadas.",
+      "O cliente é responsável por garantir que a gravação e a análise de reuniões pelo aplicativo desktop estejam em conformidade com a legislação aplicável, incluindo eventuais exigências de consentimento prévio dos participantes da reunião conforme as leis da sua jurisdição.",
 
     useTitle: "2. Como usamos seus dados",
     useItems: [
-      "Gerar avaliações SPIN Selling das simulações e reuniões",
-      "Personalizar a experiência de treinamento e coaching via Nicole IA",
+      "Gerar avaliações automáticas das simulações e reuniões",
+      "Personalizar a experiência de treinamento e coaching",
       "Fornecer métricas e relatórios de performance ao gestor da equipe",
       "Melhorar a qualidade dos modelos de avaliação da plataforma",
       "Comunicações sobre o serviço e atualizações da plataforma",
@@ -108,10 +108,6 @@ const strings = {
 
     securityTitle: "Segurança",
     securityItems: [
-      {
-        title: "Sem armazenamento de áudio/vídeo",
-        desc: "Não armazenamos gravações de áudio ou vídeo. Apenas transcrições em texto são processadas e armazenadas de forma segura.",
-      },
       {
         title: "Banco de dados protegido",
         desc: "Utilizamos Supabase com Row Level Security (RLS), garantindo que cada empresa acesse apenas seus próprios dados, com isolamento completo entre organizações.",
@@ -189,18 +185,18 @@ const strings = {
     dataPersonal: "Name, email, and profile information provided at sign-up.",
     dataUsageLabel: "Usage data:",
     dataUsage:
-      "Transcripts of analyzed simulations and meetings, SPIN evaluation scores, and activity history on the platform.",
+      "Transcripts of analyzed simulations and meetings, evaluation scores, and activity history on the platform.",
     dataIntegrationLabel: "Integration data:",
     dataIntegration:
-      "Google Calendar information for automatic scheduling of the meeting analysis bot.",
+      "Google Calendar information for automatic detection of meetings by the meeting analysis desktop application.",
     dataImportantLabel: "Important:",
     dataImportant:
-      "We do not store audio or video from simulations or meetings. Only text transcripts are processed and stored.",
+      "The customer is responsible for ensuring that recording and analyzing meetings via the desktop app complies with applicable law, including any requirement to obtain prior consent from meeting participants under the laws of their jurisdiction.",
 
     useTitle: "2. How we use your data",
     useItems: [
-      "Generate SPIN Selling evaluations of simulations and meetings",
-      "Personalize the training and coaching experience via Nicole AI",
+      "Generate automatic evaluations of simulations and meetings",
+      "Personalize the training and coaching experience",
       "Provide performance metrics and reports to the team manager",
       "Improve the quality of the platform\u2019s evaluation models",
       "Send service-related communications and platform updates",
@@ -237,10 +233,6 @@ const strings = {
 
     securityTitle: "Security",
     securityItems: [
-      {
-        title: "No audio/video storage",
-        desc: "We do not store audio or video recordings. Only text transcripts are processed and stored securely.",
-      },
       {
         title: "Protected database",
         desc: "We use Supabase with Row Level Security (RLS), ensuring each company only accesses its own data, with full isolation between organizations.",
@@ -318,18 +310,18 @@ const strings = {
     dataPersonal: "Nombre, correo electrónico e información de perfil proporcionados en el registro.",
     dataUsageLabel: "Datos de uso:",
     dataUsage:
-      "Transcripciones de simulaciones y reuniones analizadas, puntuaciones de evaluación SPIN e historial de actividad en la plataforma.",
+      "Transcripciones de simulaciones y reuniones analizadas, puntuaciones de evaluación e historial de actividad en la plataforma.",
     dataIntegrationLabel: "Datos de integración:",
     dataIntegration:
-      "Información de Google Calendar para la programación automática del bot de análisis de reuniones.",
+      "Información de Google Calendar para la detección automática de reuniones por la aplicación de escritorio de análisis de reuniones.",
     dataImportantLabel: "Importante:",
     dataImportant:
-      "No almacenamos audio ni video de las simulaciones ni de las reuniones. Solo se procesan y almacenan las transcripciones en texto.",
+      "El cliente es responsable de asegurar que la grabación y el análisis de reuniones mediante la aplicación de escritorio cumplan con la legislación aplicable, incluyendo cualquier requisito de consentimiento previo de los participantes de la reunión según las leyes de su jurisdicción.",
 
     useTitle: "2. Cómo usamos sus datos",
     useItems: [
-      "Generar evaluaciones SPIN Selling de simulaciones y reuniones",
-      "Personalizar la experiencia de entrenamiento y coaching a través de Nicole IA",
+      "Generar evaluaciones automáticas de simulaciones y reuniones",
+      "Personalizar la experiencia de entrenamiento y coaching",
       "Proporcionar métricas e informes de rendimiento al responsable del equipo",
       "Mejorar la calidad de los modelos de evaluación de la plataforma",
       "Enviar comunicaciones sobre el servicio y actualizaciones de la plataforma",
@@ -366,10 +358,6 @@ const strings = {
 
     securityTitle: "Seguridad",
     securityItems: [
-      {
-        title: "Sin almacenamiento de audio/video",
-        desc: "No almacenamos grabaciones de audio ni video. Solo se procesan y almacenan de forma segura las transcripciones en texto.",
-      },
       {
         title: "Base de datos protegida",
         desc: "Utilizamos Supabase con Row Level Security (RLS), garantizando que cada empresa acceda únicamente a sus propios datos, con aislamiento completo entre organizaciones.",

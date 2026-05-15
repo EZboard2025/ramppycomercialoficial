@@ -8,85 +8,85 @@ const strings = {
     simBadge: "Simulação de vendas",
     simTitleA: "Pratique",
     simTitleB: " antes de vender de verdade",
-    simBodyMobile: "Seu vendedor treina com um cliente virtual por voz. Cenários configuráveis, avaliação SPIN automática.",
+    simBodyMobile: "Seu vendedor treina com um cliente virtual por voz. Cenários configuráveis, avaliação automática ao final.",
     simBodyDesktop:
-      "O vendedor pratica conversas de vendas com um cliente virtual gerado por inteligência artificial. O cenário é configurável,idade, temperamento, persona do comprador, objeções específicas,e a conversa acontece por voz, com transcrição automática.",
+      "O vendedor pratica conversas de vendas com um cliente virtual gerado por inteligência artificial. O cenário é configurável, idade, temperamento, persona do comprador, objeções específicas, e a conversa acontece por voz, com transcrição automática.",
     simBody2:
-      "Ao final, uma avaliação detalhada baseada na metodologia SPIN Selling classifica o desempenho em múltiplos indicadores: Situação, Problema, Implicação e Necessidade de Solução.",
-    nicoleBadge: "Nicole IA",
-    nicoleTitleA: "Sua assistente de ",
-    nicoleTitleB: "vendas",
-    nicoleTitleC: " pessoal",
-    nicoleBodyMobile: "IA que acompanha performance, organiza agenda e analisa reuniões do seu time em tempo real.",
-    nicoleBodyDesktop:
-      "A Nicole é a assistente de IA da Ramppy. Ela acompanha a performance de cada vendedor, organiza a agenda, analisa reuniões e sugere os próximos passos, tudo em tempo real, direto na plataforma.",
-    nicoleBody2:
-      "Precisa saber como foi a última call? Quer comparar vendedores? Precisa de um resumo do dia? É só perguntar. A Nicole tem contexto completo do seu time e responde na hora.",
-    meetBadge: "Análise de reuniões",
+      "Ao final, uma avaliação detalhada classifica o desempenho do vendedor em múltiplos indicadores e aponta exatamente o que precisa evoluir na próxima conversa.",
+    dashboardBadge: "Dashboard do gestor",
+    dashboardTitleA: "Dashboard completo para o ",
+    dashboardTitleB: "gestor",
+    dashboardTitleC: "",
+    dashboardBodyMobile: "Performance de cada vendedor, comparativos do time, follow-ups no WhatsApp e transcrição de cada venda. Tudo em um painel só.",
+    dashboardBodyDesktop:
+      "Visão detalhada de cada vendedor: performance, comparativos do time, próximas reuniões, follow-ups no WhatsApp e transcrição de cada venda. Tudo em um lugar só, direto no painel do gestor.",
+    dashboardBody2:
+      "Identifique padrões, compare a evolução do time e saiba exatamente onde cada vendedor precisa melhorar. Sem caçar dados em planilhas, sem montar relatório à mão.",
+    meetBadge: "Análise de reuniões — sem bot na call",
     meetTitleA: "Análise de cada ",
     meetTitleB: "reunião",
     meetTitleC: " real",
-    meetBodyMobile: "Bot entra nas reuniões do Meet, transcreve e avalia com SPIN Selling. Sem instalar nada.",
+    meetBodyMobile: "App desktop grava e avalia cada reunião direto da máquina do vendedor. Sem bot entrando na call, em qualquer plataforma.",
     meetBodyDesktop:
-      "Conecte seu Google Agenda e pronto. Um bot entra automáticamente em cada reunião do Google Meet, transcreve tudo e aplica a mesma avaliação SPIN Selling usada nas simulações. Sem instalar nada, sem configurar nada.",
+      "O vendedor instala o app desktop uma única vez e pronto. Cada reunião é capturada de forma silenciosa direto do dispositivo, transcrita em tempo real e recebe a mesma avaliação usada nas simulações. Funciona em Google Meet, Zoom e Teams — sem nenhum bot entrar na chamada e sem aviso constrangedor para o prospect.",
     meetBody2:
-      "O gestor acompanha o desempenho real de cada vendedor em negociações de verdade. Identifique padrões, compare evolução e saiba exatamente onde cada um precisa melhorar.",
+      "O gestor acompanha o desempenho real de cada vendedor em negociações de verdade, com a discrição que o cliente espera. Identifique padrões, compare evolução e saiba exatamente onde cada um precisa melhorar.",
   },
   es: {
     simBadge: "Simulación de ventas",
     simTitleA: "Practica",
     simTitleB: " antes de vender de verdad",
-    simBodyMobile: "Tu vendedor entrena con un cliente virtual por voz. Escenarios configurables, evaluación SPIN automática.",
+    simBodyMobile: "Tu vendedor entrena con un cliente virtual por voz. Escenarios configurables, evaluación automática al final.",
     simBodyDesktop:
-      "El vendedor practica conversaciones de ventas con un cliente virtual generado por inteligencia artificial. El escenario es configurable — edad, temperamento, perfil del comprador, objeciones específicas — y la conversación ocurre por voz, con transcripción automática.",
+      "El vendedor practica conversaciones de ventas con un cliente virtual generado por inteligencia artificial. El escenario es configurable: edad, temperamento, perfil del comprador, objeciones específicas, y la conversación ocurre por voz, con transcripción automática.",
     simBody2:
-      "Al final, una evaluación detallada basada en SPIN Selling clasifica el desempeño en múltiples indicadores: Situación, Problema, Implicación y Necesidad de Solución.",
-    nicoleBadge: "Nicole IA",
-    nicoleTitleA: "Tu asistente de ",
-    nicoleTitleB: "ventas",
-    nicoleTitleC: " personal",
-    nicoleBodyMobile: "Una IA que monitorea el desempeño, organiza la agenda y analiza las reuniones de tu equipo en tiempo real.",
-    nicoleBodyDesktop:
-      "Nicole es la asistente de IA de Ramppy. Monitorea el desempeño de cada vendedor, organiza la agenda, analiza reuniones y sugiere los próximos pasos, todo en tiempo real, directo en la plataforma.",
-    nicoleBody2:
-      "¿Necesitas saber cómo fue la última llamada? ¿Quieres comparar vendedores? ¿Necesitas un resumen del día? Solo pregunta. Nicole tiene contexto completo de tu equipo y responde al instante.",
-    meetBadge: "Análisis de reuniones",
+      "Al final, una evaluación detallada clasifica el desempeño del vendedor en múltiples indicadores y muestra exactamente qué necesita mejorar en la próxima conversación.",
+    dashboardBadge: "Dashboard del manager",
+    dashboardTitleA: "Dashboard completo para el ",
+    dashboardTitleB: "manager",
+    dashboardTitleC: "",
+    dashboardBodyMobile: "Desempeño de cada vendedor, comparativos del equipo, follow-ups por WhatsApp y transcripción de cada venta. Todo en un panel.",
+    dashboardBodyDesktop:
+      "Visión detallada de cada vendedor: desempeño, comparativos del equipo, próximas reuniones, follow-ups por WhatsApp y transcripción de cada venta. Todo en un solo lugar, dentro del panel del manager.",
+    dashboardBody2:
+      "Identifica patrones, compara la evolución del equipo y descubre exactamente en qué necesita mejorar cada vendedor. Sin perseguir datos en planillas, sin armar reportes a mano.",
+    meetBadge: "Análisis de reuniones — sin bot en la llamada",
     meetTitleA: "Análisis de cada ",
     meetTitleB: "reunión",
     meetTitleC: " real",
-    meetBodyMobile: "Un bot entra en las reuniones de Meet, transcribe y evalúa con SPIN Selling. Sin instalar nada.",
+    meetBodyMobile: "La app de escritorio graba y evalúa cada reunión directamente desde la máquina del vendedor. Sin un bot entrando en la llamada, en cualquier plataforma.",
     meetBodyDesktop:
-      "Conecta tu Google Calendar y listo. Un bot entra automáticamente en cada reunión de Google Meet, transcribe todo y aplica la misma evaluación SPIN Selling usada en las simulaciones. Sin instalar nada, sin configurar nada.",
+      "El vendedor instala la app de escritorio una sola vez y listo. Cada reunión se captura de forma silenciosa desde el dispositivo, se transcribe en tiempo real y recibe la misma evaluación usada en las simulaciones. Funciona en Google Meet, Zoom y Teams — sin que ningún bot entre en la llamada y sin avisos incómodos para el prospect.",
     meetBody2:
-      "El manager monitorea el desempeño real de cada vendedor en negociaciones reales. Identifica patrones, compara la evolución y sabe exactamente en qué necesita mejorar cada uno.",
+      "El manager monitorea el desempeño real de cada vendedor en negociaciones reales, con la discreción que el cliente espera. Identifica patrones, compara la evolución y sabe exactamente en qué necesita mejorar cada uno.",
   },
   en: {
     simBadge: "Sales simulation",
     simTitleA: "Practice",
     simTitleB: " before selling for real",
-    simBodyMobile: "Your rep trains with a virtual customer by voice. Configurable scenarios, automatic SPIN evaluation.",
+    simBodyMobile: "Your rep trains with a virtual customer by voice. Configurable scenarios, automatic evaluation at the end.",
     simBodyDesktop:
-      "Reps practice sales conversations with a virtual customer powered by artificial intelligence. The scenario is fully configurable — age, temperament, buyer persona, specific objections — and the conversation happens by voice with automatic transcription.",
+      "Reps practice sales conversations with a virtual customer powered by artificial intelligence. The scenario is fully configurable: age, temperament, buyer persona, specific objections, and the conversation happens by voice with automatic transcription.",
     simBody2:
-      "At the end, a detailed evaluation based on SPIN Selling ranks performance across multiple indicators: Situation, Problem, Implication and Need-Payoff.",
-    nicoleBadge: "Nicole AI",
-    nicoleTitleA: "Your personal ",
-    nicoleTitleB: "sales",
-    nicoleTitleC: " assistant",
-    nicoleBodyMobile: "An AI that tracks performance, organizes your schedule and analyzes your team's meetings in real time.",
-    nicoleBodyDesktop:
-      "Nicole is Ramppy's AI assistant. She tracks every rep's performance, manages the calendar, analyzes meetings and suggests next steps — all in real time, right inside the platform.",
-    nicoleBody2:
-      "Need to know how the last call went? Want to compare reps? Need a daily summary? Just ask. Nicole has full context of your team and answers instantly.",
-    meetBadge: "Meeting analysis",
+      "At the end, a detailed evaluation ranks the rep's performance across multiple indicators and shows exactly what to improve in the next conversation.",
+    dashboardBadge: "Manager dashboard",
+    dashboardTitleA: "A complete dashboard for ",
+    dashboardTitleB: "managers",
+    dashboardTitleC: "",
+    dashboardBodyMobile: "Performance of every rep, team comparisons, WhatsApp follow-ups and transcripts of every sale. All in one panel.",
+    dashboardBodyDesktop:
+      "A detailed view of every rep: performance, team comparisons, upcoming meetings, WhatsApp follow-ups and transcripts of every sale. All in one place, right inside the manager dashboard.",
+    dashboardBody2:
+      "Spot patterns, compare team progress and know exactly where each rep needs to improve. No chasing data through spreadsheets, no putting reports together by hand.",
+    meetBadge: "Meeting analysis — without a bot in the call",
     meetTitleA: "Analysis of every ",
     meetTitleB: "real",
     meetTitleC: " meeting",
-    meetBodyMobile: "A bot joins your Meet calls, transcribes and evaluates them with SPIN Selling. Zero setup.",
+    meetBodyMobile: "A desktop app records and evaluates every meeting straight from the rep's machine. No bot joining the call, on any platform.",
     meetBodyDesktop:
-      "Connect your Google Calendar and you're done. A bot automatically joins every Google Meet call, transcribes everything and applies the same SPIN Selling evaluation used in simulations. Nothing to install, nothing to configure.",
+      "The rep installs the desktop app once and that's it. Every meeting is captured silently from the device, transcribed in real time and runs through the same evaluation used in simulations. Works on Google Meet, Zoom and Teams — with no bot ever joining the call and no awkward notice for the prospect.",
     meetBody2:
-      "Managers see real performance from real negotiations. Spot patterns, compare progress and know exactly where each rep needs to improve.",
+      "Managers see real performance from real negotiations, with the discretion clients expect. Spot patterns, compare progress and know exactly where each rep needs to improve.",
   },
 };
 
@@ -178,10 +178,10 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Nicole IA */}
-        <div id="nicole" className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16 relative mt-6 md:mt-8 lg:mr-[3vw] xl:mr-[4vw]">
+        {/* Dashboard do gestor */}
+        <div id="dashboard" className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative mt-16 md:mt-32">
           {/* Video - Left (after text on mobile) */}
-          <div className="flex-1 w-full max-w-[500px] lg:mt-16 order-last lg:order-first">
+          <div className="flex-1 w-full lg:translate-x-[calc(-5vw+80px)] xl:translate-x-[calc(-7vw+80px)] order-last lg:order-first">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               <video
                 ref={(el) => { if (el) el.playbackRate = 1; }}
@@ -192,32 +192,32 @@ export default function Features() {
                 className="w-full h-auto block rounded-2xl"
                 preload="auto"
               >
-                <source src="/videos/nicole.mp4" type="video/mp4" />
+                <source src="/videos/dashboard.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
 
           {/* Text - Right */}
-          <div className="flex-1 max-w-lg lg:pt-32 lg:ml-auto">
+          <div className="flex-1 max-w-lg">
             <span className="text-xs font-bold text-primary-green bg-green-surface px-3 py-1.5 rounded-full uppercase tracking-wider">
-              {t.nicoleBadge}
+              {t.dashboardBadge}
             </span>
-            <h2 className="font-[var(--font-fustat)] text-xl md:text-[32px] lg:text-[42px] font-semibold text-teal-dark leading-[115%] tracking-tight mt-4 md:mt-5 mb-4 md:mb-5">
-              {t.nicoleTitleA}
+            <h2 className="font-[var(--font-fustat)] text-xl md:text-[28px] lg:text-[36px] font-semibold text-teal-dark leading-[115%] tracking-tight mt-4 md:mt-5 mb-4 md:mb-5">
+              {t.dashboardTitleA}
               <span className="relative inline-block isolate">
-                <span className="relative z-10">{t.nicoleTitleB}</span>
+                <span className="relative z-10">{t.dashboardTitleB}</span>
                 <svg className="absolute -left-3 -top-2 w-[calc(100%+24px)] h-[calc(100%+16px)] pointer-events-none z-0" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                   <path d="M 30 38 C 25 18, 65 6, 110 8 C 155 10, 190 18, 188 38 C 186 58, 150 72, 100 74 C 50 76, 12 62, 14 42 C 16 28, 45 16, 90 14" stroke="#4CAF50" strokeWidth="2.5" strokeLinecap="round" fill="none" className="draw-circle-path" />
                 </svg>
               </span>
-              {t.nicoleTitleC}
+              {t.dashboardTitleC}
             </h2>
-            <p className="text-sm md:text-lg text-text-secondary leading-relaxed">
-              <span className="md:hidden">{t.nicoleBodyMobile}</span>
-              <span className="hidden md:inline">{t.nicoleBodyDesktop}</span>
+            <p className="text-sm md:text-base text-text-secondary leading-relaxed">
+              <span className="md:hidden">{t.dashboardBodyMobile}</span>
+              <span className="hidden md:inline">{t.dashboardBodyDesktop}</span>
             </p>
-            <p className="hidden md:block text-lg text-text-secondary leading-relaxed mt-6">
-              {t.nicoleBody2}
+            <p className="hidden md:block text-base text-text-secondary leading-relaxed mt-6">
+              {t.dashboardBody2}
             </p>
           </div>
         </div>

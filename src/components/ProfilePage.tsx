@@ -76,7 +76,7 @@ function TabVisaoGeral() {
             <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
             </div>
-            <h3 className="text-base font-bold text-gray-900">Metricas SPIN</h3>
+            <h3 className="text-base font-bold text-gray-900">Metricas da call</h3>
           </div>
           <div className="space-y-3">
             {[
@@ -103,8 +103,8 @@ function TabVisaoGeral() {
   );
 }
 
-/* ─── Tab: Analise SPIN ─── */
-function TabAnaliseSpin() {
+/* ─── Tab: Analise da call ─── */
+function TabAnaliseCall() {
   return (
     <div>
       <div className="grid grid-cols-2 gap-4 mb-6">
@@ -322,7 +322,7 @@ export default function ProfilePage() {
 
   const tabs = [
     { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>, label: "Visao Geral" },
-    { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>, label: "Analise SPIN" },
+    { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>, label: "Analise da call" },
     { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, label: "Por Persona" },
     { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, label: "Por Objecao" },
   ];
@@ -348,7 +348,7 @@ export default function ProfilePage() {
 
       {/* Tab Content */}
       {activeTab === 0 && <TabVisaoGeral />}
-      {activeTab === 1 && <TabAnaliseSpin />}
+      {activeTab === 1 && <TabAnaliseCall />}
       {activeTab === 2 && <TabPorPersona />}
       {activeTab === 3 && <TabPorObjecao />}
     </div>

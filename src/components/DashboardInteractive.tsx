@@ -285,7 +285,7 @@ function NicolePanel() {
 function HomePage() {
   return (
     <div className="grid grid-cols-12 gap-4 animate-[fadeIn_0.3s_ease]">
-      {/* Col 1: Performance chart + SPIN metrics */}
+      {/* Col 1: Performance chart + call metrics */}
       <div className="col-span-5 space-y-4">
         {/* Evolucao de Performance */}
         <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
@@ -301,9 +301,9 @@ function HomePage() {
           </div>
         </div>
 
-        {/* Metricas SPIN */}
+        {/* Metricas da call */}
         <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-green-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-          <h3 className="text-sm font-semibold text-gray-900 mb-4">Metricas SPIN</h3>
+          <h3 className="text-sm font-semibold text-gray-900 mb-4">Metricas da call</h3>
           <div className="space-y-4">
             {[
               { letter: "S", label: "Situacao", value: 7.5, pct: 74.5, color: "green", focus: false },
@@ -464,11 +464,11 @@ function PlaceholderPage({ title, description }: { title: string; description: s
 }
 
 const pages: Record<string, { title: string; description: string }> = {
-  perfil: { title: "Meu Perfil", description: "Veja suas metricas SPIN, evolucao e conexoes." },
+  perfil: { title: "Meu Perfil", description: "Veja suas metricas da call, evolucao e conexoes." },
   simulacao: { title: "Simulacao", description: "Configure persona, objecoes e inicie um roleplay com IA." },
   whatsapp: { title: "WhatsApp IA", description: "Gerencie conversas com o copiloto Nicole em tempo real." },
   calendario: { title: "Calendario", description: "Gerencie sua agenda e grave reunioes automaticamente." },
-  meet: { title: "Analise Meet", description: "Envie o bot para suas reunioes e receba avaliacao SPIN." },
+  meet: { title: "Analise Meet", description: "Instale o app desktop e cada reuniao e gravada e avaliada automaticamente, sem bot na call." },
   historico: { title: "Historico", description: "Todas as simulacoes, follow-ups e analises de Meet." },
   gestao: { title: "Gestao", description: "Dashboard da equipe com metricas de cada vendedor." },
   publica: { title: "Simulacao Publica", description: "Compartilhe um link de simulacao para prospects." },

@@ -31,9 +31,9 @@ const steps = [
   },
   {
     number: 3,
-    title: "Análise automática de reuniões",
+    title: "Análise automática de reuniões — sem bot na call",
     description:
-      "Conecte o Google Agenda e um bot entra automaticamente nas reuniões do Google Meet, transcreve e analisa cada call.",
+      "Instale o app desktop da Ramppy uma única vez e cada reunião é capturada silenciosamente do dispositivo, transcrita e analisada. Funciona em Google Meet, Zoom e Teams, sem nenhum bot entrar na chamada.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -50,9 +50,9 @@ const steps = [
   },
   {
     number: 4,
-    title: "Avaliação SPIN Selling",
+    title: "Avaliação automática",
     description:
-      "Cada simulação e reunião real recebe uma avaliação detalhada nos 4 pilares: Situação, Problema, Implicação e Necessidade de Solução.",
+      "Cada simulação e reunião real recebe uma avaliação detalhada em múltiplos indicadores que apontam exatamente o que evoluir na próxima conversa.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />

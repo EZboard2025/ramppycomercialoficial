@@ -9,7 +9,6 @@ const staticPaths = [
   "/como-funciona",
   "/sobre",
   "/ajuda",
-  "/metodologia-spin",
   "/contato",
   "/parceiros",
   "/legal",

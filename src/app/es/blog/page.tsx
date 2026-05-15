@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   locale: "es",
   path: "/blog",
-  title: "Blog de Ramppy — Ventas con IA, SPIN Selling y Gestión Comercial",
+  title: "Blog de Ramppy — Ventas con IA y Gestión Comercial",
   description:
     "Artículos, actualizaciones del producto y reflexiones sobre ventas consultivas, IA aplicada y gestión de equipos comerciales de alto rendimiento.",
 });

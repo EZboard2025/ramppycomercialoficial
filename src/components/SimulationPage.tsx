@@ -19,7 +19,7 @@ const allObjections = [
   { text: "Valor dos planos parece alto", dot: null },
   { text: "Nao sei se todos os membros da minha equipe irao se adaptar", dot: "green" },
   { text: "Estamos com orcamento apertado", dot: null },
-  { text: "Nao estou convencido de que a metodologia SPIN Selling", dot: null },
+  { text: "Nao estou convencido de que essa metodologia funcione", dot: null },
 ];
 
 const temperaments = ["Analitico", "Empatico", "Determinado", "Indeciso", "Sociavel"];

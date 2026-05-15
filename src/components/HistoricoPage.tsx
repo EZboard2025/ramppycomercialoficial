@@ -2,13 +2,13 @@ export default function HistoricoPage() {
   const categories = [
     {
       title: "Simulacoes",
-      desc: "Revise seus roleplays de vendas e avaliacoes SPIN",
+      desc: "Revise seus roleplays de vendas e avaliacoes",
       color: "green",
       icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
     },
     {
       title: "Google Meet",
-      desc: "Avaliacoes de reunioes reais gravadas pelo bot",
+      desc: "Avaliacoes de reunioes reais gravadas pelo app desktop",
       color: "blue",
       icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>,
     },

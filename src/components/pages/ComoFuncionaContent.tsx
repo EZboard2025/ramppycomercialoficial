@@ -28,13 +28,13 @@ const strings = {
       },
       {
         badge: "Passo 04",
-        title: "Análise automática de reuniões reais",
-        text: "Conecte seu Google Calendar e pronto. Um bot entra automaticamente em cada reunião do Google Meet, transcreve tudo e aplica a mesma avaliação das simulações.",
+        title: "Análise automática de reuniões reais — sem bot na call",
+        text: "O vendedor instala o app desktop da Ramppy uma única vez. A partir daí, cada reunião é capturada silenciosamente direto do dispositivo, transcrita em tempo real e recebe a mesma avaliação usada nas simulações. Funciona em Google Meet, Zoom e Teams — sem nenhum bot entrar na chamada e sem aviso para o prospect. Conecte o Google Calendar opcionalmente para detectar reuniões automaticamente.",
       },
       {
         badge: "Passo 05",
         title: "Histórico com avaliação detalhada",
-        text: "Cada simulação e reunião real fica registrada com a avaliação SPIN completa. O vendedor acompanha sua evolução nos 4 pilares: Situação, Problema, Implicação e Necessidade de Solução.",
+        text: "Cada simulação e reunião real fica registrada com a avaliação completa. O vendedor acompanha sua evolução em múltiplos indicadores e vê exatamente o que precisa melhorar na próxima conversa.",
       },
       {
         badge: "Passo 06",
@@ -66,13 +66,13 @@ const strings = {
       },
       {
         badge: "Step 04",
-        title: "Automatic analysis of real meetings",
-        text: "Connect your Google Calendar and you're set. A bot automatically joins every Google Meet call, transcribes everything, and applies the same evaluation used in the simulations.",
+        title: "Automatic analysis of real meetings — without a bot in the call",
+        text: "The rep installs the Ramppy desktop app once. From that point on, every meeting is captured silently straight from the device, transcribed in real time, and runs through the same evaluation used in the simulations. Works on Google Meet, Zoom and Teams — with no bot ever joining the call and no notice for the prospect. Optionally connect Google Calendar to auto-detect meetings.",
       },
       {
         badge: "Step 05",
         title: "Full history with detailed evaluation",
-        text: "Every simulation and real meeting is logged with a complete SPIN evaluation. Reps track their progress across the 4 pillars: Situation, Problem, Implication, and Need-payoff.",
+        text: "Every simulation and real meeting is logged with a complete evaluation. Reps track their progress across multiple indicators and see exactly what to improve in the next conversation.",
       },
       {
         badge: "Step 06",
@@ -104,13 +104,13 @@ const strings = {
       },
       {
         badge: "Paso 04",
-        title: "Análisis automático de reuniones reales",
-        text: "Conecta tu Google Calendar y listo. Un bot entra automáticamente en cada reunión de Google Meet, transcribe todo y aplica la misma evaluación de las simulaciones.",
+        title: "Análisis automático de reuniones reales — sin bot en la llamada",
+        text: "El vendedor instala la app de escritorio de Ramppy una sola vez. A partir de ahí, cada reunión se captura silenciosamente desde el dispositivo, se transcribe en tiempo real y recibe la misma evaluación usada en las simulaciones. Funciona en Google Meet, Zoom y Teams — sin que ningún bot entre en la llamada y sin aviso para el prospect. Conecta opcionalmente Google Calendar para detectar reuniones automáticamente.",
       },
       {
         badge: "Paso 05",
         title: "Historial con evaluación detallada",
-        text: "Cada simulación y reunión real queda registrada con la evaluación SPIN completa. El vendedor sigue su evolución en los 4 pilares: Situación, Problema, Implicación y Necesidad de Solución.",
+        text: "Cada simulación y reunión real queda registrada con la evaluación completa. El vendedor sigue su evolución en múltiples indicadores y ve exactamente qué necesita mejorar en la próxima conversación.",
       },
       {
         badge: "Paso 06",

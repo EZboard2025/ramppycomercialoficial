@@ -13,12 +13,11 @@ const strings = {
     productItems: [
       { label: "Simulação", href: "/#funcionalidades" },
       { label: "Análise Meet", href: "/como-funciona#passo-04" },
-      { label: "Copiloto Nicole", href: "/#nicole" },
+      { label: "Dashboard do gestor", href: "/#dashboard" },
       { label: "Gestão", href: "/como-funciona#passo-06" },
     ],
     resourceItems: [
       { label: "Como funciona", href: "/como-funciona" },
-      { label: "Metodologia SPIN", href: "/metodologia-spin" },
       { label: "Blog", href: "/blog" },
       { label: "Central de ajuda", href: "/ajuda" },
     ],
@@ -43,12 +42,11 @@ const strings = {
     productItems: [
       { label: "Simulation", href: "/#funcionalidades" },
       { label: "Meet Analysis", href: "/como-funciona#passo-04" },
-      { label: "Nicole Copilot", href: "/#nicole" },
+      { label: "Manager Dashboard", href: "/#dashboard" },
       { label: "Management", href: "/como-funciona#passo-06" },
     ],
     resourceItems: [
       { label: "How it works", href: "/como-funciona" },
-      { label: "SPIN Methodology", href: "/metodologia-spin" },
       { label: "Blog", href: "/blog" },
       { label: "Help center", href: "/ajuda" },
     ],
@@ -73,12 +71,11 @@ const strings = {
     productItems: [
       { label: "Simulación", href: "/#funcionalidades" },
       { label: "Análisis Meet", href: "/como-funciona#passo-04" },
-      { label: "Copiloto Nicole", href: "/#nicole" },
+      { label: "Dashboard del manager", href: "/#dashboard" },
       { label: "Gestión", href: "/como-funciona#passo-06" },
     ],
     resourceItems: [
       { label: "Cómo funciona", href: "/como-funciona" },
-      { label: "Metodología SPIN", href: "/metodologia-spin" },
       { label: "Blog", href: "/blog" },
       { label: "Centro de ayuda", href: "/ajuda" },
     ],

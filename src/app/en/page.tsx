@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   path: "/",
   title: "Ramppy — AI Sales Ecosystem",
   description:
-    "Train sales with AI, analyze meetings automatically, and get real-time coaching. The complete platform for sales teams — roleplay, SPIN Selling evaluation and management.",
+    "Train sales with AI, analyze meetings automatically, and get real-time coaching. The complete platform for sales teams: roleplay, automatic evaluation and management.",
 });
 
 const organizationLd = {

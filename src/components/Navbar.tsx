@@ -12,7 +12,7 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     items: [
       { label: "Simulação", description: "Treine vendedores com IA", href: "/#funcionalidades" },
       { label: "Análise Meet", description: "Avalie reuniões reais", href: "/como-funciona#passo-04" },
-      { label: "Copiloto Nicole", description: "IA assistente de vendas", href: "/#nicole" },
+      { label: "Dashboard do gestor", description: "Visão completa do time", href: "/#dashboard" },
       { label: "Gestão", description: "Gerencie seu time", href: "/como-funciona#passo-06" },
     ],
   },
@@ -20,7 +20,6 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Recursos",
     items: [
       { label: "Como funciona", description: "Entenda o fluxo completo", href: "/como-funciona" },
-      { label: "Metodologia SPIN", description: "Framework de vendas", href: "/metodologia-spin" },
       { label: "Blog", description: "Artigos e novidades", href: "/blog" },
       { label: "Central de ajuda", description: "Dúvidas frequentes", href: "/ajuda" },
     ],
@@ -41,7 +40,7 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     items: [
       { label: "Simulation", description: "Train sales reps with AI", href: "/#funcionalidades" },
       { label: "Meet Analysis", description: "Review real meetings", href: "/como-funciona#passo-04" },
-      { label: "Nicole Copilot", description: "AI sales assistant", href: "/#nicole" },
+      { label: "Manager Dashboard", description: "Full view of your team", href: "/#dashboard" },
       { label: "Management", description: "Lead your team", href: "/como-funciona#passo-06" },
     ],
   },
@@ -49,7 +48,6 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Resources",
     items: [
       { label: "How it works", description: "Understand the full flow", href: "/como-funciona" },
-      { label: "SPIN Methodology", description: "Sales framework", href: "/metodologia-spin" },
       { label: "Blog", description: "Articles and news", href: "/blog" },
       { label: "Help center", description: "Frequently asked questions", href: "/ajuda" },
     ],
@@ -70,7 +68,7 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     items: [
       { label: "Simulación", description: "Entrena a tu equipo con IA", href: "/#funcionalidades" },
       { label: "Análisis Meet", description: "Evalúa reuniones reales", href: "/como-funciona#passo-04" },
-      { label: "Copiloto Nicole", description: "Asistente de ventas con IA", href: "/#nicole" },
+      { label: "Dashboard del manager", description: "Visión completa del equipo", href: "/#dashboard" },
       { label: "Gestión", description: "Lidera tu equipo", href: "/como-funciona#passo-06" },
     ],
   },
@@ -78,7 +76,6 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Recursos",
     items: [
       { label: "Cómo funciona", description: "Entiende el flujo completo", href: "/como-funciona" },
-      { label: "Metodología SPIN", description: "Framework de ventas", href: "/metodologia-spin" },
       { label: "Blog", description: "Artículos y novedades", href: "/blog" },
       { label: "Centro de ayuda", description: "Preguntas frecuentes", href: "/ajuda" },
     ],

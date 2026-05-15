@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   path: "/",
   title: "Ramppy — Ecosistema de ventas con IA",
   description:
-    "Entrena ventas con IA, analiza reuniones automáticamente y recibe coaching en tiempo real. La plataforma completa para equipos comerciales — simulaciones, evaluación SPIN y gestión.",
+    "Entrena ventas con IA, analiza reuniones automáticamente y recibe coaching en tiempo real. La plataforma completa para equipos comerciales: simulaciones, evaluación automática y gestión.",
 });
 
 const organizationLd = {
