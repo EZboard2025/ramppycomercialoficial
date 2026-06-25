@@ -95,9 +95,15 @@ export default function ContatoContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((person) => (
               <div key={person.name} className="bg-white border border-border-light rounded-2xl p-8 text-center hover:border-primary-green/30 hover:shadow-lg transition-all duration-300">
-                <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-green-surface mx-auto mb-5" style={{ boxShadow: "0 12px 35px -8px rgba(0, 0, 0, 0.15)" }}>
+                <a
+                  href={person.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-28 h-28 rounded-full overflow-hidden border-4 border-green-surface mx-auto mb-5 hover:border-primary-green/30 transition-all duration-300"
+                  style={{ boxShadow: "0 12px 35px -8px rgba(0, 0, 0, 0.15)" }}
+                >
                   <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
-                </div>
+                </a>
                 <p className="font-[var(--font-fustat)] text-xl font-semibold text-teal-dark mb-1">
                   {person.name}
                 </p>
