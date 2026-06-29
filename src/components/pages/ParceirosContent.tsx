@@ -19,11 +19,17 @@ const strings = {
       { name: "Growthway", logo: "/images/gpEEaKIzXt5vOrnP2EA3vRSbUUU.svg", url: "https://growthway.vc/", desc: "Aceleradora" },
       { name: "Newhack", logo: "/images/Newhack logo.png", url: "https://newhack.vc/", desc: "Venture Builder" },
       { name: "Sebrae", logo: "/images/Sebrae logo.png", url: null, desc: "Apoio institucional" },
-      { name: "Google", logo: "/images/google.png", url: null, desc: "Demoday & Pitch" },
-      { name: "Be Honest", logo: "/images/be honest logo.png", url: null, desc: "Parceiro comercial" },
+      { name: "Google for Startups", logo: "/images/google-for-startups.svg", url: null, desc: "Demoday & Pitch" },
+      { name: "ElevenLabs", logo: "https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp", url: "https://elevenlabs.io/startup-grants", desc: "Grant de tecnologia" },
       { name: "Be Growth", logo: "/images/be growth.png", url: null, desc: "Parceiro comercial" },
       { name: "Grupo Escalar", logo: "/images/grupo escalar.png", url: null, desc: "Parceiro comercial" },
     ],
+
+    grantBadge: "Apoiado por",
+    grantTitle: "Selecionados para o ElevenLabs Grants",
+    grantText:
+      "A Ramppy foi selecionada para o programa de grants da ElevenLabs, recebendo créditos e suporte para construir nossos agentes de IA de voz.",
+    grantLink: "Conheça o programa",
 
     programBadge: "Programa de parceria para consultores",
     programTitlePrefix: "Nós te pagamos ",
@@ -83,11 +89,17 @@ const strings = {
       { name: "Growthway", logo: "/images/gpEEaKIzXt5vOrnP2EA3vRSbUUU.svg", url: "https://growthway.vc/", desc: "Accelerator" },
       { name: "Newhack", logo: "/images/Newhack logo.png", url: "https://newhack.vc/", desc: "Venture Builder" },
       { name: "Sebrae", logo: "/images/Sebrae logo.png", url: null, desc: "Institutional support" },
-      { name: "Google", logo: "/images/google.png", url: null, desc: "Demoday & Pitch" },
-      { name: "Be Honest", logo: "/images/be honest logo.png", url: null, desc: "Business partner" },
+      { name: "Google for Startups", logo: "/images/google-for-startups.svg", url: null, desc: "Demoday & Pitch" },
+      { name: "ElevenLabs", logo: "https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp", url: "https://elevenlabs.io/startup-grants", desc: "Technology grant" },
       { name: "Be Growth", logo: "/images/be growth.png", url: null, desc: "Business partner" },
       { name: "Grupo Escalar", logo: "/images/grupo escalar.png", url: null, desc: "Business partner" },
     ],
+
+    grantBadge: "Backed by",
+    grantTitle: "Selected for ElevenLabs Grants",
+    grantText:
+      "Ramppy was selected for ElevenLabs' grant program, receiving credits and support to build our voice AI agents.",
+    grantLink: "Explore the program",
 
     programBadge: "Partner program for consultants",
     programTitlePrefix: "We pay you ",
@@ -147,11 +159,17 @@ const strings = {
       { name: "Growthway", logo: "/images/gpEEaKIzXt5vOrnP2EA3vRSbUUU.svg", url: "https://growthway.vc/", desc: "Aceleradora" },
       { name: "Newhack", logo: "/images/Newhack logo.png", url: "https://newhack.vc/", desc: "Venture Builder" },
       { name: "Sebrae", logo: "/images/Sebrae logo.png", url: null, desc: "Apoyo institucional" },
-      { name: "Google", logo: "/images/google.png", url: null, desc: "Demoday & Pitch" },
-      { name: "Be Honest", logo: "/images/be honest logo.png", url: null, desc: "Partner comercial" },
+      { name: "Google for Startups", logo: "/images/google-for-startups.svg", url: null, desc: "Demoday & Pitch" },
+      { name: "ElevenLabs", logo: "https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp", url: "https://elevenlabs.io/startup-grants", desc: "Grant de tecnología" },
       { name: "Be Growth", logo: "/images/be growth.png", url: null, desc: "Partner comercial" },
       { name: "Grupo Escalar", logo: "/images/grupo escalar.png", url: null, desc: "Partner comercial" },
     ],
+
+    grantBadge: "Apoyado por",
+    grantTitle: "Seleccionados para ElevenLabs Grants",
+    grantText:
+      "Ramppy fue seleccionada para el programa de grants de ElevenLabs, recibiendo créditos y soporte para construir nuestros agentes de IA de voz.",
+    grantLink: "Conoce el programa",
 
     programBadge: "Programa de partners para consultores",
     programTitlePrefix: "Te pagamos ",
@@ -251,6 +269,43 @@ export default function ParceirosContent() {
                 <div key={partner.name}>{card}</div>
               );
             })}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ===================== ELEVENLABS GRANT ===================== */}
+      <SectionWrapper>
+        <div className="pb-12 md:pb-20">
+          <div className="bg-gradient-to-br from-teal-dark via-[#1e4d38] to-[#245a3a] rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-primary-green/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
+            <div className="relative z-10 flex flex-col items-center">
+              <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-7">
+                {t.grantBadge}
+              </span>
+              <img
+                src="https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp"
+                alt="ElevenLabs Grants"
+                className="h-10 md:h-12 w-auto mb-7"
+              />
+              <h2 className="font-[var(--font-fustat)] text-[26px] md:text-[36px] font-semibold text-white leading-[115%] tracking-tight mb-4 max-w-2xl">
+                {t.grantTitle}
+              </h2>
+              <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-xl">
+                {t.grantText}
+              </p>
+              <a
+                href="https://elevenlabs.io/startup-grants"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-[var(--font-fustat)] inline-flex items-center gap-2 text-base font-semibold px-7 py-3.5 rounded-full bg-white text-teal-dark hover:bg-white/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                {t.grantLink}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </SectionWrapper>
