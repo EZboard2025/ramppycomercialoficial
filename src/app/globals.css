@@ -154,6 +154,15 @@
   animation: carousel 40s linear infinite;
 }
 
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
