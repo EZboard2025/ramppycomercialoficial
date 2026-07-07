@@ -82,7 +82,6 @@ export default function PartnersMarquee() {
     const track = trackRef.current;
     if (!track) return;
     dragRef.current = { active: true, startX: e.clientX, startScroll: track.scrollLeft, moved: false };
-    track.setPointerCapture(e.pointerId);
     pause();
   };
 
@@ -91,8 +90,12 @@ export default function PartnersMarquee() {
     const track = trackRef.current;
     if (!drag.active || !track) return;
     const delta = e.clientX - drag.startX;
-    if (Math.abs(delta) > 5) drag.moved = true;
-    track.scrollLeft = drag.startScroll - delta;
+    // só captura o ponteiro quando vira arrasto de verdade; capturar no clique roubaria o click dos links
+    if (!drag.moved && Math.abs(delta) > 5) {
+      drag.moved = true;
+      track.setPointerCapture(e.pointerId);
+    }
+    if (drag.moved) track.scrollLeft = drag.startScroll - delta;
   };
 
   const onPointerUp = () => {
