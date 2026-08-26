@@ -10,6 +10,7 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
   product: {
     title: "Produto",
     items: [
+      { label: "Contratação", description: "Simule antes de contratar", href: "/#contratacao" },
       { label: "Simulação", description: "Treine vendedores com IA", href: "/#funcionalidades" },
       { label: "Análise Meet", description: "Avalie reuniões reais", href: "/como-funciona#passo-04" },
       { label: "Dashboard do gestor", description: "Visão completa do time", href: "/#dashboard" },
@@ -38,6 +39,7 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
   product: {
     title: "Product",
     items: [
+      { label: "Hiring", description: "Simulate before you hire", href: "/#contratacao" },
       { label: "Simulation", description: "Train sales reps with AI", href: "/#funcionalidades" },
       { label: "Meet Analysis", description: "Review real meetings", href: "/como-funciona#passo-04" },
       { label: "Manager Dashboard", description: "Full view of your team", href: "/#dashboard" },
@@ -66,6 +68,7 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
   product: {
     title: "Producto",
     items: [
+      { label: "Contratación", description: "Simula antes de contratar", href: "/#contratacao" },
       { label: "Simulación", description: "Entrena a tu equipo con IA", href: "/#funcionalidades" },
       { label: "Análisis Meet", description: "Evalúa reuniones reales", href: "/como-funciona#passo-04" },
       { label: "Dashboard del manager", description: "Visión completa del equipo", href: "/#dashboard" },

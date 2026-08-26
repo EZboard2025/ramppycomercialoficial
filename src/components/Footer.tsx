@@ -11,6 +11,7 @@ const strings = {
     legal: "Legal",
     copyright: "© 2026 Ramppy. Todos os direitos reservados.",
     productItems: [
+      { label: "Contratação", href: "/#contratacao" },
       { label: "Simulação", href: "/#funcionalidades" },
       { label: "Análise Meet", href: "/como-funciona#passo-04" },
       { label: "Dashboard do gestor", href: "/#dashboard" },
@@ -40,6 +41,7 @@ const strings = {
     legal: "Legal",
     copyright: "© 2026 Ramppy. All rights reserved.",
     productItems: [
+      { label: "Hiring", href: "/#contratacao" },
       { label: "Simulation", href: "/#funcionalidades" },
       { label: "Meet Analysis", href: "/como-funciona#passo-04" },
       { label: "Manager Dashboard", href: "/#dashboard" },
@@ -69,6 +71,7 @@ const strings = {
     legal: "Legal",
     copyright: "© 2026 Ramppy. Todos los derechos reservados.",
     productItems: [
+      { label: "Contratación", href: "/#contratacao" },
       { label: "Simulación", href: "/#funcionalidades" },
       { label: "Análisis Meet", href: "/como-funciona#passo-04" },
       { label: "Dashboard del manager", href: "/#dashboard" },

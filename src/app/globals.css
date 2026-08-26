@@ -17,6 +17,8 @@
   --color-surface-hover: #F6F8FA;
   --color-border-light: #E2E7F1;
   --color-accent-orange: #F5A623;
+  --color-ctr-soft: #6B7280;
+  --color-ctr-muted: #9CA3AF;
 
   --font-fustat: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   --font-inter-tight: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
@@ -302,4 +304,172 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: skeleton 4s ease-in-out infinite;
+}
+
+/* ============================================================
+   Simulação de Contratação — mockups de produto reconstruídos
+   a partir do reel. Prefixo .ctr-* para não vazar pro resto.
+   ============================================================ */
+
+.ctr-card {
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 20px;
+  box-shadow: 0 26px 60px -28px rgba(0, 0, 0, 0.28);
+}
+
+.ctr-kpi {
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 14px;
+  padding: 12px 14px 10px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ctr-kpi-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.ctr-kpi-ico {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: #f9fafb;
+  border: 1px solid var(--color-border-light);
+  display: grid;
+  place-items: center;
+  color: var(--color-ctr-soft);
+  flex: none;
+}
+
+.ctr-kpi-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ctr-soft);
+}
+
+.ctr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: ctr-livepulse 1.5s ease-out infinite;
+}
+
+.ctr-dot-lime {
+  background: #39c72e;
+  box-shadow: 0 0 8px rgba(57, 199, 46, 0.7);
+}
+
+.ctr-dot-blue {
+  background: #60a5fa;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.7);
+}
+
+@keyframes ctr-livepulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  70% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.ctr-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--color-primary-green);
+  animation: ctr-blink 1s steps(1) infinite;
+}
+
+.ctr-caret-light { background: rgba(255, 255, 255, 0.85); }
+.ctr-caret-amber { background: #fbbf24; }
+
+@keyframes ctr-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.ctr-call-glow {
+  box-shadow:
+    inset 0 0 0 2px rgba(57, 199, 46, 0.55),
+    inset 0 0 42px rgba(57, 199, 46, 0.2);
+  animation: ctr-glow 1.8s ease-in-out infinite;
+}
+
+@keyframes ctr-glow {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+.ctr-eq i {
+  width: 4.5px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #7bf776, #15604b);
+  box-shadow: 0 0 10px rgba(57, 199, 46, 0.55);
+  transform-origin: bottom;
+  animation: ctr-eqbar 0.82s ease-in-out infinite;
+}
+
+.ctr-eq i:nth-child(1) { height: 11px; animation-delay: -0.10s; }
+.ctr-eq i:nth-child(2) { height: 20px; animation-delay: -0.32s; }
+.ctr-eq i:nth-child(3) { height: 26px; animation-delay: 0s; }
+.ctr-eq i:nth-child(4) { height: 17px; animation-delay: -0.22s; }
+.ctr-eq i:nth-child(5) { height: 12px; animation-delay: -0.05s; }
+
+@keyframes ctr-eqbar {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+
+.ctr-call-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(26, 58, 42, 0.07);
+  border: 1px solid rgba(26, 58, 42, 0.14);
+  display: grid;
+  place-items: center;
+  color: var(--color-teal-dark);
+}
+
+.ctr-call-btn-end {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+.ctr-radar-label {
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--color-text-secondary);
+}
+
+.ctr-radar-score {
+  font-size: 27px;
+  font-weight: 700;
+  fill: var(--color-primary-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.ctr-radar-caption {
+  font-size: 8px;
+  font-weight: 600;
+  fill: var(--color-ctr-soft);
+  letter-spacing: 0.1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctr-dot,
+  .ctr-caret,
+  .ctr-call-glow,
+  .ctr-eq i {
+    animation: none;
+  }
 }

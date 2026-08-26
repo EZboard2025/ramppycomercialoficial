@@ -80,11 +80,13 @@ const strings = {
   pt: {
     socialProof: "Aumente em até 46% suas conversões",
     h1MobileVariants: [
+      ["Simule a venda.", "Depois ", "contrate."],
       ["Treine melhor.", "Venda ", "mais."],
       ["Treine certo.", "Venda ", "melhor."],
       ["Mais reuniões.", "Mais ", "vendas."],
     ] as const,
     h1DesktopVariants: [
+      ["Veja o candidato ", "vender", " antes de ", "contratar."],
       ["Acabe com a ", "ineficiência", " do seu time de ", "vendas."],
       ["Transforme a ", "performance", " do seu time ", "comercial."],
       ["Multiplique as ", "conversões", " do seu time de ", "vendas."],
@@ -99,11 +101,13 @@ const strings = {
   es: {
     socialProof: "Aumenta hasta un 46% tus conversiones",
     h1MobileVariants: [
+      ["Simula la venta.", "Después ", "contrata."],
       ["Entrena mejor.", "Vende ", "más."],
       ["Entrena con cabeza.", "Vende ", "mejor."],
       ["Más reuniones.", "Más ", "ventas."],
     ] as const,
     h1DesktopVariants: [
+      ["Mira al candidato ", "vender", " antes de ", "contratarlo."],
       ["Acaba con la ", "ineficiencia", " de tu equipo de ", "ventas."],
       ["Transforma el ", "rendimiento", " de tu equipo ", "comercial."],
       ["Multiplica las ", "conversiones", " de tu equipo de ", "ventas."],
@@ -118,11 +122,13 @@ const strings = {
   en: {
     socialProof: "Boost your conversions by up to 46%",
     h1MobileVariants: [
+      ["Simulate the sale.", "Then ", "hire."],
       ["Train better.", "Sell ", "more."],
       ["Train smart.", "Sell ", "better."],
       ["More meetings.", "More ", "deals."],
     ] as const,
     h1DesktopVariants: [
+      ["Watch candidates ", "sell", " before you ", "hire them."],
       ["End the ", "inefficiency", " of your ", "sales team."],
       ["Transform the ", "performance", " of your ", "sales team."],
       ["Multiply the ", "conversions", " of your ", "sales team."],
