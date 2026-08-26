@@ -7,9 +7,9 @@ import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Ramppy — Ecossistema de vendas com IA",
+  title: "Ramppy — Simulação de vendas para contratar vendedores",
   description:
-    "Treine vendas com IA, analise reuniões automaticamente, gerencie WhatsApp e receba coaching em tempo real. A plataforma completa para times de vendas.",
+    "Veja o candidato vender antes de contratar: ele conduz uma venda real com um cliente sintético e você recebe nota por etapa e ranking. Depois, a mesma IA treina e avalia o time que já está em campo.",
   applicationName: "Ramppy",
   icons: {
     icon: "/images/favicon.png",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     apple: "/images/favicon.png",
   },
   openGraph: {
-    title: "Ramppy — Ecossistema de vendas com IA",
+    title: "Ramppy — Simulação de vendas para contratar vendedores",
     description:
-      "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
+      "Veja o candidato vender antes de contratar. Depois, a mesma IA treina e avalia o time que já está em campo.",
     url: SITE_URL,
     siteName: "Ramppy",
     locale: "pt_BR",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramppy — Ecossistema de vendas com IA",
+    title: "Ramppy — Simulação de vendas para contratar vendedores",
     description:
-      "Treine vendas com IA, analise reuniões automaticamente e receba coaching em tempo real.",
+      "Veja o candidato vender antes de contratar. Depois, a mesma IA treina e avalia o time que já está em campo.",
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {

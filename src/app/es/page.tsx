@@ -15,9 +15,9 @@ import { buildMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   locale: "es",
   path: "/",
-  title: "Ramppy — Ecosistema de ventas con IA",
+  title: "Ramppy — Simulación de ventas para contratar vendedores",
   description:
-    "Entrena ventas con IA, analiza reuniones automáticamente y recibe coaching en tiempo real. La plataforma completa para equipos comerciales: simulaciones, evaluación automática y gestión.",
+    "Mira al candidato vender antes de contratarlo: le vende de verdad a un cliente sintético y recibes nota por etapa y ranking. Después, la misma IA entrena y evalúa al equipo que ya tienes.",
 });
 
 const organizationLd = {
@@ -47,7 +47,7 @@ const softwareLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "Plataforma de ventas con IA para entrenamiento, análisis de reuniones y gestión de equipos comerciales.",
+    "Plataforma de ventas con IA: simulación de contratación para evaluar candidatos a vendedor, entrenamiento, análisis de reuniones y gestión de equipos comerciales.",
   offers: { "@type": "Offer", priceCurrency: "BRL", price: "960" },
 };
 

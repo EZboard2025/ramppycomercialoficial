@@ -473,3 +473,14 @@
     animation: none;
   }
 }
+
+/* background-clip: text pinta só dentro da caixa do inline. Com tracking
+   negativo o último glifo encosta na borda e com leading apertado os
+   descendentes (g, p, q) tocam embaixo — os dois casos aparecem como letra
+   levemente cortada. Estende a caixa de pintura sem mexer no layout. */
+.clip-text,
+.clip-text-subtle {
+  padding-inline-end: 0.08em;
+  margin-inline-end: -0.08em;
+  padding-bottom: 0.12em;
+}

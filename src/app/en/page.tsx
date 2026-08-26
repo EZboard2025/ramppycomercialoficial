@@ -15,9 +15,9 @@ import { buildMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   locale: "en",
   path: "/",
-  title: "Ramppy — AI Sales Ecosystem",
+  title: "Ramppy — Sales simulation for hiring sales reps",
   description:
-    "Train sales with AI, analyze meetings automatically, and get real-time coaching. The complete platform for sales teams: roleplay, automatic evaluation and management.",
+    "Watch candidates sell before you hire them: they run a real sale with a synthetic customer and you get a score per stage and a ranking. Then the same AI trains and scores the team you already have.",
 });
 
 const organizationLd = {
@@ -47,7 +47,7 @@ const softwareLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "AI sales platform for training, meeting analysis and commercial team management.",
+    "AI sales platform: hiring simulation to evaluate sales candidates, training, meeting analysis and sales team management.",
   offers: { "@type": "Offer", priceCurrency: "BRL", price: "960" },
 };
 

@@ -352,7 +352,7 @@ export function ScreenCall({ active }: { active: boolean }) {
         </div>
 
         <div className="absolute left-3.5 z-[3] text-sm text-white/80 [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]" style={{ bottom: "94px" }}>
-          <b className="font-bold text-white">Marcia</b>
+          <b className="font-bold text-white">Clarice</b>
         </div>
 
         <div className="absolute inset-x-3 bottom-3 z-[4]">
