@@ -139,7 +139,7 @@ export const CONTRATACAO_COPY: Record<Locale, Copy> = {
     statementB: "Não com feeling.",
     statementBody:
       "Currículo e entrevista medem quem fala bonito sobre vender. A simulação mede quem vende.",
-    cta: "Quero simular meus candidatos",
+    cta: "Quero otimizar meu processo seletivo",
     whatsapp:
       "Olá, quero usar a Simulação de Contratação da Ramppy para avaliar candidatos a vendedor.",
   },
@@ -211,7 +211,7 @@ export const CONTRATACAO_COPY: Record<Locale, Copy> = {
     statementB: "Not on gut feel.",
     statementBody:
       "Résumés and interviews measure who talks well about selling. The simulation measures who sells.",
-    cta: "Simulate my candidates",
+    cta: "Optimize my hiring process",
     whatsapp:
       "Hi, I'd like to use Ramppy's Hiring Simulation to evaluate sales candidates.",
   },
@@ -283,7 +283,7 @@ export const CONTRATACAO_COPY: Record<Locale, Copy> = {
     statementB: "No con corazonadas.",
     statementBody:
       "El currículum y la entrevista miden a quien habla bonito sobre vender. La simulación mide a quien vende.",
-    cta: "Quiero simular a mis candidatos",
+    cta: "Quiero optimizar mi proceso de selección",
     whatsapp:
       "Hola, quiero usar la Simulación de Contratación de Ramppy para evaluar candidatos a vendedor.",
   },
