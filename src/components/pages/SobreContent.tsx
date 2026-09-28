@@ -39,7 +39,7 @@ const strings = {
     problemP1:
       "O mercado de vendas no Brasil ainda depende de treinamentos pontuais, palestras motivacionais e acompanhamento manual por gestores. Esse modelo tem baixa escalabilidade, zero personalização e desconexão total entre teoria e prática.",
     problemP2:
-      "A Ramppy é a plataforma que conecta simulação com IA, análise de reuniões reais, coaching automático e gestão de performance em um único lugar. Cada interação gera dados. Cada dado gera evolução.",
+      "A Ramppy é a plataforma que junta contratação, treinamento e acompanhamento do time de vendas num só lugar, com simulações por voz com cliente sintético. Cada interação gera dados. Cada dado gera evolução.",
 
     missionTitle: "Missão",
     missionText:
@@ -105,7 +105,7 @@ const strings = {
     problemP1:
       "The sales market in Brazil still relies on one-off training sessions, motivational talks, and manual coaching by managers. This model has low scalability, zero personalization, and a complete disconnect between theory and practice.",
     problemP2:
-      "Ramppy is the platform that connects AI simulation, real meeting analysis, automated coaching, and performance management in one place. Every interaction generates data. Every data point drives growth.",
+      "Ramppy is the platform that brings hiring, training and sales team tracking together in one place, with voice simulations against a synthetic customer. Every interaction generates data. Every data point drives growth.",
 
     missionTitle: "Mission",
     missionText:
@@ -171,7 +171,7 @@ const strings = {
     problemP1:
       "El mercado de ventas en Brasil aún depende de capacitaciones puntuales, charlas motivacionales y seguimiento manual por parte de los gestores. Este modelo tiene baja escalabilidad, cero personalización y una desconexión total entre teoría y práctica.",
     problemP2:
-      "Ramppy es la plataforma que conecta simulación con IA, análisis de reuniones reales, coaching automático y gestión de desempeño en un solo lugar. Cada interacción genera datos. Cada dato genera evolución.",
+      "Ramppy es la plataforma que reúne contratación, entrenamiento y seguimiento del equipo de ventas en un solo lugar, con simulaciones por voz con cliente sintético. Cada interacción genera datos. Cada dato genera evolución.",
 
     missionTitle: "Misión",
     missionText:

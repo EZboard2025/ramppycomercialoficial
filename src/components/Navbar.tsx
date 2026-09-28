@@ -92,15 +92,15 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
 
 const labels = {
   pt: {
-    plans: "Planos",
+    plans: "Créditos",
     cta: "Marcar teste grátis",
   },
   en: {
-    plans: "Plans",
+    plans: "Credits",
     cta: "Book free trial",
   },
   es: {
-    plans: "Planes",
+    plans: "Créditos",
     cta: "Prueba gratis",
   },
 };

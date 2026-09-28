@@ -38,12 +38,37 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "Preciso instalar algum software?",
             answer:
-              "O Ramppy funciona 100% no navegador. Para análise de reuniões, basta conectar seu Google Agenda. Você também pode baixar a versão beta do app desktop para funcionalidades adicionais.",
+              "Não. A Ramppy funciona no navegador. Os candidatos e os vendedores entram por link, sem instalar nada e sem criar cadastro.",
+          },
+          {
+            question: "Quem precisa ter conta?",
+            answer:
+              "Só o gestor. Os candidatos recebem o link da simulação e os vendedores recebem o convite da jornada por e-mail; todos entram pelo link.",
           },
           {
             question: "Quanto tempo leva para configurar?",
             answer:
-              "Em uma única reunião de implementação podemos configurar a Ramppy na sua empresa. Nossa equipe cuida de tudo com você e fornece suporte contínuo após a implementação.",
+              "Em uma única reunião de implementação a nossa equipe configura a Ramppy com você. Nas Configurações você conta como é o seu negócio (dados da empresa, objetivos, objeções e personas), uma pergunta por vez; se não souber alguma resposta, a IA escreve para você revisar.",
+          },
+        ],
+      },
+      {
+        title: "Contratação",
+        items: [
+          {
+            question: "Como funciona a simulação de contratação?",
+            answer:
+              "Você cria um grupo para a vaga, escolhe o cliente sintético e o objetivo da conversa, e manda o link para os candidatos. Cada candidato faz uma reunião de vendas inteira, por voz, e você recebe a nota antes da entrevista.",
+          },
+          {
+            question: "O candidato precisa se cadastrar?",
+            answer:
+              "Não. Ele abre o link, informa o nome e começa a simulação no navegador. Só precisa autorizar o microfone.",
+          },
+          {
+            question: "Como comparo os candidatos?",
+            answer:
+              "Todos os candidatos do grupo aparecem numa lista ordenada pela nota, na mesma régua de avaliação. Em cada um você vê a nota por categoria, o porquê e o que ele poderia fazer diferente.",
           },
         ],
       },
@@ -53,57 +78,67 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "Como funciona a simulação com IA?",
             answer:
-              "Você configura o cenário (persona, objeções, contexto) e inicia uma videochamada com um cliente virtual. A IA responde em tempo real por voz.",
+              "É uma reunião de vendas inteira, por voz, com um cliente sintético criado a partir da sua operação. Ele conversa em tempo real, reage ao que é dito e levanta as objeções que o seu time ouve de verdade.",
           },
           {
             question: "Posso personalizar os cenários?",
             answer:
-              "Sim. Você define idade, temperamento, objeções específicas e contexto da venda. Cada simulação pode ser diferente.",
+              "Sim. Você define as personas (cargo, empresa, temperamento, dores), as objeções da sua operação e o objetivo de cada conversa, como marcar uma demonstração ou fechar a venda.",
           },
           {
             question: "Como é calculada a nota da call?",
             answer:
-              "A IA analisa a transcrição e avalia a qualidade da conversa em vários indicadores de qualidade da venda. Cada indicador recebe uma nota de 0 a 10.",
+              "A IA avalia a conversa inteira em 5 categorias: abertura, qualificação, solução, objeções e encerramento, com 13 critérios no total. Cada categoria recebe uma nota de 0 a 10, com o porquê e o que fazer diferente na próxima.",
           },
         ],
       },
       {
-        title: "Análise de reuniões",
+        title: "Treinamento",
         items: [
           {
-            question: "Como funciona a análise de reuniões?",
+            question: "O que é uma jornada?",
             answer:
-              "O vendedor instala o app desktop da Ramppy uma única vez. A partir daí, cada reunião é capturada silenciosamente direto do dispositivo, sem nenhum bot entrar na chamada e sem aviso para o prospect. Funciona em Google Meet, Zoom e Teams. Opcionalmente, conecte sua conta Google em 'Meu Perfil' para que o app detecte reuniões da sua agenda automaticamente.",
+              "É uma trilha de treinamento em fases. Cada fase é uma reunião completa com um cliente sintético, e você define a nota mínima em cada categoria para o vendedor avançar.",
           },
           {
-            question: "Como funciona a gravação?",
+            question: "Como o time entra na jornada?",
             answer:
-              "O app desktop captura o áudio localmente do dispositivo do vendedor e transcreve a reunião em tempo real. A transcrição é usada para gerar a avaliação automática.",
-          },
-          {
-            question: "Quem tem acesso à análise?",
-            answer:
-              "O vendedor e o gestor do time têm acesso. As permissões podem ser configuradas por perfil.",
+              "Você convida o time por e-mail. Cada vendedor recebe um link, treina pelo navegador e só passa para a próxima fase quando bate a nota mínima.",
           },
         ],
       },
       {
-        title: "Planos e cobrança",
+        title: "Acompanhamento",
         items: [
           {
-            question: "Posso cancelar a qualquer momento?",
+            question: "Como acompanho o time?",
             answer:
-              "Sim. Não há fidelidade. Você pode cancelar diretamente na plataforma a qualquer momento.",
+              "A tela Início mostra o que mudou na semana. Nas Jornadas, o mapa da turma mostra a nota de cada pessoa em cada fase: quem concluiu, quem está tentando e quem travou.",
+          },
+          {
+            question: "O que a Nicolly faz?",
+            answer:
+              "A Nicolly é a assistente da Ramppy para o gestor. Ela responde perguntas sobre os candidatos e o time com os seus dados e, com a sua confirmação, cria jornadas e grupos por você.",
+          },
+        ],
+      },
+      {
+        title: "Créditos e cobrança",
+        items: [
+          {
+            question: "Como funciona a cobrança?",
+            answer:
+              "A Ramppy funciona com créditos. Cada simulação, de candidato ou de vendedor, consome créditos do seu saldo. Os pacotes são sob demanda e os créditos não expiram. Fale com a gente para saber os valores.",
+          },
+          {
+            question: "Tem mensalidade ou fidelidade?",
+            answer:
+              "Não. Você compra créditos quando precisar, sem mensalidade e sem fidelidade.",
           },
           {
             question: "Existe período de teste?",
             answer:
-              "Sim. Todos os planos incluem um período de teste grátis para você experimentar a plataforma.",
-          },
-          {
-            question: "Como funciona o sistema de créditos?",
-            answer:
-              "Cada simulação ou análise de reunião consome créditos. A quantidade disponível depende do seu plano. Créditos extras podem ser adquiridos sob demanda.",
+              "Sim. Marque um teste grátis com a nossa equipe para experimentar a Ramppy na sua operação.",
           },
         ],
       },
@@ -126,12 +161,37 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "Do I need to install any software?",
             answer:
-              "Ramppy runs 100% in the browser. For meeting analysis, just connect your Google Calendar. You can also download the beta desktop app for additional features.",
+              "No. Ramppy runs in the browser. Candidates and reps join through a link, with nothing to install and no sign-up.",
+          },
+          {
+            question: "Who needs an account?",
+            answer:
+              "Only the manager. Candidates get the simulation link and reps get the journey invite by email; everyone joins through the link.",
           },
           {
             question: "How long does setup take?",
             answer:
-              "We can set up Ramppy for your company in a single onboarding meeting. Our team takes care of everything with you and provides ongoing support after implementation.",
+              "Our team sets up Ramppy with you in a single onboarding meeting. In Settings you describe your business (company data, goals, objections and personas), one question at a time; if you're not sure of an answer, the AI writes it for you to review.",
+          },
+        ],
+      },
+      {
+        title: "Hiring",
+        items: [
+          {
+            question: "How does the hiring simulation work?",
+            answer:
+              "You create a group for the role, pick the synthetic customer and the goal of the conversation, and send the link to candidates. Each candidate runs a full sales meeting by voice, and you get the score before the interview.",
+          },
+          {
+            question: "Do candidates need to sign up?",
+            answer:
+              "No. They open the link, enter their name and start the simulation in the browser. They only need to allow the microphone.",
+          },
+          {
+            question: "How do I compare candidates?",
+            answer:
+              "Every candidate in the group appears in a list ranked by score, all on the same evaluation scale. For each one you see the score by category, the why and what they could do differently.",
           },
         ],
       },
@@ -141,57 +201,67 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "How does the AI simulation work?",
             answer:
-              "You configure the scenario (persona, objections, context) and start a video call with a virtual customer. The AI responds in real time by voice.",
+              "It's a full sales meeting, by voice, with a synthetic customer built from your operation. It talks in real time, reacts to what's said and raises the objections your team really hears.",
           },
           {
             question: "Can I customize the scenarios?",
             answer:
-              "Yes. You set the age, temperament, specific objections, and sales context. Every simulation can be different.",
+              "Yes. You define the personas (role, company, temperament, pains), your operation's objections and the goal of each conversation, such as booking a demo or closing the deal.",
           },
           {
             question: "How is the call score calculated?",
             answer:
-              "The AI analyzes the transcript and evaluates the conversation across multiple sales quality indicators. Each indicator gets a score from 0 to 10.",
+              "The AI evaluates the whole conversation in 5 categories: opening, qualification, solution, objections and closing, with 13 criteria in total. Each category gets a score from 0 to 10, with the why and what to do differently next time.",
           },
         ],
       },
       {
-        title: "Meeting analysis",
+        title: "Training",
         items: [
           {
-            question: "How does meeting analysis work?",
+            question: "What is a journey?",
             answer:
-              "The rep installs the Ramppy desktop app once. From there, every meeting is captured silently from the device, with no bot ever joining the call and no notice for the prospect. It works on Google Meet, Zoom and Teams. Optionally, connect your Google account under 'My Profile' so the app can auto-detect meetings from your calendar.",
+              "A training track in phases. Each phase is a full meeting with a synthetic customer, and you set the minimum score in each category for a rep to move on.",
           },
           {
-            question: "How does the recording work?",
+            question: "How does the team join a journey?",
             answer:
-              "The desktop app captures audio locally from the rep's device and transcribes the meeting in real time. The transcript is used to generate the automatic evaluation.",
-          },
-          {
-            question: "Who has access to the analysis?",
-            answer:
-              "The salesperson and the team manager have access. Permissions can be configured per role.",
+              "You invite the team by email. Each rep gets a link, trains in the browser and only moves to the next phase after hitting the minimum score.",
           },
         ],
       },
       {
-        title: "Plans and billing",
+        title: "Tracking",
         items: [
           {
-            question: "Can I cancel at any time?",
+            question: "How do I track the team?",
             answer:
-              "Yes. There are no long-term commitments. You can cancel directly in the platform at any time.",
+              "Home shows what changed this week. In Journeys, the team map shows each person's score in each phase: who finished, who's trying and who's stuck.",
+          },
+          {
+            question: "What does Nicolly do?",
+            answer:
+              "Nicolly is Ramppy's assistant for managers. She answers questions about candidates and the team using your data and, once you confirm, creates journeys and groups for you.",
+          },
+        ],
+      },
+      {
+        title: "Credits and billing",
+        items: [
+          {
+            question: "How does billing work?",
+            answer:
+              "Ramppy works with credits. Each simulation, for a candidate or a rep, uses credits from your balance. Packs are on demand and credits never expire. Talk to us for pricing.",
+          },
+          {
+            question: "Is there a monthly fee or lock-in?",
+            answer:
+              "No. You buy credits when you need them, with no monthly fee and no lock-in.",
           },
           {
             question: "Is there a trial period?",
             answer:
-              "Yes. All plans include a free trial period so you can try the platform.",
-          },
-          {
-            question: "How does the credit system work?",
-            answer:
-              "Each simulation or meeting analysis consumes credits. The amount available depends on your plan. Extra credits can be purchased on demand.",
+              "Yes. Book a free trial with our team to try Ramppy on your operation.",
           },
         ],
       },
@@ -214,12 +284,37 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "¿Necesito instalar algún software?",
             answer:
-              "Ramppy funciona 100% en el navegador. Para el análisis de reuniones, solo conecta tu Google Calendar. También puedes descargar la versión beta de la app de escritorio para funcionalidades adicionales.",
+              "No. Ramppy funciona en el navegador. Los candidatos y los vendedores entran por un enlace, sin instalar nada y sin registrarse.",
+          },
+          {
+            question: "¿Quién necesita una cuenta?",
+            answer:
+              "Solo el manager. Los candidatos reciben el enlace de la simulación y los vendedores reciben la invitación a la jornada por correo; todos entran por el enlace.",
           },
           {
             question: "¿Cuánto tarda la configuración?",
             answer:
-              "Podemos configurar Ramppy para tu empresa en una sola reunión de implementación. Nuestro equipo se encarga de todo contigo y ofrece soporte continuo después de la implementación.",
+              "Nuestro equipo configura Ramppy contigo en una sola reunión de implementación. En la Configuración cuentas cómo es tu negocio (datos de la empresa, objetivos, objeciones y personas), una pregunta a la vez; si no sabes alguna respuesta, la IA la escribe para que la revises.",
+          },
+        ],
+      },
+      {
+        title: "Contratación",
+        items: [
+          {
+            question: "¿Cómo funciona la simulación de contratación?",
+            answer:
+              "Creas un grupo para la vacante, eliges el cliente sintético y el objetivo de la conversación, y envías el enlace a los candidatos. Cada candidato hace una reunión de ventas completa, por voz, y recibes la nota antes de la entrevista.",
+          },
+          {
+            question: "¿El candidato necesita registrarse?",
+            answer:
+              "No. Abre el enlace, escribe su nombre y empieza la simulación en el navegador. Solo necesita autorizar el micrófono.",
+          },
+          {
+            question: "¿Cómo comparo a los candidatos?",
+            answer:
+              "Todos los candidatos del grupo aparecen en una lista ordenada por nota, con la misma vara de evaluación. En cada uno ves la nota por categoría, el porqué y qué podría hacer distinto.",
           },
         ],
       },
@@ -229,57 +324,67 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
           {
             question: "¿Cómo funciona la simulación con IA?",
             answer:
-              "Configuras el escenario (persona, objeciones, contexto) e inicias una videollamada con un cliente virtual. La IA responde en tiempo real por voz.",
+              "Es una reunión de ventas completa, por voz, con un cliente sintético creado a partir de tu operación. Conversa en tiempo real, reacciona a lo que se dice y plantea las objeciones que tu equipo escucha de verdad.",
           },
           {
             question: "¿Puedo personalizar los escenarios?",
             answer:
-              "Sí. Defines edad, temperamento, objeciones específicas y contexto de venta. Cada simulación puede ser diferente.",
+              "Sí. Defines las personas (cargo, empresa, temperamento, dolores), las objeciones de tu operación y el objetivo de cada conversación, como agendar una demostración o cerrar la venta.",
           },
           {
             question: "¿Cómo se calcula la nota de la llamada?",
             answer:
-              "La IA analiza la transcripción y evalúa la conversación en varios indicadores de calidad de la venta. Cada indicador recibe una nota de 0 a 10.",
+              "La IA evalúa toda la conversación en 5 categorías: apertura, calificación, solución, objeciones y cierre, con 13 criterios en total. Cada categoría recibe una nota de 0 a 10, con el porqué y qué hacer distinto la próxima vez.",
           },
         ],
       },
       {
-        title: "Análisis de reuniones",
+        title: "Entrenamiento",
         items: [
           {
-            question: "¿Cómo funciona el análisis de reuniones?",
+            question: "¿Qué es una jornada?",
             answer:
-              "El vendedor instala la app de escritorio de Ramppy una sola vez. A partir de ahí, cada reunión se captura silenciosamente desde el dispositivo, sin que ningún bot entre en la llamada y sin aviso para el prospect. Funciona en Google Meet, Zoom y Teams. Opcionalmente, conecta tu cuenta de Google en 'Mi Perfil' para que la app detecte reuniones de tu calendario automáticamente.",
+              "Es una ruta de entrenamiento en fases. Cada fase es una reunión completa con un cliente sintético, y tú defines la nota mínima en cada categoría para que el vendedor avance.",
           },
           {
-            question: "¿Cómo funciona la grabación?",
+            question: "¿Cómo entra el equipo a la jornada?",
             answer:
-              "La app de escritorio captura el audio localmente desde el dispositivo del vendedor y transcribe la reunión en tiempo real. La transcripción se usa para generar la evaluación automática.",
-          },
-          {
-            question: "¿Quién tiene acceso al análisis?",
-            answer:
-              "El vendedor y el manager del equipo tienen acceso. Los permisos pueden configurarse por perfil.",
+              "Invitas al equipo por correo. Cada vendedor recibe un enlace, entrena en el navegador y solo pasa a la siguiente fase al alcanzar la nota mínima.",
           },
         ],
       },
       {
-        title: "Planes y facturación",
+        title: "Seguimiento",
         items: [
           {
-            question: "¿Puedo cancelar en cualquier momento?",
+            question: "¿Cómo sigo al equipo?",
             answer:
-              "Sí. No hay compromisos a largo plazo. Puedes cancelar directamente en la plataforma en cualquier momento.",
+              "El Inicio muestra lo que cambió en la semana. En Jornadas, el mapa del equipo muestra la nota de cada persona en cada fase: quién terminó, quién está intentando y quién se trabó.",
+          },
+          {
+            question: "¿Qué hace Nicolly?",
+            answer:
+              "Nicolly es la asistente de Ramppy para el manager. Responde preguntas sobre los candidatos y el equipo con tus datos y, con tu confirmación, crea jornadas y grupos por ti.",
+          },
+        ],
+      },
+      {
+        title: "Créditos y facturación",
+        items: [
+          {
+            question: "¿Cómo funciona el cobro?",
+            answer:
+              "Ramppy funciona con créditos. Cada simulación, de candidato o de vendedor, consume créditos de tu saldo. Los paquetes son a demanda y los créditos no expiran. Habla con nosotros para conocer los valores.",
+          },
+          {
+            question: "¿Hay mensualidad o permanencia?",
+            answer:
+              "No. Compras créditos cuando los necesitas, sin mensualidad y sin permanencia.",
           },
           {
             question: "¿Hay período de prueba?",
             answer:
-              "Sí. Todos los planes incluyen un período de prueba gratuito para que experimentes la plataforma.",
-          },
-          {
-            question: "¿Cómo funciona el sistema de créditos?",
-            answer:
-              "Cada simulación o análisis de reunión consume créditos. La cantidad disponible depende de tu plan. Los créditos extra pueden adquirirse bajo demanda.",
+              "Sí. Agenda una prueba gratis con nuestro equipo para probar Ramppy en tu operación.",
           },
         ],
       },

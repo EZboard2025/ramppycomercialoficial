@@ -45,8 +45,7 @@ const softwareLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "AI sales platform: hiring simulation to evaluate sales candidates, training, meeting analysis and sales team management.",
-  offers: { "@type": "Offer", priceCurrency: "BRL", price: "960" },
+    "AI sales platform: hiring simulation to evaluate sales candidates, training journeys and sales team tracking.",
 };
 
 export default function HomeEn() {

@@ -5,185 +5,89 @@ import { useLocale } from "@/i18n/LocaleContext";
 
 type Locale = "pt" | "es" | "en";
 
-type Plan = {
-  key: "standard" | "pro";
-  name: string;
-  subtitle: string;
-  features: string[];
-  popular?: boolean;
+type Uso = {
+  title: string;
+  text: string;
 };
 
 type Copy = {
   eyebrow: string;
   title: string;
-  subtitle: string;
-  popular: string;
-  includes: string;
-  includesScope: string;
-  ctaPlan: string;
-  ctaCredits: string;
-  whatsappPlan: (plan: string) => string;
-  whatsappCredits: string;
-  plans: Plan[];
-  credits: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    bullets: string[];
-  };
+  usos: Uso[];
+  priceNote: string;
+  cta: string;
+  whatsapp: string;
   trust: string[];
 };
 
 const COPY: Record<Locale, Copy> = {
   pt: {
-    eyebrow: "Planos",
-    title: "Planos",
-    subtitle: "Escolha o plano que combina com o seu time.",
-    popular: "Mais popular",
-    includes: "Inclui",
-    includesScope: "Para análise de reuniões",
-    ctaPlan: "Falar com consultor",
-    ctaCredits: "Quero comprar créditos",
-    whatsappPlan: (plan) => `Olá, tenho interesse no plano ${plan} da Ramppy.`,
-    whatsappCredits:
-      "Olá, quero comprar créditos para simulações com cliente sintético na Ramppy.",
-    plans: [
+    eyebrow: "Créditos",
+    title: "Sem mensalidade. Você compra créditos de simulação.",
+    usos: [
       {
-        key: "standard",
-        name: "Standard",
-        subtitle: "Pro começo da operação",
-        features: [
-          "Transcrição da call sem bot",
-          "Resumo personalizado da call",
-          "Dashboard para o gestor",
-          "Nota geral da transcrição",
-        ],
+        title: "Contratação",
+        text: "Cada candidato que faz a simulação pelo link usa créditos do seu saldo.",
       },
       {
-        key: "pro",
-        name: "Pro",
-        subtitle: "Evolução do Standard",
-        popular: true,
-        features: [
-          "Nota com explicação detalhada",
-          "Avaliação completa de cada call",
-          "Insights sobre objeções e padrões",
-          "Relatórios comparativos entre vendedores",
-        ],
+        title: "Treinamento",
+        text: "Cada tentativa do time numa fase da jornada usa créditos do seu saldo.",
+      },
+      {
+        title: "Sob demanda",
+        text: "Compre pacotes quando precisar. Os créditos não expiram.",
       },
     ],
-    credits: {
-      eyebrow: "Comprados à parte",
-      title: "Créditos para simulações com cliente sintético",
-      description:
-        "Para rodar simulações com cliente sintético você precisa de créditos, comprados à parte do plano. Cada simulação consome créditos do seu saldo. Sem mensalidade extra, sem fidelidade.",
-      bullets: [
-        "Disponível em qualquer plano",
-        "Pacotes flexíveis e sob demanda",
-        "Créditos não expiram",
-      ],
-    },
-    trust: ["Cancele quando quiser", "Suporte em português", "Sem fidelidade"],
+    priceNote: "Fale com a gente para receber os valores dos pacotes.",
+    cta: "Quero comprar créditos",
+    whatsapp:
+      "Olá, quero comprar créditos para simulações com cliente sintético na Ramppy.",
+    trust: ["Sem fidelidade", "Suporte em português", "Teste grátis com a nossa equipe"],
   },
   es: {
-    eyebrow: "Planes",
-    title: "Planes",
-    subtitle: "Elige el plan que va con tu equipo.",
-    popular: "Más popular",
-    includes: "Incluye",
-    includesScope: "Para análisis de reuniones",
-    ctaPlan: "Hablar con un consultor",
-    ctaCredits: "Quiero comprar créditos",
-    whatsappPlan: (plan) => `Hola, me interesa el plan ${plan} de Ramppy.`,
-    whatsappCredits:
-      "Hola, quiero comprar créditos para simulaciones con cliente sintético en Ramppy.",
-    plans: [
+    eyebrow: "Créditos",
+    title: "Sin mensualidad. Compras créditos de simulación.",
+    usos: [
       {
-        key: "standard",
-        name: "Standard",
-        subtitle: "Para empezar la operación",
-        features: [
-          "Transcripción de la llamada sin bot",
-          "Resumen personalizado de la llamada",
-          "Dashboard para el gestor",
-          "Nota general de la transcripción",
-        ],
+        title: "Contratación",
+        text: "Cada candidato que hace la simulación por el enlace usa créditos de tu saldo.",
       },
       {
-        key: "pro",
-        name: "Pro",
-        subtitle: "Evolución del Standard",
-        popular: true,
-        features: [
-          "Nota con explicación detallada",
-          "Evaluación completa de cada llamada",
-          "Insights sobre objeciones y patrones",
-          "Reportes comparativos entre vendedores",
-        ],
+        title: "Entrenamiento",
+        text: "Cada intento del equipo en una fase de la jornada usa créditos de tu saldo.",
+      },
+      {
+        title: "A demanda",
+        text: "Compra paquetes cuando los necesites. Los créditos no expiran.",
       },
     ],
-    credits: {
-      eyebrow: "Comprados aparte",
-      title: "Créditos para simulaciones con cliente sintético",
-      description:
-        "Para correr simulaciones con cliente sintético necesitas créditos, comprados aparte del plan. Cada simulación consume créditos de tu saldo. Sin mensualidad extra, sin permanencia.",
-      bullets: [
-        "Disponible en cualquier plan",
-        "Paquetes flexibles y bajo demanda",
-        "Los créditos no expiran",
-      ],
-    },
-    trust: ["Cancela cuando quieras", "Soporte en español", "Sin permanencia"],
+    priceNote: "Habla con nosotros para conocer los valores de los paquetes.",
+    cta: "Quiero comprar créditos",
+    whatsapp:
+      "Hola, quiero comprar créditos para simulaciones con cliente sintético en Ramppy.",
+    trust: ["Sin permanencia", "Soporte en español", "Prueba gratis con nuestro equipo"],
   },
   en: {
-    eyebrow: "Plans",
-    title: "Plans",
-    subtitle: "Pick the plan that fits your team.",
-    popular: "Most popular",
-    includes: "Includes",
-    includesScope: "For meeting analysis",
-    ctaPlan: "Talk to a consultant",
-    ctaCredits: "I want to buy credits",
-    whatsappPlan: (plan) => `Hi, I'm interested in the ${plan} plan at Ramppy.`,
-    whatsappCredits:
-      "Hi, I'd like to buy credits for roleplay simulations at Ramppy.",
-    plans: [
+    eyebrow: "Credits",
+    title: "No monthly fee. You buy simulation credits.",
+    usos: [
       {
-        key: "standard",
-        name: "Standard",
-        subtitle: "To get the operation started",
-        features: [
-          "Call transcription without bot",
-          "Custom call summary",
-          "Manager dashboard",
-          "General transcription score",
-        ],
+        title: "Hiring",
+        text: "Each candidate who runs the simulation through the link uses credits from your balance.",
       },
       {
-        key: "pro",
-        name: "Pro",
-        subtitle: "Evolution of Standard",
-        popular: true,
-        features: [
-          "Score with detailed explanation",
-          "Full call evaluation",
-          "Objection and pattern insights",
-          "Cross-rep comparison reports",
-        ],
+        title: "Training",
+        text: "Each team attempt at a journey phase uses credits from your balance.",
+      },
+      {
+        title: "On demand",
+        text: "Buy packs when you need them. Credits never expire.",
       },
     ],
-    credits: {
-      eyebrow: "Bought separately",
-      title: "Credits for roleplay simulations",
-      description:
-        "To run AI roleplay simulations you need credits, bought separately from your plan. Each simulation consumes credits from your balance. No extra monthly fee, no lock-in.",
-      bullets: [
-        "Available on any plan",
-        "Flexible, on-demand packs",
-        "Credits never expire",
-      ],
-    },
-    trust: ["Cancel anytime", "Dedicated support", "No lock-in"],
+    priceNote: "Talk to us to get pack pricing.",
+    cta: "I want to buy credits",
+    whatsapp: "Hi, I'd like to buy simulation credits for Ramppy.",
+    trust: ["No lock-in", "Dedicated support", "Free trial with our team"],
   },
 };
 
@@ -231,145 +135,46 @@ export default function Pricing() {
             {t.eyebrow}
           </p>
           <h2 className="mt-4 font-[var(--font-fustat)] text-[40px] md:text-[56px] lg:text-[64px] font-medium leading-[1.02] tracking-[-0.035em] text-[#0A0A0A]">
-            {t.subtitle}
+            {t.title}
           </h2>
         </header>
 
         {/* Hairline */}
         <div className="mt-16 md:mt-20 h-px w-full bg-[#E5E7EB]" />
 
-        {/* Plans — two columns separated by a single hairline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-[#E5E7EB]">
-          {t.plans.map((plan) => {
-            const popular = !!plan.popular;
-            return (
-              <article
-                key={plan.key}
-                className={[
-                  "relative flex flex-col",
-                  "px-6 md:px-10 lg:px-14",
-                  "pt-12 md:pt-16 pb-12 md:pb-16",
-                  popular
-                    ? "bg-primary-green/[0.025] md:-mx-px"
-                    : "",
-                ].join(" ")}
-              >
-                {popular && (
-                  <span
-                    className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-primary-green"
-                    aria-hidden="true"
-                  />
-                )}
-
-                {/* Plan label row */}
-                <div className="flex items-baseline justify-between">
-                  <h3 className="font-[var(--font-fustat)] text-[28px] md:text-[32px] font-medium tracking-[-0.02em] text-[#0A0A0A]">
-                    {plan.name}
-                  </h3>
-                  {popular && (
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-green">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary-green" aria-hidden />
-                      {t.popular}
-                    </span>
-                  )}
-                </div>
-
-                <p className="mt-2 text-[15px] leading-relaxed text-[#6B7280]">
-                  {plan.subtitle}
-                </p>
-
-                {/* CTA */}
-                <a
-                  href={buildWa(t.whatsappPlan(plan.name))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={[
-                    "group mt-10 inline-flex w-full items-center justify-center gap-2",
-                    "h-11 rounded-full px-5 text-[14px] font-medium",
-                    "transition-all duration-200",
-                    popular
-                      ? "bg-primary-green text-white hover:bg-primary-light shadow-[0_8px_24px_-12px_rgba(45,140,60,0.65)]"
-                      : "bg-white text-[#0A0A0A] border border-[#E5E7EB] hover:border-[#0A0A0A]",
-                  ].join(" ")}
-                >
-                  <span>{t.ctaPlan}</span>
-                  <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </a>
-
-                {/* Includes label + scope */}
-                <p className="mt-12 flex flex-wrap items-baseline gap-x-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#6B7280]">
-                  <span>{t.includes}</span>
-                  <span className="text-[#9CA3AF]">·</span>
-                  <span className="text-primary-green/85">{t.includesScope}</span>
-                </p>
-
-                {/* Feature list */}
-                <ul className="mt-4 divide-y divide-[#EEF0F2]">
-                  {plan.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3 py-3.5"
-                    >
-                      <Check
-                        className={[
-                          "mt-[3px] h-4 w-4 flex-shrink-0",
-                          popular ? "text-primary-green" : "text-[#0A0A0A]",
-                        ].join(" ")}
-                      />
-                      <span className="text-[15px] leading-relaxed text-[#1F2937]">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            );
-          })}
+        {/* Where credits go: three columns separated by a single hairline */}
+        <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x md:divide-[#E5E7EB]">
+          {t.usos.map((uso) => (
+            <article
+              key={uso.title}
+              className="py-8 md:px-10 lg:px-14 md:py-16 first:md:pl-0 last:md:pr-0"
+            >
+              <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-green">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary-green" aria-hidden />
+                {uso.title}
+              </p>
+              <p className="mt-4 text-[17px] md:text-[18px] leading-[1.55] text-[#1F2937]">
+                {uso.text}
+              </p>
+            </article>
+          ))}
         </div>
 
         {/* Hairline */}
         <div className="h-px w-full bg-[#E5E7EB]" />
 
-        {/* Credits add-on */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 py-12 md:py-16">
-          <div className="md:col-span-4">
-            <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-green">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary-green" aria-hidden />
-              {t.credits.eyebrow}
-            </p>
-            <h3 className="mt-4 font-[var(--font-fustat)] text-[26px] md:text-[32px] font-semibold leading-[1.1] tracking-[-0.025em] text-[#0A0A0A]">
-              {t.credits.title}
-            </h3>
-          </div>
-
-          <div className="md:col-span-5">
-            <p className="text-[15px] leading-[1.65] text-[#4B5563]">
-              {t.credits.description}
-            </p>
-            <ul className="mt-6 space-y-2.5">
-              {t.credits.bullets.map((b) => (
-                <li
-                  key={b}
-                  className="flex items-start gap-3 text-[14px] text-[#1F2937]"
-                >
-                  <Check className="mt-[3px] h-4 w-4 flex-shrink-0 text-primary-green" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-3 md:flex md:items-end md:justify-end">
-            <a
-              href={buildWa(t.whatsappCredits)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-[14px] font-medium text-primary-green border-b border-primary-green pb-1 hover:gap-3 hover:text-primary-light hover:border-primary-light transition-all duration-200"
-            >
-              <span>{t.ctaCredits}</span>
-              <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
-          </div>
+        {/* Buy */}
+        <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 py-12 md:py-16">
+          <p className="text-[15px] leading-[1.65] text-[#4B5563]">{t.priceNote}</p>
+          <a
+            href={buildWa(t.whatsapp)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-2 h-11 rounded-full px-6 text-[14px] font-medium bg-primary-green text-white hover:bg-primary-light shadow-[0_8px_24px_-12px_rgba(45,140,60,0.65)] transition-all duration-200"
+          >
+            <span>{t.cta}</span>
+            <Arrow className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </a>
         </section>
 
         {/* Hairline */}
@@ -389,10 +194,6 @@ export default function Pricing() {
               <span>{item}</span>
             </span>
           ))}
-          <span
-            className="flex items-center gap-2 text-[12px] text-[#6B7280] md:before:inline-block md:before:h-1 md:before:w-1 md:before:rounded-full md:before:bg-[#D1D5DB] md:before:mr-3"
-          >
-          </span>
         </div>
       </div>
     </SectionWrapper>

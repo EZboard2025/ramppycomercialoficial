@@ -48,8 +48,7 @@ const softwareLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "Plataforma de vendas com IA: simulação de contratação para avaliar candidatos a vendedor, treinamento, análise de reuniões e gestão de times comerciais.",
-  offers: { "@type": "Offer", priceCurrency: "BRL", price: "960" },
+    "Plataforma de vendas com IA: simulação de contratação para avaliar candidatos a vendedor, treinamento em jornadas e acompanhamento de times comerciais.",
 };
 
 export default function Home() {

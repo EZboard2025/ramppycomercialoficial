@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   path: "/ajuda",
   title: "Central de Ajuda | Ramppy",
   description:
-    "Respostas para as principais dúvidas sobre a Ramppy: simulações de vendas com IA, análise de reuniões, planos, créditos e onboarding.",
+    "Respostas para as principais dúvidas sobre a Ramppy: contratação, simulações com cliente sintético, treinamento, acompanhamento do time e créditos.",
 });
 
 const faqLd = {
