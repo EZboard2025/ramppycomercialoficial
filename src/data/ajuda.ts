@@ -131,11 +131,6 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
               "A Ramppy funciona com créditos. Cada simulação, de candidato ou de vendedor, consome créditos do seu saldo. Os pacotes são sob demanda e os créditos não expiram. Fale com a gente para saber os valores.",
           },
           {
-            question: "Tem mensalidade ou fidelidade?",
-            answer:
-              "Não. Você compra créditos quando precisar, sem mensalidade e sem fidelidade.",
-          },
-          {
             question: "Existe período de teste?",
             answer:
               "Sim. Marque um teste grátis com a nossa equipe para experimentar a Ramppy na sua operação.",
@@ -254,11 +249,6 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
               "Ramppy works with credits. Each simulation, for a candidate or a rep, uses credits from your balance. Packs are on demand and credits never expire. Talk to us for pricing.",
           },
           {
-            question: "Is there a monthly fee or lock-in?",
-            answer:
-              "No. You buy credits when you need them, with no monthly fee and no lock-in.",
-          },
-          {
             question: "Is there a trial period?",
             answer:
               "Yes. Book a free trial with our team to try Ramppy on your operation.",
@@ -375,11 +365,6 @@ export const ajudaStrings: { pt: AjudaLocaleStrings; en: AjudaLocaleStrings; es:
             question: "¿Cómo funciona el cobro?",
             answer:
               "Ramppy funciona con créditos. Cada simulación, de candidato o de vendedor, consume créditos de tu saldo. Los paquetes son a demanda y los créditos no expiran. Habla con nosotros para conocer los valores.",
-          },
-          {
-            question: "¿Hay mensualidad o permanencia?",
-            answer:
-              "No. Compras créditos cuando los necesitas, sin mensualidad y sin permanencia.",
           },
           {
             question: "¿Hay período de prueba?",

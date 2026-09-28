@@ -23,7 +23,7 @@ type Copy = {
 const COPY: Record<Locale, Copy> = {
   pt: {
     eyebrow: "Créditos",
-    title: "Sem mensalidade. Você compra créditos de simulação.",
+    title: "Créditos de simulação para contratar e treinar.",
     usos: [
       {
         title: "Contratação",
@@ -46,7 +46,7 @@ const COPY: Record<Locale, Copy> = {
   },
   es: {
     eyebrow: "Créditos",
-    title: "Sin mensualidad. Compras créditos de simulación.",
+    title: "Créditos de simulación para contratar y entrenar.",
     usos: [
       {
         title: "Contratación",
@@ -69,7 +69,7 @@ const COPY: Record<Locale, Copy> = {
   },
   en: {
     eyebrow: "Credits",
-    title: "No monthly fee. You buy simulation credits.",
+    title: "Simulation credits to hire and train.",
     usos: [
       {
         title: "Hiring",
