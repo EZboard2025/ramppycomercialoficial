@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PartnersMarquee from "@/components/PartnersMarquee";
-import ContratacaoSteps from "@/components/contratacao/ContratacaoSteps";
 import LogoBar from "@/components/LogoBar";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
@@ -62,7 +61,6 @@ export default function HomeEs() {
           <Navbar />
           <Hero />
           <PartnersMarquee />
-          <ContratacaoSteps />
           <Features />
           <LogoBar />
           <HowItWorks />

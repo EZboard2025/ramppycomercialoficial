@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PartnersMarquee from "@/components/PartnersMarquee";
-import ContratacaoSteps from "@/components/contratacao/ContratacaoSteps";
 import ProblemStats from "@/components/ProblemStats";
 import LogoBar from "@/components/LogoBar";
 import Features from "@/components/Features";
@@ -64,7 +63,6 @@ export default function Home() {
         <Navbar />
         <Hero />
         <PartnersMarquee />
-        <ContratacaoSteps />
         {/* <ProblemStats /> */}
         <Features />
         <LogoBar />

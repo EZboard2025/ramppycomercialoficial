@@ -105,8 +105,8 @@ export default function Features() {
   return (
     <SectionWrapper id="funcionalidades" className="overflow-visible">
       <div className="py-12 md:py-32">
-        {/* Contratação */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative">
+        {/* Contratação (o menu e o rodapé apontam para cá) */}
+        <div id="contratacao" className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 relative">
           {/* Video - Left (after text on mobile) */}
           <div className="flex-1 w-full lg:translate-x-[-1vw] xl:translate-x-[-3vw] order-last lg:order-first">
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
