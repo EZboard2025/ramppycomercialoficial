@@ -9,37 +9,37 @@ const strings = {
     badge: "Como funciona",
     heroTitle: "Do setup ao resultado em minutos",
     heroSubtitle:
-      "O Ramppy funciona em etapas simples. Cada uma foi pensada para que seu time evolua sem complicação, com resultados visíveis desde o primeiro dia.",
+      "A Ramppy funciona em etapas simples. Cada uma foi pensada para que seu time evolua sem complicação, com resultados visíveis desde o primeiro dia.",
     steps: [
       {
         badge: "Passo 01",
-        title: "O gestor configura os cenários",
-        text: "O gestor seleciona personas, tipo de venda e objeções direto no painel. Cada simulação é montada sob medida para a realidade do time.",
+        title: "Configure a sua operação",
+        text: "Nas Configurações você conta como é o seu negócio: dados da empresa, objetivos, objeções e personas. Uma pergunta por vez, e se você não souber a resposta, a IA escreve para você revisar. Pronto: o cliente sintético tem a cara do seu cliente.",
       },
       {
         badge: "Passo 02",
-        title: "O vendedor prepara sua sessão",
-        text: "Antes de começar, o vendedor configura os detalhes da simulação: escolhe o cenário, ajusta o contexto e inicia a sessão em poucos cliques.",
+        title: "Crie o grupo da vaga",
+        text: "Crie um grupo para a vaga, escolha com qual cliente sintético o candidato vai conversar e qual é o objetivo da conversa. Depois é só mandar o link: o candidato faz a simulação sem cadastro.",
       },
       {
         badge: "Passo 03",
-        title: "Simulação por voz com IA",
-        text: "O vendedor entra em uma videochamada com um cliente virtual. A conversa acontece por voz, em tempo real, com transcrição automática. É como treinar com um cliente real, sem o risco.",
+        title: "O candidato faz a simulação",
+        text: "O candidato abre o link e liga. É uma reunião de vendas inteira, por voz, com o cliente sintético, que levanta as objeções que o seu time ouve de verdade.",
       },
       {
         badge: "Passo 04",
-        title: "Análise automática de reuniões reais — sem bot na call",
-        text: "O vendedor instala o app desktop da Ramppy uma única vez. A partir daí, cada reunião é capturada silenciosamente direto do dispositivo, transcrita em tempo real e recebe a mesma avaliação usada nas simulações. Funciona em Google Meet, Zoom e Teams — sem nenhum bot entrar na chamada e sem aviso para o prospect. Conecte o Google Calendar opcionalmente para detectar reuniões automaticamente.",
+        title: "A nota, com o porquê",
+        text: "A nota sai do que foi dito na conversa, em 5 categorias: abertura, qualificação, solução, objeções e encerramento. Cada uma vem com o porquê e com o que fazer diferente. Todo candidato na mesma régua.",
       },
       {
         badge: "Passo 05",
-        title: "Histórico com avaliação detalhada",
-        text: "Cada simulação e reunião real fica registrada com a avaliação completa. O vendedor acompanha sua evolução em múltiplos indicadores e vê exatamente o que precisa melhorar na próxima conversa.",
+        title: "Treine o time em trilhas",
+        text: "Monte a trilha do time: cada fase é uma reunião completa, com a nota mínima para avançar. Convide o time por e-mail. Cada pessoa treina pelo link e só passa para a próxima fase quando bate a nota.",
       },
       {
         badge: "Passo 06",
-        title: "Dashboard completo para o gestor",
-        text: "Visão detalhada de cada vendedor: performance, comparativos do time, próximas reuniões, follow-ups no WhatsApp e transcrição de cada venda. Tudo em um lugar só.",
+        title: "Acompanhe sem entrar em call",
+        text: "A tela Início mostra o que mudou na semana. No mapa da turma você vê quem avançou e quem travou. E pode perguntar o que quiser para a Nicolly.",
       },
     ],
   },
@@ -51,33 +51,33 @@ const strings = {
     steps: [
       {
         badge: "Step 01",
-        title: "The manager configures the scenarios",
-        text: "The manager selects personas, sale type, and objections directly in the dashboard. Every simulation is built to match your team's reality.",
+        title: "Set up your operation",
+        text: "In Settings you describe your business: company data, goals, objections and personas. One question at a time, and if you're not sure of an answer, the AI writes it for you to review. That's it: the synthetic customer looks like your customer.",
       },
       {
         badge: "Step 02",
-        title: "The rep prepares their session",
-        text: "Before starting, the rep sets the simulation details: picks the scenario, adjusts the context, and kicks off the session in just a few clicks.",
+        title: "Create a group for the role",
+        text: "Create a group for the role, choose which synthetic customer the candidate will talk to and the goal of the conversation. Then just send the link: candidates run the simulation with no sign-up.",
       },
       {
         badge: "Step 03",
-        title: "Voice simulation with AI",
-        text: "The rep joins a video call with a virtual customer. The conversation runs by voice, in real time, with automatic transcription. It's like training with a real customer, without the risk.",
+        title: "The candidate runs the simulation",
+        text: "The candidate opens the link and calls. It's a full sales meeting, by voice, with the synthetic customer, who raises the objections your team really hears.",
       },
       {
         badge: "Step 04",
-        title: "Automatic analysis of real meetings — without a bot in the call",
-        text: "The rep installs the Ramppy desktop app once. From that point on, every meeting is captured silently straight from the device, transcribed in real time, and runs through the same evaluation used in the simulations. Works on Google Meet, Zoom and Teams — with no bot ever joining the call and no notice for the prospect. Optionally connect Google Calendar to auto-detect meetings.",
+        title: "The score, with the why",
+        text: "The score comes from what was said in the conversation, in 5 categories: opening, qualification, solution, objections and closing. Each one comes with the why and what to do differently. Every candidate on the same scale.",
       },
       {
         badge: "Step 05",
-        title: "Full history with detailed evaluation",
-        text: "Every simulation and real meeting is logged with a complete evaluation. Reps track their progress across multiple indicators and see exactly what to improve in the next conversation.",
+        title: "Train the team on tracks",
+        text: "Build your team's track: each phase is a full meeting, with a minimum score to move on. Invite the team by email. Each rep trains from the link and only moves to the next phase by hitting the score.",
       },
       {
         badge: "Step 06",
-        title: "A complete dashboard for managers",
-        text: "A detailed view of every rep: performance, team comparisons, upcoming meetings, WhatsApp follow-ups, and transcripts of every sale. All in one place.",
+        title: "Track without joining a call",
+        text: "Home shows what changed this week. On the team map you see who moved ahead and who's stuck. And you can ask Nicolly anything.",
       },
     ],
   },
@@ -89,46 +89,41 @@ const strings = {
     steps: [
       {
         badge: "Paso 01",
-        title: "El manager configura los escenarios",
-        text: "El manager selecciona personas, tipo de venta y objeciones directamente en el panel. Cada simulación se arma a medida de la realidad del equipo.",
+        title: "Configura tu operación",
+        text: "En la Configuración cuentas cómo es tu negocio: datos de la empresa, objetivos, objeciones y personas. Una pregunta a la vez, y si no sabes la respuesta, la IA la escribe para que la revises. Listo: el cliente sintético se parece a tu cliente.",
       },
       {
         badge: "Paso 02",
-        title: "El vendedor prepara su sesión",
-        text: "Antes de empezar, el vendedor configura los detalles de la simulación: elige el escenario, ajusta el contexto e inicia la sesión en pocos clics.",
+        title: "Crea el grupo de la vacante",
+        text: "Crea un grupo para la vacante, elige con qué cliente sintético va a conversar el candidato y cuál es el objetivo de la conversación. Después solo envía el enlace: el candidato hace la simulación sin registrarse.",
       },
       {
         badge: "Paso 03",
-        title: "Simulación por voz con IA",
-        text: "El vendedor entra en una videollamada con un cliente virtual. La conversación ocurre por voz, en tiempo real, con transcripción automática. Es como entrenar con un cliente real, sin el riesgo.",
+        title: "El candidato hace la simulación",
+        text: "El candidato abre el enlace y llama. Es una reunión de ventas completa, por voz, con el cliente sintético, que plantea las objeciones que tu equipo escucha de verdad.",
       },
       {
         badge: "Paso 04",
-        title: "Análisis automático de reuniones reales — sin bot en la llamada",
-        text: "El vendedor instala la app de escritorio de Ramppy una sola vez. A partir de ahí, cada reunión se captura silenciosamente desde el dispositivo, se transcribe en tiempo real y recibe la misma evaluación usada en las simulaciones. Funciona en Google Meet, Zoom y Teams — sin que ningún bot entre en la llamada y sin aviso para el prospect. Conecta opcionalmente Google Calendar para detectar reuniones automáticamente.",
+        title: "La nota, con el porqué",
+        text: "La nota sale de lo que se dijo en la conversación, en 5 categorías: apertura, calificación, solución, objeciones y cierre. Cada una viene con el porqué y con qué hacer distinto. Todos los candidatos con la misma vara.",
       },
       {
         badge: "Paso 05",
-        title: "Historial con evaluación detallada",
-        text: "Cada simulación y reunión real queda registrada con la evaluación completa. El vendedor sigue su evolución en múltiples indicadores y ve exactamente qué necesita mejorar en la próxima conversación.",
+        title: "Entrena al equipo en rutas",
+        text: "Arma la ruta del equipo: cada fase es una reunión completa, con la nota mínima para avanzar. Invita al equipo por correo. Cada persona entrena desde el enlace y solo pasa a la siguiente fase al alcanzar la nota.",
       },
       {
         badge: "Paso 06",
-        title: "Dashboard completo para el manager",
-        text: "Visión detallada de cada vendedor: desempeño, comparativos del equipo, próximas reuniones, follow-ups por WhatsApp y transcripción de cada venta. Todo en un solo lugar.",
+        title: "Da seguimiento sin entrar en llamadas",
+        text: "El Inicio muestra lo que cambió en la semana. En el mapa del equipo ves quién avanzó y quién se trabó. Y puedes preguntarle lo que quieras a Nicolly.",
       },
     ],
   },
 };
 
-const stepMedia = [
-  { video: "/videos/config-gestor.mp4", reverse: false },
-  { video: "/videos/config-sessao.mp4", reverse: true },
-  { image: "/images/roleplay.png.png", reverse: false },
-  { video: "/videos/analise-meet.mp4", reverse: true },
-  { video: "/videos/dashboard.mp4", reverse: false },
-  { video: "/videos/historico.mp4", reverse: true },
-] as { video?: string; image?: string; reverse: boolean }[];
+/** Um clipe didático por passo (mudo, em loop sem emenda), no idioma da página. */
+const PASSOS_VIDEO = ["configurar", "contratar", "simulacao", "nota", "treinar", "acompanhar"] as const;
+const stepMedia = PASSOS_VIDEO.map((slug, i) => ({ slug, reverse: i % 2 === 1 }));
 
 export default function ComoFuncionaContent() {
   const locale = useLocale();
@@ -161,33 +156,11 @@ export default function ComoFuncionaContent() {
           <div className={`py-12 md:py-20 ${idx === 0 ? "" : ""}`}>
             <div className={`flex flex-col ${step.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-start gap-12 lg:gap-16`}>
               {/* Media */}
-              <div className={`flex-1 w-full ${step.video === "/videos/nicole.mp4" ? "max-w-[500px]" : ""}`}>
+              <div className="flex-1 w-full">
                 <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
-                  {step.video ? (
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-auto block"
-                      preload="auto"
-                    >
-                      <source src={step.video} type="video/quicktime" />
-                      <source src={step.video} type="video/mp4" />
-                    </video>
-                  ) : step.image ? (
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-auto block"
-                    />
-                  ) : (
-                    <div className="w-full aspect-video bg-gradient-to-br from-teal-dark to-[#1e4d38] flex items-center justify-center">
-                      <span className="font-[var(--font-fustat)] text-6xl md:text-8xl font-bold text-primary-green/30">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                  )}
+                  <video key={locale} autoPlay loop muted playsInline className="w-full h-auto block" preload="auto">
+                    <source src={`/videos/passo-${idx + 1}-${step.slug}-${locale}.mp4`} type="video/mp4" />
+                  </video>
                 </div>
               </div>
 

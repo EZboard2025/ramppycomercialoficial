@@ -11,10 +11,9 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Produto",
     items: [
       { label: "Contratação", description: "Simule antes de contratar", href: "/#contratacao" },
-      { label: "Simulação", description: "Treine vendedores com IA", href: "/#funcionalidades" },
-      { label: "Análise Meet", description: "Avalie reuniões reais", href: "/como-funciona#passo-04" },
-      { label: "Dashboard do gestor", description: "Visão completa do time", href: "/#dashboard" },
-      { label: "Gestão", description: "Gerencie seu time", href: "/como-funciona#passo-06" },
+      { label: "Treinamento", description: "Trilhas até bater a nota", href: "/#treinamento" },
+      { label: "Acompanhamento", description: "Veja quem travou", href: "/#acompanhamento" },
+      { label: "Como funciona", description: "O passo a passo em vídeo", href: "/como-funciona" },
     ],
   },
   resources: {
@@ -40,10 +39,9 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Product",
     items: [
       { label: "Hiring", description: "Simulate before you hire", href: "/#contratacao" },
-      { label: "Simulation", description: "Train sales reps with AI", href: "/#funcionalidades" },
-      { label: "Meet Analysis", description: "Review real meetings", href: "/como-funciona#passo-04" },
-      { label: "Manager Dashboard", description: "Full view of your team", href: "/#dashboard" },
-      { label: "Management", description: "Lead your team", href: "/como-funciona#passo-06" },
+      { label: "Training", description: "Tracks until they hit the score", href: "/#treinamento" },
+      { label: "Tracking", description: "See who's stuck", href: "/#acompanhamento" },
+      { label: "How it works", description: "The step by step, on video", href: "/como-funciona" },
     ],
   },
   resources: {
@@ -69,10 +67,9 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Producto",
     items: [
       { label: "Contratación", description: "Simula antes de contratar", href: "/#contratacao" },
-      { label: "Simulación", description: "Entrena a tu equipo con IA", href: "/#funcionalidades" },
-      { label: "Análisis Meet", description: "Evalúa reuniones reales", href: "/como-funciona#passo-04" },
-      { label: "Dashboard del manager", description: "Visión completa del equipo", href: "/#dashboard" },
-      { label: "Gestión", description: "Lidera tu equipo", href: "/como-funciona#passo-06" },
+      { label: "Entrenamiento", description: "Rutas hasta alcanzar la nota", href: "/#treinamento" },
+      { label: "Seguimiento", description: "Ve quién se trabó", href: "/#acompanhamento" },
+      { label: "Cómo funciona", description: "El paso a paso en video", href: "/como-funciona" },
     ],
   },
   resources: {

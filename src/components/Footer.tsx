@@ -12,10 +12,9 @@ const strings = {
     copyright: "© 2026 Ramppy. Todos os direitos reservados.",
     productItems: [
       { label: "Contratação", href: "/#contratacao" },
-      { label: "Simulação", href: "/#funcionalidades" },
-      { label: "Análise Meet", href: "/como-funciona#passo-04" },
-      { label: "Dashboard do gestor", href: "/#dashboard" },
-      { label: "Gestão", href: "/como-funciona#passo-06" },
+      { label: "Treinamento", href: "/#treinamento" },
+      { label: "Acompanhamento", href: "/#acompanhamento" },
+      { label: "Como funciona", href: "/como-funciona" },
     ],
     resourceItems: [
       { label: "Como funciona", href: "/como-funciona" },
@@ -42,10 +41,9 @@ const strings = {
     copyright: "© 2026 Ramppy. All rights reserved.",
     productItems: [
       { label: "Hiring", href: "/#contratacao" },
-      { label: "Simulation", href: "/#funcionalidades" },
-      { label: "Meet Analysis", href: "/como-funciona#passo-04" },
-      { label: "Manager Dashboard", href: "/#dashboard" },
-      { label: "Management", href: "/como-funciona#passo-06" },
+      { label: "Training", href: "/#treinamento" },
+      { label: "Tracking", href: "/#acompanhamento" },
+      { label: "How it works", href: "/como-funciona" },
     ],
     resourceItems: [
       { label: "How it works", href: "/como-funciona" },
@@ -72,10 +70,9 @@ const strings = {
     copyright: "© 2026 Ramppy. Todos los derechos reservados.",
     productItems: [
       { label: "Contratación", href: "/#contratacao" },
-      { label: "Simulación", href: "/#funcionalidades" },
-      { label: "Análisis Meet", href: "/como-funciona#passo-04" },
-      { label: "Dashboard del manager", href: "/#dashboard" },
-      { label: "Gestión", href: "/como-funciona#passo-06" },
+      { label: "Entrenamiento", href: "/#treinamento" },
+      { label: "Seguimiento", href: "/#acompanhamento" },
+      { label: "Cómo funciona", href: "/como-funciona" },
     ],
     resourceItems: [
       { label: "Cómo funciona", href: "/como-funciona" },

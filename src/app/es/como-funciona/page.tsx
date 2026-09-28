@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   path: "/como-funciona",
   title: "Cómo Funciona | Ramppy",
   description:
-    "El recorrido completo de Ramppy: simulaciones de ventas con IA, análisis automático de reuniones y coaching inteligente para equipos B2B.",
+    "El recorrido de Ramppy: configura el cliente sintético, contrata con una simulación de ventas por voz, entrena al equipo en rutas y ve quién se trabó.",
 });
 
 export default function Page() {

@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   path: "/como-funciona",
   title: "How It Works | Ramppy",
   description:
-    "The full Ramppy walkthrough: AI sales simulations, automatic meeting analysis and smart coaching built for B2B sales teams.",
+    "The Ramppy walkthrough: set up the synthetic customer, hire through a voice sales simulation, train the team on tracks and see who's stuck.",
 });
 
 export default function HowItWorksPage() {
