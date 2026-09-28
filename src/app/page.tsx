@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PartnersMarquee from "@/components/PartnersMarquee";
 import ProblemStats from "@/components/ProblemStats";
-import LogoBar from "@/components/LogoBar";
 import Features from "@/components/Features";
 import Results from "@/components/Results";
 import HowItWorks from "@/components/HowItWorks";
@@ -65,7 +64,6 @@ export default function Home() {
         <PartnersMarquee />
         {/* <ProblemStats /> */}
         <Features />
-        <LogoBar />
         {/* <Results /> */}
         <HowItWorks />
         {/* <Testimonials /> */}
