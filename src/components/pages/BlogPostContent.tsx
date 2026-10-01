@@ -19,18 +19,21 @@ const strings = {
     readTimeSuffix: "de leitura",
     viewOnLinkedin: "Ver no LinkedIn",
     viewOnLinkedinInline: "Ver no LinkedIn ↗",
+    viewProfile: "Ver perfil no LinkedIn ↗",
   },
   en: {
     backToBlog: "Back to blog",
     readTimeSuffix: "read",
     viewOnLinkedin: "View on LinkedIn",
     viewOnLinkedinInline: "View on LinkedIn ↗",
+    viewProfile: "View LinkedIn profile ↗",
   },
   es: {
     backToBlog: "Volver al blog",
     readTimeSuffix: "de lectura",
     viewOnLinkedin: "Ver en LinkedIn",
     viewOnLinkedinInline: "Ver en LinkedIn ↗",
+    viewProfile: "Ver perfil en LinkedIn ↗",
   },
 };
 
@@ -46,7 +49,13 @@ type Post = {
   content: string;
   featured?: boolean;
   images?: string[];
+  /** Pessoa de quem o post fala: vira um cartão no fim do texto. */
+  about?: { name: string; role: string; image?: string; url?: string };
+  videos?: { src: string; poster?: string; title: string }[];
 };
+
+/** Um parágrafo "[video:N]" no conteúdo põe ali o vídeo N de `post.videos`. */
+const VIDEO_MARKER = /^\[video:(\d+)\]$/;
 
 export default function BlogPostContent({ post }: { post: Post }) {
   const locale = useLocale();
@@ -93,7 +102,7 @@ export default function BlogPostContent({ post }: { post: Post }) {
             {/* Images */}
             {"images" in post && Array.isArray((post as Record<string, unknown>).images) ? (
               <ImageGallery images={(post as Record<string, unknown>).images as string[]} alt={post.title} />
-            ) : post.image ? (
+            ) : post.image && !post.videos ? (
               <div className="rounded-2xl overflow-hidden mb-10 border border-border-light">
                 <img src={post.image} alt={post.title} className="w-full h-auto" />
               </div>
@@ -101,12 +110,44 @@ export default function BlogPostContent({ post }: { post: Post }) {
 
             {/* Content */}
             <div className="prose-custom">
-              {post.content.split("\n\n").map((paragraph, idx) => (
-                <p key={idx} className="text-lg text-text-secondary leading-relaxed mb-6">
-                  {paragraph}
-                </p>
-              ))}
+              {post.content.split("\n\n").map((paragraph, idx) => {
+                const marker = paragraph.match(VIDEO_MARKER);
+                if (marker) {
+                  const video = post.videos?.[Number(marker[1])];
+                  return video ? (
+                    <div key={idx} className="rounded-2xl overflow-hidden mb-8 border border-border-light bg-black">
+                      <video src={video.src} poster={video.poster} title={video.title} controls playsInline preload="metadata" className="w-full h-auto block" />
+                    </div>
+                  ) : null;
+                }
+                return (
+                  <p key={idx} className="text-lg text-text-secondary leading-relaxed mb-6">
+                    {paragraph}
+                  </p>
+                );
+              })}
             </div>
+
+            {/* Person card */}
+            {post.about && (
+              <a
+                href={post.about.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center gap-5 md:gap-6 p-4 md:p-5 rounded-2xl border border-border-light hover:border-primary-green/30 transition-colors group"
+              >
+                {post.about.image && (
+                  <img src={post.about.image} alt={`${post.about.name}, ${post.about.role}`} className="w-24 md:w-32 aspect-[4/5] rounded-xl object-cover shrink-0" />
+                )}
+                <span className="flex flex-col">
+                  <span className="font-[var(--font-fustat)] text-xl md:text-2xl font-semibold text-teal-dark">{post.about.name}</span>
+                  <span className="text-base text-text-secondary">{post.about.role}</span>
+                  {post.about.url && (
+                    <span className="mt-3 text-sm font-medium text-primary-green group-hover:underline">{t.viewProfile}</span>
+                  )}
+                </span>
+              </a>
+            )}
 
             {/* Share / back */}
             <div className="mt-12 pt-8 border-t border-border-light flex items-center justify-between">

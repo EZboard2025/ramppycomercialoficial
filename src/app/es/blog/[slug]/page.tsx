@@ -4,7 +4,7 @@ import PageShell from "@/components/PageShell";
 import BlogPostContent from "@/components/pages/BlogPostContent";
 import posts from "@/data/blog-posts.json";
 import JsonLd from "@/components/JsonLd";
-import { buildMetadata, SITE_URL } from "@/lib/seo";
+import { articlePersonLd, articleVideosLd, buildMetadata, SITE_URL } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -42,6 +42,8 @@ export default async function Page({ params }: Props) {
     dateModified: post.date,
     inLanguage: "es",
     author: { "@type": "Organization", name: "Ramppy" },
+    about: articlePersonLd(post.about),
+    video: articleVideosLd(post.videos, post.date),
     publisher: {
       "@type": "Organization",
       name: "Ramppy",

@@ -1,5 +1,39 @@
 [
   {
+    "slug": "gabriel-gomide-motion-design-ramppy",
+    "featured": true,
+    "category": "Atualização",
+    "title": "Gabriel Gomide começa no motion design com os vídeos da Ramppy",
+    "excerpt": "Gabriel Gomide, cofundador da Ramppy, começou a fazer motion design. Os primeiros projetos: um vídeo explicativo de 44 segundos e A Ramppy numa frase, um vídeo narrado de 24 segundos.",
+    "date": "2026-10-01",
+    "readTime": "2 min",
+    "image": "/images/blog-motion-design-explicativo.jpg",
+    "linkedinUrl": "",
+    "about": {
+      "name": "Gabriel Gomide",
+      "role": "Cofundador da Ramppy",
+      "image": "/images/blog-gabriel-gomide.jpg",
+      "url": "https://www.linkedin.com/in/gabriel-gomide-922694365/"
+    },
+    "videos": [
+      {
+        "src": "/videos/blog/ramppy-explicativo.mp4",
+        "poster": "/images/blog-motion-design-explicativo.jpg",
+        "title": "Ramppy em 44 segundos",
+        "description": "Vídeo explicativo da Ramppy: o treinamento do time em calls simuladas e a contratação por simulação.",
+        "duration": "PT44S"
+      },
+      {
+        "src": "/videos/blog/ramppy-numa-frase.mp4",
+        "poster": "/images/blog-motion-design-frase.jpg",
+        "title": "A Ramppy numa frase",
+        "description": "Uma frase digitada vira um treinamento completo na Ramppy: a jornada, a Nicolly, a avaliação e a nota até a mínima.",
+        "duration": "PT24S"
+      }
+    ],
+    "content": "Gabriel Gomide, cofundador da Ramppy, começou a fazer motion design nas últimas semanas. Os primeiros projetos foram para a própria marca: dois vídeos que mostram o produto em menos de um minuto, cada um de um jeito.\n\nA Ramppy é uma plataforma de treinamento para times de vendas. O time pratica em calls simuladas por voz com um cliente sintético, e a empresa avalia candidatos numa venda simulada antes de contratar. É um produto que se entende melhor vendo do que lendo, e a ideia de Gabriel era que qualquer pessoa entendesse isso em poucos segundos.\n\n[video:0]\n\nO primeiro é um vídeo explicativo de 44 segundos. Ele começa por um problema que todo gestor comercial conhece, o vendedor novo aprendendo em cima do cliente de verdade, e passa pelas duas frentes da Ramppy: o treinamento, em que o time pratica até bater a nota mínima de cada fase, e a contratação, em que o candidato faz uma simulação pelo link e já chega com nota. Todas as telas que aparecem são as telas reais da plataforma.\n\n[video:1]\n\nO segundo, A Ramppy numa frase, tem 24 segundos e é narrado. Ele acompanha uma frase digitada que vira um treinamento completo: a jornada do time, a conversa com a Nicolly, a assistente da Ramppy, o playbook da empresa virando critério de avaliação e a nota subindo da primeira tentativa até a mínima, com uma cena se transformando na outra.\n\nOs dois passaram por muitas versões até chegar aqui. Gabriel estudou referências quadro a quadro, refez cenas inteiras e tirou tudo o que não estava à altura do produto.\n\nA ideia é que os próximos vídeos da Ramppy também sejam feitos dentro de casa. Para acompanhar, siga a Ramppy no Instagram, @ramppy.ai, e Gabriel Gomide no LinkedIn."
+  },
+  {
     "slug": "bot-estranho-call-vendas",
     "category": "Conteúdo",
     "title": "O bot estranho que entrou na sua call (e o cliente percebeu)",
@@ -166,7 +200,6 @@
   },
   {
     "slug": "demoday-growthway-google",
-    "featured": true,
     "category": "Evento",
     "title": "Demoday Growthway | NewHack Google Day",
     "excerpt": "Essa semana tivemos a oportunidade de apresentar a Ramppy no Demoday da Growthway, direto do escritório do Google em São Paulo. Uma manhã intensa de troca, aprendizado e pitch.",

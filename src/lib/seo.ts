@@ -65,3 +65,33 @@ export function buildMetadata({
     },
   };
 }
+
+type PostPerson = { name: string; role: string; image?: string; url?: string };
+type PostVideo = { src: string; poster?: string; title: string; description?: string; duration?: string };
+
+/** Pessoa de quem o post fala, como `about` do Article no schema.org. */
+export function articlePersonLd(person?: PostPerson) {
+  if (!person) return undefined;
+  return {
+    "@type": "Person",
+    name: person.name,
+    jobTitle: person.role,
+    image: person.image ? `${SITE_URL}${encodeURI(person.image)}` : undefined,
+    url: person.url,
+    sameAs: person.url ? [person.url] : undefined,
+    worksFor: { "@type": "Organization", name: "Ramppy", url: SITE_URL },
+  };
+}
+
+/** Vídeos do post como VideoObject, para aparecerem na busca de vídeos. */
+export function articleVideosLd(videos: PostVideo[] | undefined, uploadDate: string) {
+  return videos?.map((v) => ({
+    "@type": "VideoObject",
+    name: v.title,
+    description: v.description ?? v.title,
+    thumbnailUrl: v.poster ? `${SITE_URL}${v.poster}` : undefined,
+    contentUrl: `${SITE_URL}${v.src}`,
+    uploadDate,
+    duration: v.duration,
+  }));
+}
