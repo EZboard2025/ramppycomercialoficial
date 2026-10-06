@@ -94,7 +94,7 @@ const strings = {
     subtitleMobile: "O candidato vende para um cliente sintético. A nota chega antes da entrevista.",
     subtitleDesktop:
       "Simulação de vendas com IA para contratar melhor: o candidato vende para um cliente sintético e a nota chega antes da entrevista. Depois, o mesmo motor treina e avalia quem já está no time.",
-    ctaPrimary: "Comece grátis",
+    ctaPrimary: "Calcular ROI",
     ctaSecondary: "Ver como funciona",
   },
   es: {
@@ -114,7 +114,7 @@ const strings = {
     subtitleMobile: "El candidato le vende a un cliente sintético. La nota llega antes de la entrevista.",
     subtitleDesktop:
       "Simulación de ventas con IA para contratar mejor: el candidato le vende a un cliente sintético y la nota llega antes de la entrevista. Después, el mismo motor entrena y evalúa a tu equipo.",
-    ctaPrimary: "Empieza gratis",
+    ctaPrimary: "Calcular ROI",
     ctaSecondary: "Ver cómo funciona",
   },
   en: {
@@ -134,7 +134,7 @@ const strings = {
     subtitleMobile: "Candidates sell to a synthetic customer. The score lands before the interview.",
     subtitleDesktop:
       "AI sales simulation for better hiring: candidates sell to a synthetic customer and the score lands before the interview. Then the same engine trains and scores the team you already have.",
-    ctaPrimary: "Start free",
+    ctaPrimary: "Calculate ROI",
     ctaSecondary: "See how it works",
   },
 };
@@ -191,7 +191,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-row items-center gap-3 md:gap-4 mt-[40px] md:mt-10">
               <a
-                href="#planos"
+                href="#roi"
                 className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
               >
                 {t.ctaPrimary}

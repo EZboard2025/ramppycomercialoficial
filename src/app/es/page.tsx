@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PartnersMarquee from "@/components/PartnersMarquee";
 import Features from "@/components/Features";
+import RoiCalculator from "@/components/RoiCalculator";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
@@ -60,6 +61,7 @@ export default function HomeEs() {
           <Hero />
           <PartnersMarquee />
           <Features />
+          <RoiCalculator />
           <HowItWorks />
           <Pricing />
           <Footer />

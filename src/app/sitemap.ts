@@ -7,6 +7,7 @@ export const dynamic = "force-static";
 const staticPaths = [
   "/",
   "/como-funciona",
+  "/calculadora",
   "/sobre",
   "/ajuda",
   "/contato",

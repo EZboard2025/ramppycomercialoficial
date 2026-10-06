@@ -4,6 +4,7 @@ import PartnersMarquee from "@/components/PartnersMarquee";
 import ProblemStats from "@/components/ProblemStats";
 import Features from "@/components/Features";
 import Results from "@/components/Results";
+import RoiCalculator from "@/components/RoiCalculator";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -64,6 +65,7 @@ export default function Home() {
         {/* <ProblemStats /> */}
         <Features />
         {/* <Results /> */}
+        <RoiCalculator />
         <HowItWorks />
         {/* <Testimonials /> */}
         <Pricing />

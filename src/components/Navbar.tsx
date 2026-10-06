@@ -20,6 +20,7 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Recursos",
     items: [
       { label: "Como funciona", description: "Entenda o fluxo completo", href: "/como-funciona" },
+      { label: "Calculadora de ROI", description: "Quanto vale a conversão do seu time", href: "/calculadora" },
       { label: "Blog", description: "Artigos e novidades", href: "/blog" },
       { label: "Central de ajuda", description: "Dúvidas frequentes", href: "/ajuda" },
     ],
@@ -48,6 +49,7 @@ const menuDataEn: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Resources",
     items: [
       { label: "How it works", description: "Understand the full flow", href: "/como-funciona" },
+      { label: "ROI calculator", description: "What your team's conversion is worth", href: "/calculadora" },
       { label: "Blog", description: "Articles and news", href: "/blog" },
       { label: "Help center", description: "Frequently asked questions", href: "/ajuda" },
     ],
@@ -76,6 +78,7 @@ const menuDataEs: Record<MenuKey, { title: string; items: MenuItem[] }> = {
     title: "Recursos",
     items: [
       { label: "Cómo funciona", description: "Entiende el flujo completo", href: "/como-funciona" },
+      { label: "Calculadora de ROI", description: "Cuánto vale la conversión de tu equipo", href: "/calculadora" },
       { label: "Blog", description: "Artículos y novedades", href: "/blog" },
       { label: "Centro de ayuda", description: "Preguntas frecuentes", href: "/ajuda" },
     ],
