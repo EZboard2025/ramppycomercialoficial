@@ -41,7 +41,7 @@ const COPY: Record<Locale, Copy> = {
     eyebrow: "Calculadora de ROI",
     title: `E se o seu time convertesse ${MELHORA_CASO} pontos a mais?`,
     subtitle:
-      "Foi o ganho de um time de vendedores novos treinado na Ramppy, de 18% para 30%. Coloque os números do seu time e veja quanto isso vale.",
+      "Foi o ganho de um time que nunca tinha vendido na vida, treinado na Ramppy: de 18% para 30%. Coloque os números do seu time e veja quanto isso vale.",
     reunioes: { label: "Reuniões por dia", hint: `Somando o time todo. O mês conta ${DIAS_UTEIS} dias úteis.` },
     conversao: { label: "Conversão de hoje", hint: "De cada 100 reuniões, quantas viram venda" },
     ticket: { label: "Ticket médio", hint: "Valor médio de cada venda" },
@@ -56,9 +56,9 @@ const COPY: Record<Locale, Copy> = {
       `Olá, fiz a calculadora de ROI da Ramppy: ${r.reunioes} reuniões por dia, ${r.conversao}% de conversão hoje e ticket médio de ${r.ticket}. Com +${MELHORA_CASO} pontos de conversão, seriam ${r.receitaMes} a mais por mês. Quero entender como chegar lá.`,
     caso: {
       eyebrow: "Caso real",
-      title: "Um time de vendedores novos treinado na Ramppy",
+      title: "Um time sem nenhuma experiência em vendas, treinado na Ramppy",
       numeros: [
-        { valor: "6", texto: "pessoas que nunca tinham vendido" },
+        { valor: "6", texto: "pessoas que nunca tinham vendido na vida" },
         { valor: "3 dias", texto: "até o time estar vendendo" },
         { valor: "18% → 30%", texto: "de conversão na primeira semana" },
         { valor: "6x", texto: "de retorno do investimento" },
@@ -72,7 +72,7 @@ const COPY: Record<Locale, Copy> = {
     eyebrow: "ROI calculator",
     title: `What if your team converted ${MELHORA_CASO} more points?`,
     subtitle:
-      "That was the gain of a team of new reps trained on Ramppy, from 18% to 30%. Enter your team's numbers and see what it's worth.",
+      "That was the gain of a team that had never sold anything before, trained on Ramppy: from 18% to 30%. Enter your team's numbers and see what it's worth.",
     reunioes: { label: "Meetings per day", hint: `Across the whole team. A month counts ${DIAS_UTEIS} business days.` },
     conversao: { label: "Current conversion", hint: "Out of every 100 meetings, how many close" },
     ticket: { label: "Average deal size", hint: "Average value of each sale" },
@@ -87,9 +87,9 @@ const COPY: Record<Locale, Copy> = {
       `Hi, I used the Ramppy ROI calculator: ${r.reunioes} meetings per day, ${r.conversao}% conversion today and an average deal size of ${r.ticket}. With +${MELHORA_CASO} points of conversion, that would be ${r.receitaMes} extra per month. I'd like to understand how to get there.`,
     caso: {
       eyebrow: "Real case",
-      title: "A team of new reps trained on Ramppy",
+      title: "A team with no sales experience at all, trained on Ramppy",
       numeros: [
-        { valor: "6", texto: "people who had never sold" },
+        { valor: "6", texto: "people who had never sold anything in their lives" },
         { valor: "3 days", texto: "until the team was selling" },
         { valor: "18% → 30%", texto: "conversion in the first week" },
         { valor: "6x", texto: "return on investment" },
@@ -103,7 +103,7 @@ const COPY: Record<Locale, Copy> = {
     eyebrow: "Calculadora de ROI",
     title: `¿Y si tu equipo convirtiera ${MELHORA_CASO} puntos más?`,
     subtitle:
-      "Fue la mejora de un equipo de vendedores nuevos entrenado en Ramppy, de 18% a 30%. Pon los números de tu equipo y mira cuánto vale.",
+      "Fue la mejora de un equipo que nunca había vendido en su vida, entrenado en Ramppy: de 18% a 30%. Pon los números de tu equipo y mira cuánto vale.",
     reunioes: { label: "Reuniones por día", hint: `Sumando todo el equipo. El mes cuenta ${DIAS_UTEIS} días hábiles.` },
     conversao: { label: "Conversión actual", hint: "De cada 100 reuniones, cuántas se convierten en venta" },
     ticket: { label: "Ticket promedio", hint: "Valor promedio de cada venta" },
@@ -118,9 +118,9 @@ const COPY: Record<Locale, Copy> = {
       `Hola, usé la calculadora de ROI de Ramppy: ${r.reunioes} reuniones por día, ${r.conversao}% de conversión actual y ticket promedio de ${r.ticket}. Con +${MELHORA_CASO} puntos de conversión, serían ${r.receitaMes} extra por mes. Quiero entender cómo llegar ahí.`,
     caso: {
       eyebrow: "Caso real",
-      title: "Un equipo de vendedores nuevos entrenado en Ramppy",
+      title: "Un equipo sin ninguna experiencia en ventas, entrenado en Ramppy",
       numeros: [
-        { valor: "6", texto: "personas que nunca habían vendido" },
+        { valor: "6", texto: "personas que nunca habían vendido en su vida" },
         { valor: "3 días", texto: "hasta que el equipo estaba vendiendo" },
         { valor: "18% → 30%", texto: "de conversión en la primera semana" },
         { valor: "6x", texto: "de retorno de la inversión" },

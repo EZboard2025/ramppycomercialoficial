@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   path: "/calculadora",
   title: "ROI Calculator | Ramppy",
   description:
-    "Enter your team's meetings per day, conversion and average deal size and see what a real case's gain is worth: a team of new reps trained on Ramppy went from 18% to 30% conversion.",
+    "Enter your team's meetings per day, conversion and average deal size and see what a real case's gain is worth: a team that had never sold anything before, trained on Ramppy, went from 18% to 30% conversion.",
 });
 
 export default function CalculatorPage() {

@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   path: "/calculadora",
   title: "Calculadora de ROI | Ramppy",
   description:
-    "Pon las reuniones por día, la conversión y el ticket promedio de tu equipo y mira cuánto vale la mejora de un caso real: un equipo de vendedores nuevos entrenado en Ramppy pasó de 18% a 30% de conversión.",
+    "Pon las reuniones por día, la conversión y el ticket promedio de tu equipo y mira cuánto vale la mejora de un caso real: un equipo que nunca había vendido en su vida, entrenado en Ramppy, pasó de 18% a 30% de conversión.",
 });
 
 export default function CalculadoraPage() {

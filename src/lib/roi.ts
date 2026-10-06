@@ -2,8 +2,8 @@
  * A conta da calculadora de ROI (seção #roi da home e página /calculadora).
  *
  * A pessoa informa quantas reuniões o time faz por dia, a conversão de hoje e o ticket médio. A melhora é fixa e
- * é a de um caso real: um time de vendedores novos treinado na Ramppy foi de 18% para 30% de conversão na
- * primeira semana (+12 pontos). O visitante não escolhe a melhora (dono, 2026-10-06).
+ * é a de um caso real: um time que nunca tinha vendido na vida, treinado na Ramppy, foi de 18% para 30% de
+ * conversão na primeira semana (+12 pontos). O visitante não escolhe a melhora (dono, 2026-10-06).
  */
 
 /** Os pontos de conversão que o caso real ganhou (18% para 30%). */
