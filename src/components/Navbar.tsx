@@ -13,7 +13,7 @@ const menuDataPt: Record<MenuKey, { title: string; items: MenuItem[] }> = {
       { label: "Contratação", description: "Simule antes de contratar", href: "/#contratacao" },
       { label: "Treinamento", description: "Trilhas até bater a nota", href: "/#treinamento" },
       { label: "Acompanhamento", description: "Veja quem travou", href: "/#acompanhamento" },
-      { label: "Como funciona", description: "O passo a passo em vídeo", href: "/como-funciona" },
+      { label: "Diagnóstico de vendas", description: "Para o vendedor: sua nota em 10 minutos", href: "/diagnostico" },
     ],
   },
   resources: {
@@ -236,7 +236,7 @@ export default function Navbar() {
 
       {/* Desktop Dynamic Island */}
       <div
-        className={`hidden lg:block fixed top-5 left-1/2 z-50 transition-transform duration-300 ${
+        className={`hidden lg:block fixed top-5 left-1/2 z-50 w-max transition-transform duration-300 ${
           hidden && !isAnyOpen ? "-translate-x-1/2 -translate-y-[150%]" : "-translate-x-1/2 translate-y-0"
         }`}
         ref={islandRef}
@@ -288,6 +288,21 @@ export default function Navbar() {
                 </svg>
               </button>
             ))}
+
+            {/* Diagnóstico de vendas (B2C, só no Brasil): fica no topo também depois do lançamento */}
+            {locale === "pt" && (
+              <a
+                href="/diagnostico"
+                className="font-[var(--font-fustat)] text-[14px] font-semibold text-gray-600 pl-3.5 pr-2 py-2 rounded-full hover:bg-gray-50 hover:text-teal-dark transition-colors duration-200 inline-flex items-center gap-2"
+                onMouseEnter={() => {
+                  if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                  closeMenu();
+                }}
+              >
+                Diagnóstico
+                <span className="text-[10px] font-bold uppercase tracking-wider text-primary-green bg-green-surface rounded-full px-2 py-0.5">Novo</span>
+              </a>
+            )}
 
             <a
               href={plansHref}

@@ -48,6 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Só em português (o Diagnóstico de vendas é para o Brasil).
+  entries.push({ url: `${SITE_URL}/diagnostico`, lastModified: now, changeFrequency: "weekly", priority: 0.9 });
+
   for (const post of posts) {
     const ptUrl = `${SITE_URL}/blog/${post.slug}`;
     const enUrl = `${SITE_URL}/en/blog/${post.slug}`;

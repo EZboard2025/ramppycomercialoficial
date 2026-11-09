@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ClientsMarquee from "@/components/ClientsMarquee";
 import PartnersMarquee from "@/components/PartnersMarquee";
 import ProblemStats from "@/components/ProblemStats";
 import Features from "@/components/Features";
@@ -61,6 +62,7 @@ export default function Home() {
       <main className="bg-bg-main/80 min-h-screen space-y-[1px] relative z-10 max-w-[1920px] mx-auto">
         <Navbar />
         <Hero />
+        <ClientsMarquee />
         <PartnersMarquee />
         {/* <ProblemStats /> */}
         <Features />

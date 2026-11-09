@@ -15,6 +15,8 @@ const partners = [
   { name: "Newhack", logo: "/images/Newhack logo.png", url: "https://newhack.vc/" },
   { name: "Sebrae", logo: "/images/Sebrae logo.png", url: "https://www.sebrae.com.br/" },
   { name: "Google for Startups", logo: "/images/google-for-startups.svg", url: "https://cloud.google.com/startup" },
+  // Marca oficial do Claude (claude.com) + "for Startups": o programa não publica um logotipo próprio
+  { name: "Claude for Startups", logo: "/images/claude-for-startups.png", url: "https://claude.com/programs/startups", altura: "h-[30px] md:h-10" },
   { name: "ElevenLabs", logo: "https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp", url: "https://elevenlabs.io/startup-grants" },
   { name: "Be Growth", logo: "/images/be growth.png", url: "https://begrowth.com.br/" },
   { name: "Grupo Escalar", logo: "/images/grupo escalar.png", url: "https://grupoescalar.com/" },
@@ -23,10 +25,42 @@ const partners = [
 const COPIES = 4;
 const SPEED = 0.6; // px por frame do auto-scroll
 
+export type LogoItem = { name: string; logo: string; url?: string; altura?: string };
+
 export default function PartnersMarquee() {
   const locale = useLocale();
-  const label = labelByLocale[locale] ?? labelByLocale.pt;
-  const items = Array.from({ length: COPIES }, () => partners).flat();
+  return <LogoMarquee label={labelByLocale[locale] ?? labelByLocale.pt} logos={partners} />;
+}
+
+/** Seção com rótulo e a faixa de logos. */
+export function LogoMarquee({ label, logos, reverso = false }: { label: string; logos: LogoItem[]; reverso?: boolean }) {
+  return (
+    <SectionWrapper className="overflow-hidden">
+      <div className="py-10 md:py-12">
+        <p className="text-center text-xs font-semibold uppercase tracking-wider text-text-secondary/70 mb-8">
+          {label}
+        </p>
+        <LogoTrack logos={logos} reverso={reverso} />
+      </div>
+    </SectionWrapper>
+  );
+}
+
+/** A faixa de logos que rola sozinha (arrasta com o mouse, pausa no toque). `reverso` rola para a direita.
+ *  `margem` estica a faixa até a borda do cartão; `espaco` é o respiro de cada logo. */
+export function LogoTrack({
+  logos,
+  reverso = false,
+  margem = "-mx-6 md:-mx-[4%] lg:-mx-[5%] xl:-mx-[5.4%]",
+  espaco = "px-8 md:px-14",
+}: {
+  logos: LogoItem[];
+  reverso?: boolean;
+  margem?: string;
+  espaco?: string;
+}) {
+  const items = Array.from({ length: COPIES }, () => logos).flat();
+  const speed = reverso ? -SPEED : SPEED;
 
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
@@ -42,7 +76,7 @@ export default function PartnersMarquee() {
     const step = () => {
       const setWidth = track.scrollWidth / COPIES;
       if (setWidth > 0) {
-        let next = pausedRef.current ? track.scrollLeft : posRef.current + SPEED;
+        let next = pausedRef.current ? track.scrollLeft : posRef.current + speed;
         let wrapped = false;
         // mantém a posição dentro das cópias do meio pra rolagem infinita nos dois sentidos
         if (next >= setWidth * 2) {
@@ -63,7 +97,7 @@ export default function PartnersMarquee() {
       cancelAnimationFrame(raf);
       if (resumeTimer.current) clearTimeout(resumeTimer.current);
     };
-  }, []);
+  }, [speed]);
 
   const pause = () => {
     if (resumeTimer.current) clearTimeout(resumeTimer.current);
@@ -112,63 +146,78 @@ export default function PartnersMarquee() {
   };
 
   return (
-    <SectionWrapper className="overflow-hidden">
-      <div className="py-10 md:py-12">
-        <p className="text-center text-xs font-semibold uppercase tracking-wider text-text-secondary/70 mb-8">
-          {label}
-        </p>
-        <div
-          ref={trackRef}
-          className="-mx-6 md:-mx-[4%] lg:-mx-[5%] xl:-mx-[5.4%] overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          }}
-          onMouseEnter={pause}
-          onMouseLeave={() => {
-            if (!dragRef.current.active) resumeAfter(0);
-          }}
-          onTouchStart={pause}
-          onTouchEnd={() => resumeAfter(1500)}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerUp}
-          onClickCapture={onClickCapture}
-        >
-          <div className="flex w-max items-center">
-            {items.map((partner, i) => {
-              const logo = (
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
+    <div
+      ref={trackRef}
+      className={`${margem} overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none`}
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+      }}
+      onMouseEnter={pause}
+      onMouseLeave={() => {
+        if (!dragRef.current.active) resumeAfter(0);
+      }}
+      onTouchStart={pause}
+      onTouchEnd={() => resumeAfter(1500)}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+      onClickCapture={onClickCapture}
+    >
+      <div className="flex w-max items-center">
+        {items.map((partner, i) => {
+          const logo = (
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              draggable={false}
+              className={`${partner.altura ?? "h-7 md:h-9"} w-auto object-contain opacity-80 transition-opacity duration-300 hover:opacity-100`}
+            />
+          );
+          return (
+            <div key={i} className={`shrink-0 ${espaco}`}>
+              {partner.url ? (
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                   draggable={false}
-                  className="h-7 md:h-9 w-auto object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
-                />
-              );
-              return (
-                <div key={i} className="shrink-0 px-8 md:px-14">
-                  {partner.url ? (
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                      draggable={false}
-                    >
-                      {logo}
-                    </a>
-                  ) : (
-                    logo
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+                >
+                  {logo}
+                </a>
+              ) : (
+                logo
+              )}
+            </div>
+          );
+        })}
       </div>
-    </SectionWrapper>
+    </div>
+  );
+}
+
+/** Faixa que passa sem parar (animação CSS), sem arrasto nem pausa: o topo do hero no celular. Rola para a direita. */
+export function LogoLoop({ logos, margem = "", espaco = "px-6" }: { logos: LogoItem[]; margem?: string; espaco?: string }) {
+  const fade = "linear-gradient(to right, transparent, black 8%, black 92%, transparent)";
+  return (
+    <div className={`${margem} overflow-hidden`} style={{ maskImage: fade, WebkitMaskImage: fade }}>
+      <div className="logos-passando flex w-max items-center">
+        {[...logos, ...logos].map((l, i) => (
+          <div key={i} className={`shrink-0 ${espaco}`} aria-hidden={i >= logos.length || undefined}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={l.logo}
+              alt={i < logos.length ? l.name : ""}
+              draggable={false}
+              className={`${l.altura ?? "h-7"} w-auto object-contain opacity-80 select-none`}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

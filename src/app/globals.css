@@ -484,3 +484,13 @@
   margin-inline-end: -0.08em;
   padding-bottom: 0.12em;
 }
+
+/* Carrossel de clientes no topo do hero (celular): passa sem parar, nem o toque segura. A faixa tem a lista duas
+   vezes, então andar 50% emenda sem salto. */
+@keyframes logos-passando {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.logos-passando {
+  animation: logos-passando 18s linear infinite;
+}

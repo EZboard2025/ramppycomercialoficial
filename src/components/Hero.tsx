@@ -2,6 +2,19 @@
 import { useEffect, useState } from "react";
 import SectionWrapper from "./SectionWrapper";
 import { useLocale, localizeHref } from "@/i18n/LocaleContext";
+import { DIAGNOSTICO_VSL_URL, LANCAMENTO_DIAGNOSTICO } from "@/lib/lancamento";
+import { LogoLoop } from "./PartnersMarquee";
+import { clientes, clientesLabel } from "./ClientsMarquee";
+
+// No topo do hero, no celular, os logos ficam menores que na faixa (a frase continua sendo o maior elemento)
+const ALTURA_NO_HERO: Record<string, string> = {
+  Zoppy: "h-[18px]",
+  "G4 Educação": "h-6",
+  Allu: "h-5",
+  Sambatech: "h-4",
+  "Grupo Escalar": "h-[15px]",
+};
+const clientesNoHero = clientes.map((c) => ({ ...c, url: undefined, altura: ALTURA_NO_HERO[c.name] ?? "h-5" }));
 
 function useTypewriter(
   phrases: readonly (readonly string[])[],
@@ -139,9 +152,46 @@ const strings = {
   },
 };
 
+// Lançamento do Diagnóstico (só em português; a chave fica em src/lib/lancamento.ts): mesma estrutura do hero, com
+// o texto, os botões e o vídeo do Diagnóstico. O "Sou empresa" desce para o conteúdo de empresa da própria home.
+const lancamentoPt = {
+  h1MobileVariants: [
+    ["Onde você", "perde ", "venda?"],
+    ["Sua nota em", "10 ", "minutos."],
+    ["Agora é a", "sua ", "vez."],
+  ] as const,
+  h1DesktopVariants: [
+    ["Descubra o que está ", "travando", " as suas ", "vendas."],
+    ["Nunca mais perca uma ", "venda", " sem saber ", "por quê."],
+    ["Uma ligação de ", "10 minutos", " e a sua ", "nota na hora."],
+    ["O que era só de ", "empresa grande", ", agora é ", "seu."],
+  ] as const,
+  subtitleMobile: "Uma ligação de 10 minutos com um cliente sintético. A\u00A0nota e os seus gargalos chegam na hora.",
+  subtitleDesktop:
+    "Uma ligação de 10 minutos com um cliente sintético, como numa venda de verdade. Na hora, você recebe a sua nota, os seus gargalos e o que fazer no lugar.",
+  ctaPrimary: "Fazer meu diagnóstico",
+  ctaPrimaryHref: DIAGNOSTICO_VSL_URL,
+  ctaSecondary: "Sou empresa",
+  ctaSecondaryHref: "#contratacao",
+  // Até 1023 px o quadro aparece inteiro (versão centralizada); a partir de 1024 px a borda direita sai da tela, e a
+  // versão de desktop anda o conteúdo para a esquerda.
+  video: "/videos/hero-diagnostico-celular.mp4",
+  videoDesktop: "/videos/hero-diagnostico.mp4" as string | null,
+};
+
 export default function Hero() {
   const locale = useLocale();
-  const t = strings[locale];
+  const lancamento = LANCAMENTO_DIAGNOSTICO && locale === "pt";
+  const base = strings[locale];
+  const t = lancamento
+    ? { ...base, ...lancamentoPt }
+    : {
+        ...base,
+        ctaPrimaryHref: "#roi",
+        ctaSecondaryHref: localizeHref(locale, "/como-funciona"),
+        video: `/videos/hero-${locale}.mp4`,
+        videoDesktop: null as string | null,
+      };
 
   const desktop = useTypewriter(t.h1DesktopVariants);
   const mobile = useTypewriter(t.h1MobileVariants);
@@ -149,11 +199,22 @@ export default function Hero() {
   return (
     <SectionWrapper className="overflow-visible">
       <div className="py-6 md:py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-start gap-10 md:gap-8 lg:gap-[5%]">
+        {/* No lançamento o texto fica no meio da altura do vídeo (as quatro frases têm 2 linhas, nada pula) */}
+        <div className={`flex flex-col lg:flex-row items-start ${lancamento ? "lg:items-center" : ""} gap-10 md:gap-8 lg:gap-[5%]`}>
           {/* Left: Text Content */}
           <div className="lg:w-[33%] xl:w-[33%] shrink-0 mt-[10px] md:mt-0">
+            {/* Lançamento, só no celular: o carrossel de clientes no lugar da pílula (no desktop ele é a faixa abaixo do hero) */}
+            {lancamento && (
+              <div className="md:hidden mb-11">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-text-secondary/70 mb-3">
+                  {clientesLabel.pt}
+                </p>
+                <LogoLoop logos={clientesNoHero} margem="-mx-6" espaco="px-6" />
+              </div>
+            )}
+
             {/* Social proof badge - mobile only */}
-            <div className="md:hidden inline-flex items-center gap-2.5 bg-surface-hover/60 border border-border-light/60 rounded-full px-4 py-2 mb-6">
+            <div className={`${lancamento ? "hidden" : "md:hidden inline-flex"} items-center gap-2.5 bg-surface-hover/60 border border-border-light/60 rounded-full px-4 py-2 mb-6`}>
               <div className="flex -space-x-2">
                 <img src="/images/Gabriel Gomide.png" alt="Gabriel" className="w-7 h-7 rounded-full border-2 border-white object-cover" />
                 <img src="/images/1769295670916.jpg" alt="Arthur" className="w-7 h-7 rounded-full border-2 border-white object-cover" />
@@ -191,7 +252,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-row items-center gap-3 md:gap-4 mt-[40px] md:mt-10">
               <a
-                href="#roi"
+                href={t.ctaPrimaryHref}
                 className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-1.5 md:gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full bg-primary-green text-white hover:bg-green-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
               >
                 {t.ctaPrimary}
@@ -202,8 +263,8 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href={localizeHref(locale, "/como-funciona")}
-                className="font-[var(--font-fustat)] inline-flex items-center justify-center gap-2 text-sm md:text-base font-semibold px-5 md:px-6 py-3 md:py-3.5 rounded-full text-teal-medium md:bg-white md:border md:border-border-light hover:bg-surface-hover transition-all duration-300"
+                href={t.ctaSecondaryHref}
+                className={`font-[var(--font-fustat)] inline-flex items-center justify-center gap-2 text-sm md:text-base font-semibold ${lancamento ? "px-3 whitespace-nowrap" : "px-5"} md:px-6 py-3 md:py-3.5 rounded-full text-teal-medium md:bg-white md:border md:border-border-light hover:bg-surface-hover transition-all duration-300`}
               >
                 {t.ctaSecondary}
               </a>
@@ -216,7 +277,7 @@ export default function Hero() {
             <div className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ boxShadow: "0 25px 80px -12px rgba(0, 0, 0, 0.25), 0 12px 35px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)" }}>
               {/* o filme emenda sozinho (último quadro igual ao primeiro): o loop nativo basta */}
               <video
-                key={locale}
+                key={t.video}
                 autoPlay
                 loop
                 muted
@@ -225,7 +286,8 @@ export default function Hero() {
                 style={{ marginLeft: "-1%" }}
                 preload="auto"
               >
-                <source src={`/videos/hero-${locale}.mp4`} type="video/mp4" />
+                {t.videoDesktop && <source media="(min-width: 1024px)" src={t.videoDesktop} type="video/mp4" />}
+                <source src={t.video} type="video/mp4" />
               </video>
             </div>
           </div>

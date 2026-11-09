@@ -14,6 +14,7 @@ const strings = {
       { label: "Contratação", href: "/#contratacao" },
       { label: "Treinamento", href: "/#treinamento" },
       { label: "Acompanhamento", href: "/#acompanhamento" },
+      { label: "Diagnóstico de vendas", href: "/diagnostico" },
       { label: "Como funciona", href: "/como-funciona" },
     ],
     resourceItems: [
