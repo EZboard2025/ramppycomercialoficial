@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     "Veja o candidato vender antes de contratar: ele conduz uma venda real com um cliente sintético e você recebe nota por etapa e ranking. Depois, a mesma IA treina e avalia o time que já está em campo.",
   applicationName: "Ramppy",
   icons: {
-    icon: "/images/favicon.png",
-    shortcut: "/images/favicon.png",
-    apple: "/images/favicon.png",
+    icon: "/images/ramppy-favicon-circulo.png",
+    shortcut: "/favicon.ico",
+    apple: "/images/ramppy-favicon-apple.png",
   },
   openGraph: {
     title: "Ramppy — Simulação de vendas para contratar vendedores",
