@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Veja o candidato vender antes de contratar: ele conduz uma venda real com um cliente sintético e você recebe nota por etapa e ranking. Depois, a mesma IA treina e avalia o time que já está em campo.",
   applicationName: "Ramppy",
   icons: {
-    icon: "/images/ramppy-favicon-circulo.png",
+    icon: "/images/ramppy-favicon.png",
     shortcut: "/favicon.ico",
     apple: "/images/ramppy-favicon-apple.png",
   },
